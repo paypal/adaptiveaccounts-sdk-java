@@ -1,0 +1,89 @@
+
+/**
+ * Auto generated code
+ */
+
+package com.paypal.svcs.types.aa;
+
+import com.paypal.svcs.types.common.ErrorData;
+import com.paypal.svcs.types.common.ResponseEnvelope;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+
+/**
+ * Returned values are:
+ * VERIFIED|UNVERIFIED.
+ */
+public class GetVerifiedStatusResponse {
+
+	/**
+	 *
+	 * @Required
+	 */
+	private ResponseEnvelope responseEnvelope;
+	public ResponseEnvelope getResponseEnvelope() {
+		return responseEnvelope;
+	}
+	public void setResponseEnvelope(ResponseEnvelope value) {
+		this.responseEnvelope = value;
+	}
+
+	/**
+	 * Returned values are:
+	 * VERIFIED|UNVERIFIED.
+	 *
+	 * @Required
+	 */
+	private String accountStatus;
+	public String getAccountStatus() {
+		return accountStatus;
+	}
+	public void setAccountStatus(String value) {
+		this.accountStatus = value;
+	}
+
+	/**
+	 * Returns countryCode belonging to PayPal account.
+	 */
+	private String countryCode;
+	public String getCountryCode() {
+		return countryCode;
+	}
+	public void setCountryCode(String value) {
+		this.countryCode = value;
+	}
+
+	/**
+	 */
+	private List<ErrorData> error = new ArrayList<ErrorData>();
+	public List<ErrorData> getError() {
+		return error;
+	}
+	public void setError(List<ErrorData> value) {
+		this.error = value;
+	}
+
+
+	public GetVerifiedStatusResponse() {
+	}
+	public GetVerifiedStatusResponse(Map<String, String> map, String prefix) {
+		if( map.containsKey(prefix + "responseEnvelope" + ".timestamp") ) {
+			String newPrefix = prefix + "responseEnvelope" + '.';
+			this.responseEnvelope =  new ResponseEnvelope(map, newPrefix);
+		}
+		if( map.containsKey(prefix + "accountStatus") ) {
+			this.accountStatus = map.get(prefix + "accountStatus");
+		}
+		if( map.containsKey(prefix + "countryCode") ) {
+			this.countryCode = map.get(prefix + "countryCode");
+		}
+		for(int i=0; i<10; i++) {
+			if( map.containsKey(prefix + "error" + '(' + i + ')'+ ".errorId") ) {
+				String newPrefix = prefix + "error" + '(' + i + ')' + '.';
+				this.error.add(new ErrorData(map, newPrefix));
+			}
+		}
+	}
+}
