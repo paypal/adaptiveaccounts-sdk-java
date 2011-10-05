@@ -24,7 +24,7 @@ SDK Integration:
 
 Eg. if your sdk_config.properties file is in your WEB-INF/ folder, you can initialize the AdaptiveAccountsService as below:	
 	
-		  new InvoiceService(this.getServletContext().getRealPath("/") + "/WEB-INF/sdk_config.properties");
+		  new AdaptiveAccountsService(this.getServletContext().getRealPath("/") + "/WEB-INF/sdk_config.properties");
 		
 
 *	Create a service wrapper object.
