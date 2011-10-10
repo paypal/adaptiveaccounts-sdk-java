@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<project name="adaptivepayments-sample" default="war">
+<project name="adaptiveaccounts-sample" default="war">
 
 	<property environment="env" />
 	<property file="../../build.properties" />
