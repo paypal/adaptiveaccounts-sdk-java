@@ -17,15 +17,13 @@ public class NVPUtil {
 	 */
 	public static Map<String, String> decode(String nvpString)
 			throws UnsupportedEncodingException {
+				
 		String[] nmValPairs = nvpString.split("&");
 
-		// String decodedResponse = URLDecoder.decode(nvpString,
-		// Constants.ENCODING_FORMAT);
 		Map<String, String> response = new HashMap<String, String>();
 
 		// parse the string and load into the object
-		// String[] nmValPairs = decodedResponse.split("&");
-		for (String nmVal : nmValPairs) {
+			for (String nmVal : nmValPairs) {
 			
 			String[] field = nmVal.split("=");
 		
