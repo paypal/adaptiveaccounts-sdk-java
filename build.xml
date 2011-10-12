@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="PayPal_AdaptiveAccounts_SDK" default="all">
+<project name="PayPal_Invoicing_SDK" default="all">
 	<property file="build.properties" />
-	<property name="jarfile" value="${Jar.name}_${release.version}.jar" />
+	<property name="jarfile" value="${invoiceJar.name}_${release.version}.jar" />
 	<taskdef resource="testngtasks" classpath="lib/testng.jar" />
 
 	<path id="lib.classpath">
@@ -37,13 +37,13 @@
 	<target name="doc" description="generate javadoc">
 		<delete dir="${javadoc.dir}" />
 		<mkdir dir="${javadoc.dir}" />
-		<javadoc destdir="${javadoc.dir}" classpathref="lib.classpath" use="true" windowtitle="AdaptiveAccounts Java SDK v${release.version}" doctitle="AdaptiveAccounts Java SDK v${release.version}" header="AdaptiveAccounts Java SDK v${release.version}" bottom="Copyright 2011 PayPal, Inc. All Rights Reserved." private="no" breakiterator="yes">
+		<javadoc destdir="${javadoc.dir}" classpathref="lib.classpath" use="true" windowtitle="Invoicing Java SDK v${release.version}" doctitle="Invoicing Java SDK v${release.version}" header="Invoicing Java SDK v${release.version}" bottom="Copyright 2011 PayPal, Inc. All Rights Reserved." private="no" breakiterator="yes">
 			<packageset dir="${src.java.dir}" defaultexcludes="yes">
 				<include name="com/paypal/**" />
 				<exclude name="test/**" />
 				<exclude name="resource/**" />
 			</packageset>
-			<group title="AdaptiveAccounts Java SDK" packages="com.paypal.*" />
+			<group title="Invoicing Java SDK" packages="com.paypal.*" />
 		</javadoc>
 	</target>
 

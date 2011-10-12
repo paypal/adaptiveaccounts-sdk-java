@@ -17,6 +17,7 @@ import com.paypal.svcs.services.AdaptiveAccountsService;
 import com.paypal.svcs.types.aa.AddressType;
 import com.paypal.svcs.types.aa.CreateAccountRequest;
 import com.paypal.svcs.types.aa.CreateAccountResponse;
+import com.paypal.svcs.types.aa.CreateAccountWebOptionsType;
 import com.paypal.svcs.types.aa.NameType;
 import com.paypal.svcs.types.common.AckCode;
 import com.paypal.svcs.types.common.RequestEnvelope;
@@ -74,6 +75,10 @@ public class CreateAccountServlet extends HttpServlet {
 				.getParameter("citizenshipCtryCode"));
 		req.setCurrencyCode(request.getParameter("currencyCode"));
 		req.setEmailAddress(request.getParameter("email"));
+		CreateAccountWebOptionsType webOptions = new CreateAccountWebOptionsType();
+		webOptions.setReturnUrl(request.getParameter("returnUrl"));
+		req.setRegistrationType(request.getParameter("regType"));
+		req.setCreateAccountWebOptions(webOptions);
 		AdaptiveAccountsService service = new AdaptiveAccountsService(this
 				.getServletContext().getRealPath("/")
 				+ "/WEB-INF/sdk_config.properties");
@@ -84,12 +89,10 @@ public class CreateAccountServlet extends HttpServlet {
 			response.setContentType("text/html");
 			response.getWriter().println("<a href='index.html'>Home</a>");
 			if (resp.getResponseEnvelope().getAck().equals(AckCode.SUCCESS)) {
-				// String redirectURL =
-				// "https://www.sanbox.paypal.com/cgi-bin/webscr?cmd=_grant-permission&request_token="
-				// + resp.getPreapprovalKey();
-				//response.getWriter().println(
-						//"<a href=https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_ap-payment&paykey="
-							//	+ resp.getPayKey() + ">RedirectURL</a>");
+
+				response.getWriter()
+						.println(
+								"<a href="+ resp.getRedirectURL()+">RedirectURL</a>");
 			}
 		} catch (SSLConfigurationException e) {
 			// TODO Auto-generated catch block

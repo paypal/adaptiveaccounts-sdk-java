@@ -5,6 +5,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>AdaptiveAccounts</title>
+<%
+	StringBuilder url = new StringBuilder();
+	url.append("http://");
+	url.append(request.getServerName());
+	url.append(":");
+	url.append(request.getServerPort());
+	url.append(request.getContextPath());
+	String returnURL = url.toString() + "/index.html";
+%>
 </head>
 <body>
 	<h2>CreateAccount API Test Page</h2>
@@ -95,6 +104,20 @@
 			<div class="param_value">
 				<input type="text" name="email" value="test@paypal.com" size="50"
 					maxlength="260" />
+			</div>
+		</div>
+		<div class="params">
+			<div class="param_name">Registration Type</div>
+			<div class="param_value">
+				<input type="text" name="regType" value="WEB" size="50"
+					maxlength="260" />
+			</div>
+		</div>
+		<div class="params">
+			<div class="param_name">Return Url</div>
+			<div class="param_value">
+				<input type="text" name="returnUrl" value="<%=returnURL%>"
+					size="50" maxlength="260" />
 			</div>
 		</div>
 		<input type="submit" name="CreateAccountBtn" value="CreateAccount" />

@@ -227,6 +227,17 @@ public class CreateAccountRequest {
 	}
 
 	/**
+	 * tax id, ssn, itin, pan, cpf, acn, abn, etc.
+	 */
+	private String taxId;
+	public String getTaxId() {
+		return taxId;
+	}
+	public void setTaxId(String value) {
+		this.taxId = value;
+	}
+
+	/**
 	 */
 	private String partnerField1;
 	public String getPartnerField1() {
@@ -373,6 +384,10 @@ public class CreateAccountRequest {
 		}
 		if( performExtraVettingOnThisAccount != null ) {
 			sb.append(prefix).append("performExtraVettingOnThisAccount=").append(performExtraVettingOnThisAccount);
+			sb.append('&');
+		}
+		if( taxId != null ) {
+			sb.append(prefix).append("taxId=").append(NVPUtil.encodeUrl(taxId));
 			sb.append('&');
 		}
 		if( partnerField1 != null ) {
