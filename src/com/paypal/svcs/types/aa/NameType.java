@@ -7,6 +7,7 @@ package com.paypal.svcs.types.aa;
 
 import com.paypal.core.NVPUtil;
 import java.io.UnsupportedEncodingException;
+import java.util.Map;
 
 
 /**
@@ -104,4 +105,21 @@ public class NameType {
 		return sb.toString();
 	}
 
+	public NameType(Map<String, String> map, String prefix) {
+		if( map.containsKey(prefix + "salutation") ) {
+			this.salutation = map.get(prefix + "salutation");
+		}
+		if( map.containsKey(prefix + "firstName") ) {
+			this.firstName = map.get(prefix + "firstName");
+		}
+		if( map.containsKey(prefix + "middleName") ) {
+			this.middleName = map.get(prefix + "middleName");
+		}
+		if( map.containsKey(prefix + "lastName") ) {
+			this.lastName = map.get(prefix + "lastName");
+		}
+		if( map.containsKey(prefix + "suffix") ) {
+			this.suffix = map.get(prefix + "suffix");
+		}
+	}
 }

@@ -14,12 +14,12 @@
 	</welcome-file-list>
 	<servlet>
 		<description></description>
-		<display-name>CreateAccountServlet</display-name>
-		<servlet-name>CreateAccountServlet</servlet-name>
-		<servlet-class>com.sample.adaptiveaccounts.CreateAccountServlet</servlet-class>
+		<display-name>AdaptiveAccountsServlet</display-name>
+		<servlet-name>AdaptiveAccountsServlet</servlet-name>
+		<servlet-class>com.sample.adaptiveaccounts.AdaptiveAccountsServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>CreateAccountServlet</servlet-name>
-		<url-pattern>/CreateAccount</url-pattern>
+		<servlet-name>AdaptiveAccountsServlet</servlet-name>
+		<url-pattern>/AdaptiveAccounts/*</url-pattern>
 	</servlet-mapping>
 </web-app>

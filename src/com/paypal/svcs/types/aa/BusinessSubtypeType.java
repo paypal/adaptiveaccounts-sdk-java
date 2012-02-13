@@ -9,24 +9,25 @@ package com.paypal.svcs.types.aa;
 
 public enum BusinessSubtypeType {
 
-ENTITY("ENTITY"),
-EMANATION("EMANATION"),
-ESTDCOMMONWEALTH("ESTD_COMMONWEALTH"),
-ESTDUNDERSTATETERRITORY("ESTD_UNDER_STATE_TERRITORY"),
-ESTDUNDERFOREIGNCOUNTRY("ESTD_UNDER_FOREIGN_COUNTRY"),
-INCORPORATED("INCORPORATED"),
-NONINCORPORATED("NON_INCORPORATED"),
-	;
-private String value;
-BusinessSubtypeType(String val){
-value=val;
-}public String getValue(){
-return value;
-}
-public static BusinessSubtypeType fromValue(String v) {
+	ENTITY("ENTITY"), EMANATION("EMANATION"), ESTDCOMMONWEALTH(
+			"ESTD_COMMONWEALTH"), ESTDUNDERSTATETERRITORY(
+			"ESTD_UNDER_STATE_TERRITORY"), ESTDUNDERFOREIGNCOUNTRY(
+			"ESTD_UNDER_FOREIGN_COUNTRY"), INCORPORATED("INCORPORATED"), NONINCORPORATED(
+			"NON_INCORPORATED"), ;
+	private String value;
+
+	BusinessSubtypeType(String val) {
+		value = val;
+	}
+
+	public String getValue() {
+		return value;
+	}
+
+	public static BusinessSubtypeType fromValue(String v) {
 		for (BusinessSubtypeType c : values())
 			if (c.value.equals(v))
 				return c;
-throw new IllegalArgumentException(v);
-}
+		throw new IllegalArgumentException(v);
+	}
 }

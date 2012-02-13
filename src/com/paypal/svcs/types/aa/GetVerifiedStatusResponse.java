@@ -5,6 +5,7 @@
 
 package com.paypal.svcs.types.aa;
 
+import com.paypal.svcs.types.aa.UserInfoType;
 import com.paypal.svcs.types.common.ErrorData;
 import com.paypal.svcs.types.common.ResponseEnvelope;
 import java.util.ArrayList;
@@ -56,6 +57,18 @@ public class GetVerifiedStatusResponse {
 	}
 
 	/**
+	 * Info about PayPal user such as emailAddress,
+	 * accountId, firstName, lastName etc. 
+	 */
+	private UserInfoType userInfo;
+	public UserInfoType getUserInfo() {
+		return userInfo;
+	}
+	public void setUserInfo(UserInfoType value) {
+		this.userInfo = value;
+	}
+
+	/**
 	 */
 	private List<ErrorData> error = new ArrayList<ErrorData>();
 	public List<ErrorData> getError() {
@@ -78,6 +91,10 @@ public class GetVerifiedStatusResponse {
 		}
 		if( map.containsKey(prefix + "countryCode") ) {
 			this.countryCode = map.get(prefix + "countryCode");
+		}
+		if( map.containsKey(prefix + "userInfo" + ".emailAddress") ) {
+			String newPrefix = prefix + "userInfo" + '.';
+			this.userInfo =  new UserInfoType(map, newPrefix);
 		}
 		for(int i=0; i<10; i++) {
 			if( map.containsKey(prefix + "error" + '(' + i + ')'+ ".errorId") ) {
