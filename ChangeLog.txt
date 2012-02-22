@@ -1,0 +1,4 @@
+PayPal  Java AdaptiveAccounts SDK - 0.6.86
+Release Date  - 27-Feb-2012
+This release contains new AdaptiveAccounts SDK (NVP) and samples for AdaptiveAccounts api's.
+==========================================================================================================

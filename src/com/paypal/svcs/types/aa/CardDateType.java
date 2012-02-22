@@ -5,6 +5,7 @@
 
 package com.paypal.svcs.types.aa;
 
+import com.paypal.core.NVPUtil;
 import java.io.UnsupportedEncodingException;
 
 
