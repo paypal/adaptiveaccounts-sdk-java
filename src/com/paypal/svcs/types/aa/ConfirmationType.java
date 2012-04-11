@@ -20,9 +20,9 @@ value=val;
 return value;
 }
 public static ConfirmationType fromValue(String v) {
-		for (ConfirmationType c : values())
-			if (c.value.equals(v))
-				return c;
+																									for (ConfirmationType c : values())
+																										if (c.value.equals(v))
+																											return c;
 throw new IllegalArgumentException(v);
 }
 }

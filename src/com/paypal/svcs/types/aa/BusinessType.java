@@ -35,9 +35,9 @@ value=val;
 return value;
 }
 public static BusinessType fromValue(String v) {
-		for (BusinessType c : values())
-			if (c.value.equals(v))
-				return c;
+																									for (BusinessType c : values())
+																										if (c.value.equals(v))
+																											return c;
 throw new IllegalArgumentException(v);
 }
 }

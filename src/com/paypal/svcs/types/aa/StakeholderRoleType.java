@@ -24,9 +24,9 @@ value=val;
 return value;
 }
 public static StakeholderRoleType fromValue(String v) {
-		for (StakeholderRoleType c : values())
-			if (c.value.equals(v))
-				return c;
+																									for (StakeholderRoleType c : values())
+																										if (c.value.equals(v))
+																											return c;
 throw new IllegalArgumentException(v);
 }
 }

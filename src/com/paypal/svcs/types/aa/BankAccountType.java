@@ -22,9 +22,9 @@ value=val;
 return value;
 }
 public static BankAccountType fromValue(String v) {
-		for (BankAccountType c : values())
-			if (c.value.equals(v))
-				return c;
+																									for (BankAccountType c : values())
+																										if (c.value.equals(v))
+																											return c;
 throw new IllegalArgumentException(v);
 }
 }

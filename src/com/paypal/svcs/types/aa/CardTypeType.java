@@ -26,9 +26,9 @@ value=val;
 return value;
 }
 public static CardTypeType fromValue(String v) {
-		for (CardTypeType c : values())
-			if (c.value.equals(v))
-				return c;
+																									for (CardTypeType c : values())
+																										if (c.value.equals(v))
+																											return c;
 throw new IllegalArgumentException(v);
 }
 }
