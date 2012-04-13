@@ -31,13 +31,13 @@ PUBLICPARTNERSHIP("PUBLIC_PARTNERSHIP"),
 private String value;
 BusinessType(String val){
 value=val;
-}public String getValue(){
-return value;
-}
-public static BusinessType fromValue(String v) {
-																									for (BusinessType c : values())
-																										if (c.value.equals(v))
-																											return c;
-throw new IllegalArgumentException(v);
-}
+}		public String getValue(){
+			return value;
+		}
+		public static BusinessType fromValue(String v) {
+			for (BusinessType c : values())
+				if (c.value.equals(v))
+					return c;
+			throw new IllegalArgumentException(v);
+		}
 }

@@ -16,13 +16,13 @@ NONE("NONE"),
 private String value;
 ConfirmationType(String val){
 value=val;
-}public String getValue(){
-return value;
-}
-public static ConfirmationType fromValue(String v) {
-																									for (ConfirmationType c : values())
-																										if (c.value.equals(v))
-																											return c;
-throw new IllegalArgumentException(v);
-}
+}		public String getValue(){
+			return value;
+		}
+		public static ConfirmationType fromValue(String v) {
+			for (ConfirmationType c : values())
+				if (c.value.equals(v))
+					return c;
+			throw new IllegalArgumentException(v);
+		}
 }

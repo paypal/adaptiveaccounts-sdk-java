@@ -20,13 +20,13 @@ NOBENEFICIALOWNER("NO_BENEFICIAL_OWNER"),
 private String value;
 StakeholderRoleType(String val){
 value=val;
-}public String getValue(){
-return value;
-}
-public static StakeholderRoleType fromValue(String v) {
-																									for (StakeholderRoleType c : values())
-																										if (c.value.equals(v))
-																											return c;
-throw new IllegalArgumentException(v);
-}
+}		public String getValue(){
+			return value;
+		}
+		public static StakeholderRoleType fromValue(String v) {
+			for (StakeholderRoleType c : values())
+				if (c.value.equals(v))
+					return c;
+			throw new IllegalArgumentException(v);
+		}
 }
