@@ -61,11 +61,14 @@ public class GetUserAgreementResponse {
 		if( map.containsKey(prefix + "agreement") ) {
 			this.agreement = map.get(prefix + "agreement");
 		}
-		for(int i=0; i<10; i++) {
+		int i=0;
+		while(true) {
 			if( map.containsKey(prefix + "error" + '(' + i + ')'+ ".errorId") ) {
 				String newPrefix = prefix + "error" + '(' + i + ')' + '.';
 				this.error.add(new ErrorData(map, newPrefix));
 			}
+			else break;
+			i++;
 		}
 	}
 }

@@ -432,7 +432,7 @@ public class BusinessInfoType {
 		}
 		if( salesVenue != null ) {
 			for(int i=0; i<salesVenue.size(); i++) {
-				sb.append(prefix).append("salesVenue(").append(i).append(")=").append(salesVenue.get(i));
+				sb.append(prefix).append("salesVenue(").append(i).append(")=").append(salesVenue.get(i).getValue());
 				sb.append('&');
 			}
 		}

@@ -9,14 +9,14 @@ package com.paypal.svcs.types.aa;
 
 public enum ConfirmationType {
 
-WEB("WEB"),
-MOBILE("MOBILE"),
-NONE("NONE"),
-	;
-private String value;
-ConfirmationType(String val){
-value=val;
-}		public String getValue(){
+ 		WEB("WEB"),
+ 		MOBILE("MOBILE"),
+ 		NONE("NONE"),
+		;
+		private String value;
+		ConfirmationType(String val){
+			value=val;
+		}		public String getValue(){
 			return value;
 		}
 		public static ConfirmationType fromValue(String v) {
