@@ -106,6 +106,7 @@ public class NameType {
 	}
 
 	public NameType(Map<String, String> map, String prefix) {
+		int i=0; 
 		if( map.containsKey(prefix + "salutation") ) {
 			this.salutation = map.get(prefix + "salutation");
 		}

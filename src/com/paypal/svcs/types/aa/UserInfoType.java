@@ -76,6 +76,7 @@ public class UserInfoType {
 	public UserInfoType() {
 	}
 	public UserInfoType(Map<String, String> map, String prefix) {
+		int i=0; 
 		if( map.containsKey(prefix + "emailAddress") ) {
 			this.emailAddress = map.get(prefix + "emailAddress");
 		}
