@@ -1,416 +1,631 @@
-
-/**
- * Auto generated code
- */
-
 package com.paypal.svcs.types.aa;
-
-import com.paypal.core.NVPUtil;
-import com.paypal.svcs.types.aa.AddressType;
-import com.paypal.svcs.types.aa.BusinessInfoType;
-import com.paypal.svcs.types.aa.CreateAccountWebOptionsType;
-import com.paypal.svcs.types.aa.NameType;
-import com.paypal.svcs.types.common.ClientDetailsType;
 import com.paypal.svcs.types.common.RequestEnvelope;
+import com.paypal.svcs.types.common.ClientDetailsType;
+import com.paypal.svcs.types.aa.NameType;
+import com.paypal.svcs.types.aa.AddressType;
+import com.paypal.svcs.types.aa.CreateAccountWebOptionsType;
+import com.paypal.svcs.types.aa.BusinessInfoType;
 import java.io.UnsupportedEncodingException;
-
+import com.paypal.core.NVPUtil;
 
 /**
- * Valid values are: Personal, Premier, and
- * Business. Flag="2" corresponds to
- * java.util.regex.Pattern.CASE_INSENSITIVE,
- * meaning the strings are not
- * case-sensitive
+ * Valid values are: Personal, Premier, and Business. Flag="2"
+ * corresponds to java.util.regex.Pattern.CASE_INSENSITIVE,
+ * meaning the strings are not case-sensitive 
  */
-public class CreateAccountRequest {
+public class CreateAccountRequest{
+
 
 	/**
-	 *
-	 * @Required
-	 */
+	 * No Document Comments	  
+	 *@Required	 
+	 */ 
 	private RequestEnvelope requestEnvelope;
-	public RequestEnvelope getRequestEnvelope() {
-		return requestEnvelope;
-	}
-	public void setRequestEnvelope(RequestEnvelope value) {
-		this.requestEnvelope = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private ClientDetailsType clientDetails;
-	public ClientDetailsType getClientDetails() {
-		return clientDetails;
-	}
-	public void setClientDetails(ClientDetailsType value) {
-		this.clientDetails = value;
-	}
 
 	/**
-	 * Valid values are: Personal, Premier, and
-	 * Business. Flag="2" corresponds to
-	 * java.util.regex.Pattern.CASE_INSENSITIVE,
-	 * meaning the strings are not
-	 * case-sensitive
-	 */
+	 * Valid values are: Personal, Premier, and Business. Flag="2"
+	 * corresponds to java.util.regex.Pattern.CASE_INSENSITIVE,
+	 * meaning the strings are not case-sensitive 	 
+	 */ 
 	private String accountType;
-	public String getAccountType() {
-		return accountType;
-	}
-	public void setAccountType(String value) {
-		this.accountType = value;
-	}
 
 	/**
-	 *
-	 * @Required
-	 */
+	 * No Document Comments	  
+	 *@Required	 
+	 */ 
 	private NameType name;
-	public NameType getName() {
-		return name;
-	}
-	public void setName(NameType value) {
-		this.name = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private String dateOfBirth;
-	public String getDateOfBirth() {
-		return dateOfBirth;
-	}
-	public void setDateOfBirth(String value) {
-		this.dateOfBirth = value;
-	}
 
 	/**
-	 *
-	 * @Required
-	 */
+	 * No Document Comments	  
+	 *@Required	 
+	 */ 
 	private AddressType address;
-	public AddressType getAddress() {
-		return address;
-	}
-	public void setAddress(AddressType value) {
-		this.address = value;
-	}
 
 	/**
-	 * Must provide at least one of contactPhoneNumber, homePhoneNumber, or mobilePhoneNumber
-	 */
+	 * Must provide at least one of contactPhoneNumber,
+	 * homePhoneNumber, or mobilePhoneNumber 	 
+	 */ 
 	private String contactPhoneNumber;
-	public String getContactPhoneNumber() {
-		return contactPhoneNumber;
-	}
-	public void setContactPhoneNumber(String value) {
-		this.contactPhoneNumber = value;
-	}
 
 	/**
-	 * Must provide at least one of contactPhoneNumber, homePhoneNumber, or mobilePhoneNumber
-	 */
+	 * Must provide at least one of contactPhoneNumber,
+	 * homePhoneNumber, or mobilePhoneNumber 	 
+	 */ 
 	private String homePhoneNumber;
-	public String getHomePhoneNumber() {
-		return homePhoneNumber;
-	}
-	public void setHomePhoneNumber(String value) {
-		this.homePhoneNumber = value;
-	}
 
 	/**
-	 * Must provide at least one of contactPhoneNumber, homePhoneNumber, or mobilePhoneNumber
-	 */
+	 * Must provide at least one of contactPhoneNumber,
+	 * homePhoneNumber, or mobilePhoneNumber 	 
+	 */ 
 	private String mobilePhoneNumber;
-	public String getMobilePhoneNumber() {
-		return mobilePhoneNumber;
-	}
-	public void setMobilePhoneNumber(String value) {
-		this.mobilePhoneNumber = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private String currencyCode;
-	public String getCurrencyCode() {
-		return currencyCode;
-	}
-	public void setCurrencyCode(String value) {
-		this.currencyCode = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private String citizenshipCountryCode;
-	public String getCitizenshipCountryCode() {
-		return citizenshipCountryCode;
-	}
-	public void setCitizenshipCountryCode(String value) {
-		this.citizenshipCountryCode = value;
-	}
 
 	/**
-	 *
-	 * @Required
-	 */
+	 * No Document Comments	  
+	 *@Required	 
+	 */ 
 	private String preferredLanguageCode;
-	public String getPreferredLanguageCode() {
-		return preferredLanguageCode;
-	}
-	public void setPreferredLanguageCode(String value) {
-		this.preferredLanguageCode = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private String notificationURL;
-	public String getNotificationURL() {
-		return notificationURL;
-	}
-	public void setNotificationURL(String value) {
-		this.notificationURL = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private String emailAddress;
-	public String getEmailAddress() {
-		return emailAddress;
-	}
-	public void setEmailAddress(String value) {
-		this.emailAddress = value;
-	}
 
 	/**
-	 * Valid values are: Mobile and Web.
-	 * Mobile: Returns a key to complete the
-	 * registration. Web: Returns a URL to
-	 * complete the registration.
-	 */
+	 * Valid values are: Mobile and Web. Mobile: Returns a key to
+	 * complete the registration. Web: Returns a URL to complete
+	 * the registration. 	 
+	 */ 
 	private String registrationType;
-	public String getRegistrationType() {
-		return registrationType;
-	}
-	public void setRegistrationType(String value) {
-		this.registrationType = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private CreateAccountWebOptionsType createAccountWebOptions;
-	public CreateAccountWebOptionsType getCreateAccountWebOptions() {
-		return createAccountWebOptions;
-	}
-	public void setCreateAccountWebOptions(CreateAccountWebOptionsType value) {
-		this.createAccountWebOptions = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private Boolean suppressWelcomeEmail;
-	public Boolean getSuppressWelcomeEmail() {
-		return suppressWelcomeEmail;
-	}
-	public void setSuppressWelcomeEmail(Boolean value) {
-		this.suppressWelcomeEmail = value;
-	}
 
 	/**
-	 * Set to true if you want this account to undergo extra vetting by PayPal
-	 * before becoming usable. 
-	 */
+	 * Set to true if you want this account to undergo extra
+	 * vetting by PayPal before becoming usable. 	 
+	 */ 
 	private Boolean performExtraVettingOnThisAccount;
-	public Boolean getPerformExtraVettingOnThisAccount() {
-		return performExtraVettingOnThisAccount;
-	}
-	public void setPerformExtraVettingOnThisAccount(Boolean value) {
-		this.performExtraVettingOnThisAccount = value;
-	}
 
 	/**
-	 * tax id, ssn, itin, pan, cpf, acn, abn, etc.
-	 */
+	 * tax id, ssn, itin, pan, cpf, acn, abn, etc. 	 
+	 */ 
 	private String taxId;
-	public String getTaxId() {
-		return taxId;
-	}
-	public void setTaxId(String value) {
-		this.taxId = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private String partnerField1;
-	public String getPartnerField1() {
-		return partnerField1;
-	}
-	public void setPartnerField1(String value) {
-		this.partnerField1 = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private String partnerField2;
-	public String getPartnerField2() {
-		return partnerField2;
-	}
-	public void setPartnerField2(String value) {
-		this.partnerField2 = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private String partnerField3;
-	public String getPartnerField3() {
-		return partnerField3;
-	}
-	public void setPartnerField3(String value) {
-		this.partnerField3 = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private String partnerField4;
-	public String getPartnerField4() {
-		return partnerField4;
-	}
-	public void setPartnerField4(String value) {
-		this.partnerField4 = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private String partnerField5;
-	public String getPartnerField5() {
-		return partnerField5;
-	}
-	public void setPartnerField5(String value) {
-		this.partnerField5 = value;
-	}
 
 	/**
-	 * Required for business account creation
-	 */
+	 * Required for business account creation 	 
+	 */ 
 	private BusinessInfoType businessInfo;
-	public BusinessInfoType getBusinessInfo() {
-		return businessInfo;
-	}
-	public void setBusinessInfo(BusinessInfoType value) {
-		this.businessInfo = value;
-	}
 
+	
 
-	public CreateAccountRequest(RequestEnvelope requestEnvelope, NameType name, AddressType address, String preferredLanguageCode) {
+	/**
+	 * Constructor with arguments
+	 */
+	public CreateAccountRequest (RequestEnvelope requestEnvelope, NameType name, AddressType address, String preferredLanguageCode){
 		this.requestEnvelope = requestEnvelope;
 		this.name = name;
 		this.address = address;
 		this.preferredLanguageCode = preferredLanguageCode;
-	}
-	public CreateAccountRequest() {
-	}
+	}	
+
+	/**
+	 * Default Constructor
+	 */
+	public CreateAccountRequest (){
+	}	
+
+	/**
+	 * Getter for requestEnvelope
+	 */
+	 public RequestEnvelope getRequestEnvelope() {
+	 	return requestEnvelope;
+	 }
+	 
+	/**
+	 * Setter for requestEnvelope
+	 */
+	 public void setRequestEnvelope(RequestEnvelope requestEnvelope) {
+	 	this.requestEnvelope = requestEnvelope;
+	 }
+	 
+	/**
+	 * Getter for clientDetails
+	 */
+	 public ClientDetailsType getClientDetails() {
+	 	return clientDetails;
+	 }
+	 
+	/**
+	 * Setter for clientDetails
+	 */
+	 public void setClientDetails(ClientDetailsType clientDetails) {
+	 	this.clientDetails = clientDetails;
+	 }
+	 
+	/**
+	 * Getter for accountType
+	 */
+	 public String getAccountType() {
+	 	return accountType;
+	 }
+	 
+	/**
+	 * Setter for accountType
+	 */
+	 public void setAccountType(String accountType) {
+	 	this.accountType = accountType;
+	 }
+	 
+	/**
+	 * Getter for name
+	 */
+	 public NameType getName() {
+	 	return name;
+	 }
+	 
+	/**
+	 * Setter for name
+	 */
+	 public void setName(NameType name) {
+	 	this.name = name;
+	 }
+	 
+	/**
+	 * Getter for dateOfBirth
+	 */
+	 public String getDateOfBirth() {
+	 	return dateOfBirth;
+	 }
+	 
+	/**
+	 * Setter for dateOfBirth
+	 */
+	 public void setDateOfBirth(String dateOfBirth) {
+	 	this.dateOfBirth = dateOfBirth;
+	 }
+	 
+	/**
+	 * Getter for address
+	 */
+	 public AddressType getAddress() {
+	 	return address;
+	 }
+	 
+	/**
+	 * Setter for address
+	 */
+	 public void setAddress(AddressType address) {
+	 	this.address = address;
+	 }
+	 
+	/**
+	 * Getter for contactPhoneNumber
+	 */
+	 public String getContactPhoneNumber() {
+	 	return contactPhoneNumber;
+	 }
+	 
+	/**
+	 * Setter for contactPhoneNumber
+	 */
+	 public void setContactPhoneNumber(String contactPhoneNumber) {
+	 	this.contactPhoneNumber = contactPhoneNumber;
+	 }
+	 
+	/**
+	 * Getter for homePhoneNumber
+	 */
+	 public String getHomePhoneNumber() {
+	 	return homePhoneNumber;
+	 }
+	 
+	/**
+	 * Setter for homePhoneNumber
+	 */
+	 public void setHomePhoneNumber(String homePhoneNumber) {
+	 	this.homePhoneNumber = homePhoneNumber;
+	 }
+	 
+	/**
+	 * Getter for mobilePhoneNumber
+	 */
+	 public String getMobilePhoneNumber() {
+	 	return mobilePhoneNumber;
+	 }
+	 
+	/**
+	 * Setter for mobilePhoneNumber
+	 */
+	 public void setMobilePhoneNumber(String mobilePhoneNumber) {
+	 	this.mobilePhoneNumber = mobilePhoneNumber;
+	 }
+	 
+	/**
+	 * Getter for currencyCode
+	 */
+	 public String getCurrencyCode() {
+	 	return currencyCode;
+	 }
+	 
+	/**
+	 * Setter for currencyCode
+	 */
+	 public void setCurrencyCode(String currencyCode) {
+	 	this.currencyCode = currencyCode;
+	 }
+	 
+	/**
+	 * Getter for citizenshipCountryCode
+	 */
+	 public String getCitizenshipCountryCode() {
+	 	return citizenshipCountryCode;
+	 }
+	 
+	/**
+	 * Setter for citizenshipCountryCode
+	 */
+	 public void setCitizenshipCountryCode(String citizenshipCountryCode) {
+	 	this.citizenshipCountryCode = citizenshipCountryCode;
+	 }
+	 
+	/**
+	 * Getter for preferredLanguageCode
+	 */
+	 public String getPreferredLanguageCode() {
+	 	return preferredLanguageCode;
+	 }
+	 
+	/**
+	 * Setter for preferredLanguageCode
+	 */
+	 public void setPreferredLanguageCode(String preferredLanguageCode) {
+	 	this.preferredLanguageCode = preferredLanguageCode;
+	 }
+	 
+	/**
+	 * Getter for notificationURL
+	 */
+	 public String getNotificationURL() {
+	 	return notificationURL;
+	 }
+	 
+	/**
+	 * Setter for notificationURL
+	 */
+	 public void setNotificationURL(String notificationURL) {
+	 	this.notificationURL = notificationURL;
+	 }
+	 
+	/**
+	 * Getter for emailAddress
+	 */
+	 public String getEmailAddress() {
+	 	return emailAddress;
+	 }
+	 
+	/**
+	 * Setter for emailAddress
+	 */
+	 public void setEmailAddress(String emailAddress) {
+	 	this.emailAddress = emailAddress;
+	 }
+	 
+	/**
+	 * Getter for registrationType
+	 */
+	 public String getRegistrationType() {
+	 	return registrationType;
+	 }
+	 
+	/**
+	 * Setter for registrationType
+	 */
+	 public void setRegistrationType(String registrationType) {
+	 	this.registrationType = registrationType;
+	 }
+	 
+	/**
+	 * Getter for createAccountWebOptions
+	 */
+	 public CreateAccountWebOptionsType getCreateAccountWebOptions() {
+	 	return createAccountWebOptions;
+	 }
+	 
+	/**
+	 * Setter for createAccountWebOptions
+	 */
+	 public void setCreateAccountWebOptions(CreateAccountWebOptionsType createAccountWebOptions) {
+	 	this.createAccountWebOptions = createAccountWebOptions;
+	 }
+	 
+	/**
+	 * Getter for suppressWelcomeEmail
+	 */
+	 public Boolean getSuppressWelcomeEmail() {
+	 	return suppressWelcomeEmail;
+	 }
+	 
+	/**
+	 * Setter for suppressWelcomeEmail
+	 */
+	 public void setSuppressWelcomeEmail(Boolean suppressWelcomeEmail) {
+	 	this.suppressWelcomeEmail = suppressWelcomeEmail;
+	 }
+	 
+	/**
+	 * Getter for performExtraVettingOnThisAccount
+	 */
+	 public Boolean getPerformExtraVettingOnThisAccount() {
+	 	return performExtraVettingOnThisAccount;
+	 }
+	 
+	/**
+	 * Setter for performExtraVettingOnThisAccount
+	 */
+	 public void setPerformExtraVettingOnThisAccount(Boolean performExtraVettingOnThisAccount) {
+	 	this.performExtraVettingOnThisAccount = performExtraVettingOnThisAccount;
+	 }
+	 
+	/**
+	 * Getter for taxId
+	 */
+	 public String getTaxId() {
+	 	return taxId;
+	 }
+	 
+	/**
+	 * Setter for taxId
+	 */
+	 public void setTaxId(String taxId) {
+	 	this.taxId = taxId;
+	 }
+	 
+	/**
+	 * Getter for partnerField1
+	 */
+	 public String getPartnerField1() {
+	 	return partnerField1;
+	 }
+	 
+	/**
+	 * Setter for partnerField1
+	 */
+	 public void setPartnerField1(String partnerField1) {
+	 	this.partnerField1 = partnerField1;
+	 }
+	 
+	/**
+	 * Getter for partnerField2
+	 */
+	 public String getPartnerField2() {
+	 	return partnerField2;
+	 }
+	 
+	/**
+	 * Setter for partnerField2
+	 */
+	 public void setPartnerField2(String partnerField2) {
+	 	this.partnerField2 = partnerField2;
+	 }
+	 
+	/**
+	 * Getter for partnerField3
+	 */
+	 public String getPartnerField3() {
+	 	return partnerField3;
+	 }
+	 
+	/**
+	 * Setter for partnerField3
+	 */
+	 public void setPartnerField3(String partnerField3) {
+	 	this.partnerField3 = partnerField3;
+	 }
+	 
+	/**
+	 * Getter for partnerField4
+	 */
+	 public String getPartnerField4() {
+	 	return partnerField4;
+	 }
+	 
+	/**
+	 * Setter for partnerField4
+	 */
+	 public void setPartnerField4(String partnerField4) {
+	 	this.partnerField4 = partnerField4;
+	 }
+	 
+	/**
+	 * Getter for partnerField5
+	 */
+	 public String getPartnerField5() {
+	 	return partnerField5;
+	 }
+	 
+	/**
+	 * Setter for partnerField5
+	 */
+	 public void setPartnerField5(String partnerField5) {
+	 	this.partnerField5 = partnerField5;
+	 }
+	 
+	/**
+	 * Getter for businessInfo
+	 */
+	 public BusinessInfoType getBusinessInfo() {
+	 	return businessInfo;
+	 }
+	 
+	/**
+	 * Setter for businessInfo
+	 */
+	 public void setBusinessInfo(BusinessInfoType businessInfo) {
+	 	this.businessInfo = businessInfo;
+	 }
+	 
+
 
 	public String toNVPString() throws UnsupportedEncodingException {
 		return toNVPString("");
 	}
-
+	
 	public String toNVPString(String prefix) throws UnsupportedEncodingException {
 		StringBuilder sb = new StringBuilder();
-		if( requestEnvelope != null ) {
+		if (requestEnvelope != null) {
 			String newPrefix = prefix + "requestEnvelope.";
 			sb.append(requestEnvelope.toNVPString(newPrefix));
 		}
-		if( clientDetails != null ) {
+		if (clientDetails != null) {
 			String newPrefix = prefix + "clientDetails.";
 			sb.append(clientDetails.toNVPString(newPrefix));
 		}
-		if( accountType != null ) {
+		if (accountType != null) {
 			sb.append(prefix).append("accountType=").append(NVPUtil.encodeUrl(accountType));
-			sb.append('&');
+			sb.append("&");
 		}
-		if( name != null ) {
+		if (name != null) {
 			String newPrefix = prefix + "name.";
 			sb.append(name.toNVPString(newPrefix));
 		}
-		if( dateOfBirth != null ) {
+		if (dateOfBirth != null) {
 			sb.append(prefix).append("dateOfBirth=").append(NVPUtil.encodeUrl(dateOfBirth));
-			sb.append('&');
+			sb.append("&");
 		}
-		if( address != null ) {
+		if (address != null) {
 			String newPrefix = prefix + "address.";
 			sb.append(address.toNVPString(newPrefix));
 		}
-		if( contactPhoneNumber != null ) {
+		if (contactPhoneNumber != null) {
 			sb.append(prefix).append("contactPhoneNumber=").append(NVPUtil.encodeUrl(contactPhoneNumber));
-			sb.append('&');
+			sb.append("&");
 		}
-		if( homePhoneNumber != null ) {
+		if (homePhoneNumber != null) {
 			sb.append(prefix).append("homePhoneNumber=").append(NVPUtil.encodeUrl(homePhoneNumber));
-			sb.append('&');
+			sb.append("&");
 		}
-		if( mobilePhoneNumber != null ) {
+		if (mobilePhoneNumber != null) {
 			sb.append(prefix).append("mobilePhoneNumber=").append(NVPUtil.encodeUrl(mobilePhoneNumber));
-			sb.append('&');
+			sb.append("&");
 		}
-		if( currencyCode != null ) {
+		if (currencyCode != null) {
 			sb.append(prefix).append("currencyCode=").append(NVPUtil.encodeUrl(currencyCode));
-			sb.append('&');
+			sb.append("&");
 		}
-		if( citizenshipCountryCode != null ) {
+		if (citizenshipCountryCode != null) {
 			sb.append(prefix).append("citizenshipCountryCode=").append(NVPUtil.encodeUrl(citizenshipCountryCode));
-			sb.append('&');
+			sb.append("&");
 		}
-		if( preferredLanguageCode != null ) {
+		if (preferredLanguageCode != null) {
 			sb.append(prefix).append("preferredLanguageCode=").append(NVPUtil.encodeUrl(preferredLanguageCode));
-			sb.append('&');
+			sb.append("&");
 		}
-		if( notificationURL != null ) {
+		if (notificationURL != null) {
 			sb.append(prefix).append("notificationURL=").append(NVPUtil.encodeUrl(notificationURL));
-			sb.append('&');
+			sb.append("&");
 		}
-		if( emailAddress != null ) {
+		if (emailAddress != null) {
 			sb.append(prefix).append("emailAddress=").append(NVPUtil.encodeUrl(emailAddress));
-			sb.append('&');
+			sb.append("&");
 		}
-		if( registrationType != null ) {
+		if (registrationType != null) {
 			sb.append(prefix).append("registrationType=").append(NVPUtil.encodeUrl(registrationType));
-			sb.append('&');
+			sb.append("&");
 		}
-		if( createAccountWebOptions != null ) {
+		if (createAccountWebOptions != null) {
 			String newPrefix = prefix + "createAccountWebOptions.";
 			sb.append(createAccountWebOptions.toNVPString(newPrefix));
 		}
-		if( suppressWelcomeEmail != null ) {
+		if (suppressWelcomeEmail != null) {
 			sb.append(prefix).append("suppressWelcomeEmail=").append(suppressWelcomeEmail);
-			sb.append('&');
+			sb.append("&");
 		}
-		if( performExtraVettingOnThisAccount != null ) {
+		if (performExtraVettingOnThisAccount != null) {
 			sb.append(prefix).append("performExtraVettingOnThisAccount=").append(performExtraVettingOnThisAccount);
-			sb.append('&');
+			sb.append("&");
 		}
-		if( taxId != null ) {
+		if (taxId != null) {
 			sb.append(prefix).append("taxId=").append(NVPUtil.encodeUrl(taxId));
-			sb.append('&');
+			sb.append("&");
 		}
-		if( partnerField1 != null ) {
+		if (partnerField1 != null) {
 			sb.append(prefix).append("partnerField1=").append(NVPUtil.encodeUrl(partnerField1));
-			sb.append('&');
+			sb.append("&");
 		}
-		if( partnerField2 != null ) {
+		if (partnerField2 != null) {
 			sb.append(prefix).append("partnerField2=").append(NVPUtil.encodeUrl(partnerField2));
-			sb.append('&');
+			sb.append("&");
 		}
-		if( partnerField3 != null ) {
+		if (partnerField3 != null) {
 			sb.append(prefix).append("partnerField3=").append(NVPUtil.encodeUrl(partnerField3));
-			sb.append('&');
+			sb.append("&");
 		}
-		if( partnerField4 != null ) {
+		if (partnerField4 != null) {
 			sb.append(prefix).append("partnerField4=").append(NVPUtil.encodeUrl(partnerField4));
-			sb.append('&');
+			sb.append("&");
 		}
-		if( partnerField5 != null ) {
+		if (partnerField5 != null) {
 			sb.append(prefix).append("partnerField5=").append(NVPUtil.encodeUrl(partnerField5));
-			sb.append('&');
+			sb.append("&");
 		}
-		if( businessInfo != null ) {
+		if (businessInfo != null) {
 			String newPrefix = prefix + "businessInfo.";
 			sb.append(businessInfo.toNVPString(newPrefix));
 		}

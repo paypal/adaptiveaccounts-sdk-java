@@ -1,98 +1,137 @@
-
-/**
- * Auto generated code
- */
-
 package com.paypal.svcs.types.aa;
-
-import com.paypal.core.NVPUtil;
 import com.paypal.svcs.types.common.RequestEnvelope;
 import java.io.UnsupportedEncodingException;
-
+import com.paypal.core.NVPUtil;
 
 /**
- * Identifying the PayPal account to which this request is targetted to.
- * Caller of this API has to either provided an emailAddress or an accountId.
+ * Identifying the PayPal account to which this request is
+ * targetted to. Caller of this API has to either provided an
+ * emailAddress or an accountId. 
  */
-public class SetFundingSourceConfirmedRequest {
+public class SetFundingSourceConfirmedRequest{
+
 
 	/**
-	 *
-	 * @Required
-	 */
+	 * No Document Comments	  
+	 *@Required	 
+	 */ 
 	private RequestEnvelope requestEnvelope;
-	public RequestEnvelope getRequestEnvelope() {
-		return requestEnvelope;
-	}
-	public void setRequestEnvelope(RequestEnvelope value) {
-		this.requestEnvelope = value;
-	}
 
 	/**
-	 * Identifying the PayPal account to which this request is targetted to.
-	 * Caller of this API has to either provided an emailAddress or an accountId.
-	 */
+	 * Identifying the PayPal account to which this request is
+	 * targetted to. Caller of this API has to either provided an
+	 * emailAddress or an accountId. 	 
+	 */ 
 	private String emailAddress;
-	public String getEmailAddress() {
-		return emailAddress;
-	}
-	public void setEmailAddress(String value) {
-		this.emailAddress = value;
-	}
 
 	/**
-	 * Identifying the PayPal account to which this request is targetted to.
-	 * Caller of this API has to either provided an emailAddress or an accountId.
-	 */
+	 * Identifying the PayPal account to which this request is
+	 * targetted to. Caller of this API has to either provided an
+	 * emailAddress or an accountId. 	 
+	 */ 
 	private String accountId;
-	public String getAccountId() {
-		return accountId;
-	}
-	public void setAccountId(String value) {
-		this.accountId = value;
-	}
 
 	/**
-	 *
-	 * @Required
-	 */
+	 * No Document Comments	  
+	 *@Required	 
+	 */ 
 	private String fundingSourceKey;
-	public String getFundingSourceKey() {
-		return fundingSourceKey;
-	}
-	public void setFundingSourceKey(String value) {
-		this.fundingSourceKey = value;
-	}
 
+	
 
-	public SetFundingSourceConfirmedRequest(RequestEnvelope requestEnvelope, String fundingSourceKey) {
+	/**
+	 * Constructor with arguments
+	 */
+	public SetFundingSourceConfirmedRequest (RequestEnvelope requestEnvelope, String fundingSourceKey){
 		this.requestEnvelope = requestEnvelope;
 		this.fundingSourceKey = fundingSourceKey;
-	}
-	public SetFundingSourceConfirmedRequest() {
-	}
+	}	
+
+	/**
+	 * Default Constructor
+	 */
+	public SetFundingSourceConfirmedRequest (){
+	}	
+
+	/**
+	 * Getter for requestEnvelope
+	 */
+	 public RequestEnvelope getRequestEnvelope() {
+	 	return requestEnvelope;
+	 }
+	 
+	/**
+	 * Setter for requestEnvelope
+	 */
+	 public void setRequestEnvelope(RequestEnvelope requestEnvelope) {
+	 	this.requestEnvelope = requestEnvelope;
+	 }
+	 
+	/**
+	 * Getter for emailAddress
+	 */
+	 public String getEmailAddress() {
+	 	return emailAddress;
+	 }
+	 
+	/**
+	 * Setter for emailAddress
+	 */
+	 public void setEmailAddress(String emailAddress) {
+	 	this.emailAddress = emailAddress;
+	 }
+	 
+	/**
+	 * Getter for accountId
+	 */
+	 public String getAccountId() {
+	 	return accountId;
+	 }
+	 
+	/**
+	 * Setter for accountId
+	 */
+	 public void setAccountId(String accountId) {
+	 	this.accountId = accountId;
+	 }
+	 
+	/**
+	 * Getter for fundingSourceKey
+	 */
+	 public String getFundingSourceKey() {
+	 	return fundingSourceKey;
+	 }
+	 
+	/**
+	 * Setter for fundingSourceKey
+	 */
+	 public void setFundingSourceKey(String fundingSourceKey) {
+	 	this.fundingSourceKey = fundingSourceKey;
+	 }
+	 
+
 
 	public String toNVPString() throws UnsupportedEncodingException {
 		return toNVPString("");
 	}
-
+	
 	public String toNVPString(String prefix) throws UnsupportedEncodingException {
 		StringBuilder sb = new StringBuilder();
-		if( requestEnvelope != null ) {
+		if (requestEnvelope != null) {
 			String newPrefix = prefix + "requestEnvelope.";
 			sb.append(requestEnvelope.toNVPString(newPrefix));
 		}
-		if( emailAddress != null ) {
+		if (emailAddress != null) {
 			sb.append(prefix).append("emailAddress=").append(NVPUtil.encodeUrl(emailAddress));
-			sb.append('&');
+			sb.append("&");
 		}
-		if( accountId != null ) {
+		if (accountId != null) {
 			sb.append(prefix).append("accountId=").append(NVPUtil.encodeUrl(accountId));
-			sb.append('&');
+			sb.append("&");
 		}
-		if( fundingSourceKey != null ) {
+		if (fundingSourceKey != null) {
 			sb.append(prefix).append("fundingSourceKey=").append(NVPUtil.encodeUrl(fundingSourceKey));
-			sb.append('&');
+			sb.append("&");
 		}
 		return sb.toString();
 	}

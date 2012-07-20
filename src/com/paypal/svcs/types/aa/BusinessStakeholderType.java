@@ -1,107 +1,155 @@
-
-/**
- * Auto generated code
- */
-
 package com.paypal.svcs.types.aa;
-
-import com.paypal.core.NVPUtil;
-import com.paypal.svcs.types.aa.AddressType;
-import com.paypal.svcs.types.aa.NameType;
 import com.paypal.svcs.types.aa.StakeholderRoleType;
+import com.paypal.svcs.types.aa.NameType;
+import com.paypal.svcs.types.aa.AddressType;
 import java.io.UnsupportedEncodingException;
-
+import com.paypal.core.NVPUtil;
 
 /**
- * Info about Stakeholders such as partner,
- * beneficial, owner, director etc. 
+ * Info about Stakeholders such as partner, beneficial, owner,
+ * director etc. 
  */
-public class BusinessStakeholderType {
+public class BusinessStakeholderType{
+
 
 	/**
-	 *
-	 * @Required
-	 */
+	 * No Document Comments	  
+	 *@Required	 
+	 */ 
 	private StakeholderRoleType role;
-	public StakeholderRoleType getRole() {
-		return role;
-	}
-	public void setRole(StakeholderRoleType value) {
-		this.role = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private NameType name;
-	public NameType getName() {
-		return name;
-	}
-	public void setName(NameType value) {
-		this.name = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private String fullLegalName;
-	public String getFullLegalName() {
-		return fullLegalName;
-	}
-	public void setFullLegalName(String value) {
-		this.fullLegalName = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private AddressType address;
-	public AddressType getAddress() {
-		return address;
-	}
-	public void setAddress(AddressType value) {
-		this.address = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private String dateOfBirth;
-	public String getDateOfBirth() {
-		return dateOfBirth;
-	}
-	public void setDateOfBirth(String value) {
-		this.dateOfBirth = value;
-	}
 
+	
 
-	public BusinessStakeholderType(StakeholderRoleType role) {
+	/**
+	 * Constructor with arguments
+	 */
+	public BusinessStakeholderType (StakeholderRoleType role){
 		this.role = role;
-	}
-	public BusinessStakeholderType() {
-	}
+	}	
+
+	/**
+	 * Default Constructor
+	 */
+	public BusinessStakeholderType (){
+	}	
+
+	/**
+	 * Getter for role
+	 */
+	 public StakeholderRoleType getRole() {
+	 	return role;
+	 }
+	 
+	/**
+	 * Setter for role
+	 */
+	 public void setRole(StakeholderRoleType role) {
+	 	this.role = role;
+	 }
+	 
+	/**
+	 * Getter for name
+	 */
+	 public NameType getName() {
+	 	return name;
+	 }
+	 
+	/**
+	 * Setter for name
+	 */
+	 public void setName(NameType name) {
+	 	this.name = name;
+	 }
+	 
+	/**
+	 * Getter for fullLegalName
+	 */
+	 public String getFullLegalName() {
+	 	return fullLegalName;
+	 }
+	 
+	/**
+	 * Setter for fullLegalName
+	 */
+	 public void setFullLegalName(String fullLegalName) {
+	 	this.fullLegalName = fullLegalName;
+	 }
+	 
+	/**
+	 * Getter for address
+	 */
+	 public AddressType getAddress() {
+	 	return address;
+	 }
+	 
+	/**
+	 * Setter for address
+	 */
+	 public void setAddress(AddressType address) {
+	 	this.address = address;
+	 }
+	 
+	/**
+	 * Getter for dateOfBirth
+	 */
+	 public String getDateOfBirth() {
+	 	return dateOfBirth;
+	 }
+	 
+	/**
+	 * Setter for dateOfBirth
+	 */
+	 public void setDateOfBirth(String dateOfBirth) {
+	 	this.dateOfBirth = dateOfBirth;
+	 }
+	 
+
 
 	public String toNVPString() throws UnsupportedEncodingException {
 		return toNVPString("");
 	}
-
+	
 	public String toNVPString(String prefix) throws UnsupportedEncodingException {
 		StringBuilder sb = new StringBuilder();
-		if( role != null ) {
+		if (role != null) {
 			sb.append(prefix).append("role=").append(role.getValue());
-			sb.append('&');
+			sb.append("&");
 		}
-		if( name != null ) {
+		if (name != null) {
 			String newPrefix = prefix + "name.";
 			sb.append(name.toNVPString(newPrefix));
 		}
-		if( fullLegalName != null ) {
+		if (fullLegalName != null) {
 			sb.append(prefix).append("fullLegalName=").append(NVPUtil.encodeUrl(fullLegalName));
-			sb.append('&');
+			sb.append("&");
 		}
-		if( address != null ) {
+		if (address != null) {
 			String newPrefix = prefix + "address.";
 			sb.append(address.toNVPString(newPrefix));
 		}
-		if( dateOfBirth != null ) {
+		if (dateOfBirth != null) {
 			sb.append(prefix).append("dateOfBirth=").append(NVPUtil.encodeUrl(dateOfBirth));
-			sb.append('&');
+			sb.append("&");
 		}
 		return sb.toString();
 	}

@@ -1,66 +1,84 @@
-
-/**
- * Auto generated code
- */
-
 package com.paypal.svcs.types.aa;
-
-import com.paypal.core.NVPUtil;
 import java.io.UnsupportedEncodingException;
-
+import com.paypal.core.NVPUtil;
 
 /**
- * Month in integer format, between 1 and 12
+ * Month in integer format, between 1 and 12 
  */
-public class CardDateType {
+public class CardDateType{
+
 
 	/**
-	 * Month in integer format, between 1 and 12
-	 *
-	 * @Required
-	 */
+	 * Month in integer format, between 1 and 12 	  
+	 *@Required	 
+	 */ 
 	private Integer month;
-	public Integer getMonth() {
-		return month;
-	}
-	public void setMonth(Integer value) {
-		this.month = value;
-	}
 
 	/**
-	 * Year in four digit format- YYYY
-	 *
-	 * @Required
-	 */
+	 * Year in four digit format- YYYY 	  
+	 *@Required	 
+	 */ 
 	private Integer year;
-	public Integer getYear() {
-		return year;
-	}
-	public void setYear(Integer value) {
-		this.year = value;
-	}
 
+	
 
-	public CardDateType(Integer month, Integer year) {
+	/**
+	 * Constructor with arguments
+	 */
+	public CardDateType (Integer month, Integer year){
 		this.month = month;
 		this.year = year;
-	}
-	public CardDateType() {
-	}
+	}	
+
+	/**
+	 * Default Constructor
+	 */
+	public CardDateType (){
+	}	
+
+	/**
+	 * Getter for month
+	 */
+	 public Integer getMonth() {
+	 	return month;
+	 }
+	 
+	/**
+	 * Setter for month
+	 */
+	 public void setMonth(Integer month) {
+	 	this.month = month;
+	 }
+	 
+	/**
+	 * Getter for year
+	 */
+	 public Integer getYear() {
+	 	return year;
+	 }
+	 
+	/**
+	 * Setter for year
+	 */
+	 public void setYear(Integer year) {
+	 	this.year = year;
+	 }
+	 
+
 
 	public String toNVPString() throws UnsupportedEncodingException {
 		return toNVPString("");
 	}
-
+	
 	public String toNVPString(String prefix) throws UnsupportedEncodingException {
 		StringBuilder sb = new StringBuilder();
-		if( month != null ) {
+		if (month != null) {
 			sb.append(prefix).append("month=").append(month);
-			sb.append('&');
+			sb.append("&");
 		}
-		if( year != null ) {
+		if (year != null) {
 			sb.append(prefix).append("year=").append(year);
-			sb.append('&');
+			sb.append("&");
 		}
 		return sb.toString();
 	}

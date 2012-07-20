@@ -1,81 +1,120 @@
-
-/**
- * Auto generated code
- */
-
 package com.paypal.svcs.types.aa;
-
-import com.paypal.core.NVPUtil;
 import java.io.UnsupportedEncodingException;
-
+import com.paypal.core.NVPUtil;
 
 /**
+ * No Document Comments
  */
-public class WebOptionsType {
+public class WebOptionsType{
+
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private String returnUrl;
-	public String getReturnUrl() {
-		return returnUrl;
-	}
-	public void setReturnUrl(String value) {
-		this.returnUrl = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private String cancelUrl;
-	public String getCancelUrl() {
-		return cancelUrl;
-	}
-	public void setCancelUrl(String value) {
-		this.cancelUrl = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private String returnUrlDescription;
-	public String getReturnUrlDescription() {
-		return returnUrlDescription;
-	}
-	public void setReturnUrlDescription(String value) {
-		this.returnUrlDescription = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private String cancelUrlDescription;
-	public String getCancelUrlDescription() {
-		return cancelUrlDescription;
-	}
-	public void setCancelUrlDescription(String value) {
-		this.cancelUrlDescription = value;
-	}
 
+	
+
+	/**
+	 * Default Constructor
+	 */
+	public WebOptionsType (){
+	}	
+
+	/**
+	 * Getter for returnUrl
+	 */
+	 public String getReturnUrl() {
+	 	return returnUrl;
+	 }
+	 
+	/**
+	 * Setter for returnUrl
+	 */
+	 public void setReturnUrl(String returnUrl) {
+	 	this.returnUrl = returnUrl;
+	 }
+	 
+	/**
+	 * Getter for cancelUrl
+	 */
+	 public String getCancelUrl() {
+	 	return cancelUrl;
+	 }
+	 
+	/**
+	 * Setter for cancelUrl
+	 */
+	 public void setCancelUrl(String cancelUrl) {
+	 	this.cancelUrl = cancelUrl;
+	 }
+	 
+	/**
+	 * Getter for returnUrlDescription
+	 */
+	 public String getReturnUrlDescription() {
+	 	return returnUrlDescription;
+	 }
+	 
+	/**
+	 * Setter for returnUrlDescription
+	 */
+	 public void setReturnUrlDescription(String returnUrlDescription) {
+	 	this.returnUrlDescription = returnUrlDescription;
+	 }
+	 
+	/**
+	 * Getter for cancelUrlDescription
+	 */
+	 public String getCancelUrlDescription() {
+	 	return cancelUrlDescription;
+	 }
+	 
+	/**
+	 * Setter for cancelUrlDescription
+	 */
+	 public void setCancelUrlDescription(String cancelUrlDescription) {
+	 	this.cancelUrlDescription = cancelUrlDescription;
+	 }
+	 
 
 
 	public String toNVPString() throws UnsupportedEncodingException {
 		return toNVPString("");
 	}
-
+	
 	public String toNVPString(String prefix) throws UnsupportedEncodingException {
 		StringBuilder sb = new StringBuilder();
-		if( returnUrl != null ) {
+		if (returnUrl != null) {
 			sb.append(prefix).append("returnUrl=").append(NVPUtil.encodeUrl(returnUrl));
-			sb.append('&');
+			sb.append("&");
 		}
-		if( cancelUrl != null ) {
+		if (cancelUrl != null) {
 			sb.append(prefix).append("cancelUrl=").append(NVPUtil.encodeUrl(cancelUrl));
-			sb.append('&');
+			sb.append("&");
 		}
-		if( returnUrlDescription != null ) {
+		if (returnUrlDescription != null) {
 			sb.append(prefix).append("returnUrlDescription=").append(NVPUtil.encodeUrl(returnUrlDescription));
-			sb.append('&');
+			sb.append("&");
 		}
-		if( cancelUrlDescription != null ) {
+		if (cancelUrlDescription != null) {
 			sb.append(prefix).append("cancelUrlDescription=").append(NVPUtil.encodeUrl(cancelUrlDescription));
-			sb.append('&');
+			sb.append("&");
 		}
 		return sb.toString();
 	}

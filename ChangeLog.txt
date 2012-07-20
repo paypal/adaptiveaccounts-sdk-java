@@ -1,7 +1,8 @@
 
-PayPal AdaptiveAccounts SDK for Java - 0.8.88
-=============================================
-
+Version 0.8.92 - July 17, 2012 
+    - wsdl update version 0.8.92
+------------------------------------------
+	
 Version 0.8.88 -  July 05, 2012
  
   This release contains minor fixes for incorrect proxy configuration parsing and issues with 

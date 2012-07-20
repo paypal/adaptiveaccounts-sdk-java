@@ -1,89 +1,129 @@
-
-/**
- * Auto generated code
- */
-
 package com.paypal.svcs.types.aa;
-
-import com.paypal.core.NVPUtil;
 import com.paypal.svcs.types.common.RequestEnvelope;
 import java.io.UnsupportedEncodingException;
-
+import com.paypal.core.NVPUtil;
 
 /**
+ * No Document Comments
  */
-public class GetUserAgreementRequest {
+public class GetUserAgreementRequest{
+
 
 	/**
-	 *
-	 * @Required
-	 */
+	 * No Document Comments	  
+	 *@Required	 
+	 */ 
 	private RequestEnvelope requestEnvelope;
-	public RequestEnvelope getRequestEnvelope() {
-		return requestEnvelope;
-	}
-	public void setRequestEnvelope(RequestEnvelope value) {
-		this.requestEnvelope = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private String createAccountKey;
-	public String getCreateAccountKey() {
-		return createAccountKey;
-	}
-	public void setCreateAccountKey(String value) {
-		this.createAccountKey = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private String countryCode;
-	public String getCountryCode() {
-		return countryCode;
-	}
-	public void setCountryCode(String value) {
-		this.countryCode = value;
-	}
 
 	/**
-	 */
+	 * No Document Comments	 
+	 */ 
 	private String languageCode;
-	public String getLanguageCode() {
-		return languageCode;
-	}
-	public void setLanguageCode(String value) {
-		this.languageCode = value;
-	}
 
+	
 
-	public GetUserAgreementRequest(RequestEnvelope requestEnvelope) {
+	/**
+	 * Constructor with arguments
+	 */
+	public GetUserAgreementRequest (RequestEnvelope requestEnvelope){
 		this.requestEnvelope = requestEnvelope;
-	}
-	public GetUserAgreementRequest() {
-	}
+	}	
+
+	/**
+	 * Default Constructor
+	 */
+	public GetUserAgreementRequest (){
+	}	
+
+	/**
+	 * Getter for requestEnvelope
+	 */
+	 public RequestEnvelope getRequestEnvelope() {
+	 	return requestEnvelope;
+	 }
+	 
+	/**
+	 * Setter for requestEnvelope
+	 */
+	 public void setRequestEnvelope(RequestEnvelope requestEnvelope) {
+	 	this.requestEnvelope = requestEnvelope;
+	 }
+	 
+	/**
+	 * Getter for createAccountKey
+	 */
+	 public String getCreateAccountKey() {
+	 	return createAccountKey;
+	 }
+	 
+	/**
+	 * Setter for createAccountKey
+	 */
+	 public void setCreateAccountKey(String createAccountKey) {
+	 	this.createAccountKey = createAccountKey;
+	 }
+	 
+	/**
+	 * Getter for countryCode
+	 */
+	 public String getCountryCode() {
+	 	return countryCode;
+	 }
+	 
+	/**
+	 * Setter for countryCode
+	 */
+	 public void setCountryCode(String countryCode) {
+	 	this.countryCode = countryCode;
+	 }
+	 
+	/**
+	 * Getter for languageCode
+	 */
+	 public String getLanguageCode() {
+	 	return languageCode;
+	 }
+	 
+	/**
+	 * Setter for languageCode
+	 */
+	 public void setLanguageCode(String languageCode) {
+	 	this.languageCode = languageCode;
+	 }
+	 
+
 
 	public String toNVPString() throws UnsupportedEncodingException {
 		return toNVPString("");
 	}
-
+	
 	public String toNVPString(String prefix) throws UnsupportedEncodingException {
 		StringBuilder sb = new StringBuilder();
-		if( requestEnvelope != null ) {
+		if (requestEnvelope != null) {
 			String newPrefix = prefix + "requestEnvelope.";
 			sb.append(requestEnvelope.toNVPString(newPrefix));
 		}
-		if( createAccountKey != null ) {
+		if (createAccountKey != null) {
 			sb.append(prefix).append("createAccountKey=").append(NVPUtil.encodeUrl(createAccountKey));
-			sb.append('&');
+			sb.append("&");
 		}
-		if( countryCode != null ) {
+		if (countryCode != null) {
 			sb.append(prefix).append("countryCode=").append(NVPUtil.encodeUrl(countryCode));
-			sb.append('&');
+			sb.append("&");
 		}
-		if( languageCode != null ) {
+		if (languageCode != null) {
 			sb.append(prefix).append("languageCode=").append(NVPUtil.encodeUrl(languageCode));
-			sb.append('&');
+			sb.append("&");
 		}
 		return sb.toString();
 	}
