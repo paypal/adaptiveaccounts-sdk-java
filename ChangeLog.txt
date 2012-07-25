@@ -22,3 +22,9 @@ Version 0.6.86 - February 27, 2012
   - This release contains new AdaptiveAccounts SDK (NVP) and samples for AdaptiveAccounts api's.
 
 --------------------------------------------------------------------------------------------------
+
+Version 1.0.92 - July 25, 2012
+
+  - This release enables AdaptiveAccounts SDK (NVP) to be used with Google App Engine.
+
+--------------------------------------------------------------------------------------------------
