@@ -6,10 +6,9 @@ Using SDK:
 ----------
 SDK Integration:
 ----------------
-*	Download the project from github, build project using build.xml with default ant target, which will create 			    'adaptiveaccounts-java-sdk_0.7
-.88.jar' inside 'dist' folder.
+*	Download the project from github, build project using build.xml with default ant target, which will create 			    'adaptiveaccounts-java-sdk_1.8.92.jar' inside 'dist' folder.
 
-*	Copy 'adaptiveaccounts-java-sdk_0.7.88.jar' inside 'dist' folder under SDK root, to your class path.
+*	Copy 'adaptiveaccounts-java-sdk_1.8.92.jar' inside 'dist' folder under SDK root, to your class path.
 
 *	Copy the configuration file 'sdk_config.properties' in SDK 'resource' folder to your project.
 
