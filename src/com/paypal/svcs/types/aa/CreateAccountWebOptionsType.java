@@ -11,12 +11,12 @@ public class CreateAccountWebOptionsType{
 
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String returnUrl;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private Boolean showAddCreditCard;
 
@@ -28,7 +28,7 @@ public class CreateAccountWebOptionsType{
 	private Boolean showMobileConfirm;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String returnUrlDescription;
 

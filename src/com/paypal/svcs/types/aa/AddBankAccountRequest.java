@@ -15,7 +15,7 @@ public class AddBankAccountRequest{
 
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private RequestEnvelope requestEnvelope;
@@ -35,7 +35,7 @@ public class AddBankAccountRequest{
 	private String accountId;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String createAccountKey;
 
@@ -56,7 +56,7 @@ public class AddBankAccountRequest{
 	private String routingNumber;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BankAccountType bankAccountType;
 
@@ -142,13 +142,13 @@ public class AddBankAccountRequest{
 	private String accountHolderDateOfBirth;
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private ConfirmationType confirmationType;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private WebOptionsType webOptions;
 

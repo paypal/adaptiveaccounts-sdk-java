@@ -3,39 +3,39 @@ import java.io.UnsupportedEncodingException;
 import com.paypal.core.NVPUtil;
 
 /**
- * No Document Comments
+ * 
  */
 public class AddressType{
 
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String line1;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String line2;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String city;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String state;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String postalCode;
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String countryCode;

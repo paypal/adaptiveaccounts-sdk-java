@@ -18,7 +18,7 @@ public class AddPaymentCardRequest{
 
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private RequestEnvelope requestEnvelope;
@@ -38,41 +38,41 @@ public class AddPaymentCardRequest{
 	private String accountId;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String createAccountKey;
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private NameType nameOnCard;
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private AddressType billingAddress;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String cardOwnerDateOfBirth;
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String cardNumber;
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private CardTypeType cardType;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private CardDateType expirationDate;
 
@@ -83,7 +83,7 @@ public class AddPaymentCardRequest{
 	private String cardVerificationNumber;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private CardDateType startDate;
 
@@ -93,13 +93,13 @@ public class AddPaymentCardRequest{
 	private String issueNumber;
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private ConfirmationType confirmationType;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private WebOptionsType webOptions;
 

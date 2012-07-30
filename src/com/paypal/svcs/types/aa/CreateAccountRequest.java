@@ -17,13 +17,13 @@ public class CreateAccountRequest{
 
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private RequestEnvelope requestEnvelope;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private ClientDetailsType clientDetails;
 
@@ -35,18 +35,18 @@ public class CreateAccountRequest{
 	private String accountType;
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private NameType name;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String dateOfBirth;
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private AddressType address;
@@ -70,28 +70,28 @@ public class CreateAccountRequest{
 	private String mobilePhoneNumber;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String currencyCode;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String citizenshipCountryCode;
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String preferredLanguageCode;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String notificationURL;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String emailAddress;
 
@@ -103,12 +103,12 @@ public class CreateAccountRequest{
 	private String registrationType;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private CreateAccountWebOptionsType createAccountWebOptions;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private Boolean suppressWelcomeEmail;
 
@@ -124,27 +124,27 @@ public class CreateAccountRequest{
 	private String taxId;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String partnerField1;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String partnerField2;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String partnerField3;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String partnerField4;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String partnerField5;
 

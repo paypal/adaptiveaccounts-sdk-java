@@ -13,13 +13,13 @@ public class CreateAccountResponse{
 
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private ResponseEnvelope responseEnvelope;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String createAccountKey;
 
@@ -31,7 +31,7 @@ public class CreateAccountResponse{
 	private String execStatus;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String redirectURL;
 
@@ -42,7 +42,7 @@ public class CreateAccountResponse{
 	private String accountId;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private List<ErrorData> error = new ArrayList<ErrorData>();
 
@@ -160,7 +160,7 @@ public class CreateAccountResponse{
 		}
 		i = 0;
 		while(true) {
-			if(map.containsKey(prefix + "error" + "(" + i + ")" + ".parameter(0)")){
+			if(map.containsKey(prefix + "error" + "(" + i + ")" + ".errorId")){
 				String newPrefix = prefix + "error" + "(" + i + ")" + ".";
 				this.error.add(new ErrorData(map, newPrefix));
 			} else {

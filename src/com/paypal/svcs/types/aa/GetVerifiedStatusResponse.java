@@ -13,7 +13,7 @@ public class GetVerifiedStatusResponse{
 
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private ResponseEnvelope responseEnvelope;
@@ -36,7 +36,7 @@ public class GetVerifiedStatusResponse{
 	private UserInfoType userInfo;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private List<ErrorData> error = new ArrayList<ErrorData>();
 
@@ -132,13 +132,13 @@ public class GetVerifiedStatusResponse{
 		if(map.containsKey(prefix + "countryCode")){
 			this.countryCode = map.get(prefix + "countryCode");
 		}
-		if(map.containsKey(prefix + "userInfo" + ".name.firstName")){
+		if(map.containsKey(prefix + "userInfo" + ".emailAddress")){
 			String newPrefix = prefix + "userInfo" + ".";
 			this.userInfo =  new UserInfoType(map, newPrefix);
 		}
 		i = 0;
 		while(true) {
-			if(map.containsKey(prefix + "error" + "(" + i + ")" + ".parameter(0)")){
+			if(map.containsKey(prefix + "error" + "(" + i + ")" + ".errorId")){
 				String newPrefix = prefix + "error" + "(" + i + ")" + ".";
 				this.error.add(new ErrorData(map, newPrefix));
 			} else {

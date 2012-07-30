@@ -13,28 +13,28 @@ public class BusinessStakeholderType{
 
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private StakeholderRoleType role;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private NameType name;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String fullLegalName;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private AddressType address;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String dateOfBirth;
 

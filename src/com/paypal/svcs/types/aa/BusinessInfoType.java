@@ -16,19 +16,19 @@ public class BusinessInfoType{
 
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String businessName;
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private AddressType businessAddress;
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String workPhone;
@@ -52,27 +52,27 @@ public class BusinessInfoType{
 	private Integer merchantCategoryCode;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String doingBusinessAs;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String customerServicePhone;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String customerServiceEmail;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String disputeEmail;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String webSite;
 
@@ -82,22 +82,22 @@ public class BusinessInfoType{
 	private String companyId;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String dateOfEstablishment;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BusinessType businessType;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private BusinessSubtypeType businessSubtype;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String incorporationId;
 
@@ -118,7 +118,7 @@ public class BusinessInfoType{
 	private Integer percentageRevenueFromOnline;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private List<SalesVenueType> salesVenue = new ArrayList<SalesVenueType>();
 
@@ -144,22 +144,22 @@ public class BusinessInfoType{
 	private String commercialRegistrationLocation;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private AddressType principalPlaceOfBusinessAddress;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private AddressType registeredOfficeAddress;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String establishmentCountryCode;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private String establishmentState;
 

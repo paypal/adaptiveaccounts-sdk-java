@@ -12,7 +12,7 @@ public class SetFundingSourceConfirmedRequest{
 
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private RequestEnvelope requestEnvelope;
@@ -32,7 +32,7 @@ public class SetFundingSourceConfirmedRequest{
 	private String accountId;
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String fundingSourceKey;

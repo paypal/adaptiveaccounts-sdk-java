@@ -6,25 +6,25 @@ import com.paypal.svcs.types.common.ErrorData;
 import java.util.Map;
 
 /**
- * No Document Comments
+ * 
  */
 public class GetUserAgreementResponse{
 
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private ResponseEnvelope responseEnvelope;
 
 	/**
-	 * No Document Comments	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String agreement;
 
 	/**
-	 * No Document Comments	 
+	 * 	 
 	 */ 
 	private List<ErrorData> error = new ArrayList<ErrorData>();
 
@@ -91,7 +91,7 @@ public class GetUserAgreementResponse{
 		}
 		i = 0;
 		while(true) {
-			if(map.containsKey(prefix + "error" + "(" + i + ")" + ".parameter(0)")){
+			if(map.containsKey(prefix + "error" + "(" + i + ")" + ".errorId")){
 				String newPrefix = prefix + "error" + "(" + i + ")" + ".";
 				this.error.add(new ErrorData(map, newPrefix));
 			} else {
