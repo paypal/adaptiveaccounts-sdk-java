@@ -152,23 +152,41 @@ public class NameType{
 		}
 		return sb.toString();
 	}
-	public NameType(Map<String, String> map, String prefix) {
+	
+	public static NameType createInstance(Map<String, String> map, String prefix, int index) {
+		NameType nameType = null;
 		int i = 0;
-		if(map.containsKey(prefix + "salutation")){
-			this.salutation = map.get(prefix + "salutation");
+		if (index != -1) {
+				if (!prefix.isEmpty() && !prefix.endsWith(".")) {
+					prefix = prefix + "(" + index + ").";
+				}
+		} else {
+			if (!prefix.isEmpty() && !prefix.endsWith(".")) {
+				prefix = prefix + ".";
+			}
 		}
-		if(map.containsKey(prefix + "firstName")){
-			this.firstName = map.get(prefix + "firstName");
+			
+		if (map.containsKey(prefix + "salutation")) {
+				nameType = (nameType == null) ? new NameType() : nameType;
+				nameType.setSalutation(map.get(prefix + "salutation"));
 		}
-		if(map.containsKey(prefix + "middleName")){
-			this.middleName = map.get(prefix + "middleName");
+		if (map.containsKey(prefix + "firstName")) {
+				nameType = (nameType == null) ? new NameType() : nameType;
+				nameType.setFirstName(map.get(prefix + "firstName"));
 		}
-		if(map.containsKey(prefix + "lastName")){
-			this.lastName = map.get(prefix + "lastName");
+		if (map.containsKey(prefix + "middleName")) {
+				nameType = (nameType == null) ? new NameType() : nameType;
+				nameType.setMiddleName(map.get(prefix + "middleName"));
 		}
-		if(map.containsKey(prefix + "suffix")){
-			this.suffix = map.get(prefix + "suffix");
+		if (map.containsKey(prefix + "lastName")) {
+				nameType = (nameType == null) ? new NameType() : nameType;
+				nameType.setLastName(map.get(prefix + "lastName"));
 		}
+		if (map.containsKey(prefix + "suffix")) {
+				nameType = (nameType == null) ? new NameType() : nameType;
+				nameType.setSuffix(map.get(prefix + "suffix"));
+		}
+		return nameType;
 	}
-
+ 
 }

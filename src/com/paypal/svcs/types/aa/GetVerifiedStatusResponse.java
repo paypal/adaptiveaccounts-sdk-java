@@ -120,32 +120,50 @@ public class GetVerifiedStatusResponse{
 	 
 
 
-	public GetVerifiedStatusResponse(Map<String, String> map, String prefix) {
+	
+	public static GetVerifiedStatusResponse createInstance(Map<String, String> map, String prefix, int index) {
+		GetVerifiedStatusResponse getVerifiedStatusResponse = null;
 		int i = 0;
-		if(map.containsKey(prefix + "responseEnvelope" + ".timestamp")){
-			String newPrefix = prefix + "responseEnvelope" + ".";
-			this.responseEnvelope =  new ResponseEnvelope(map, newPrefix);
+		if (index != -1) {
+				if (!prefix.isEmpty() && !prefix.endsWith(".")) {
+					prefix = prefix + "(" + index + ").";
+				}
+		} else {
+			if (!prefix.isEmpty() && !prefix.endsWith(".")) {
+				prefix = prefix + ".";
+			}
 		}
-		if(map.containsKey(prefix + "accountStatus")){
-			this.accountStatus = map.get(prefix + "accountStatus");
+			
+		ResponseEnvelope responseEnvelope =  ResponseEnvelope.createInstance(map, prefix + "responseEnvelope", -1);
+		if (responseEnvelope != null) {
+			getVerifiedStatusResponse = (getVerifiedStatusResponse == null) ? new GetVerifiedStatusResponse() : getVerifiedStatusResponse;
+			getVerifiedStatusResponse.setResponseEnvelope(responseEnvelope);
 		}
-		if(map.containsKey(prefix + "countryCode")){
-			this.countryCode = map.get(prefix + "countryCode");
+		if (map.containsKey(prefix + "accountStatus")) {
+				getVerifiedStatusResponse = (getVerifiedStatusResponse == null) ? new GetVerifiedStatusResponse() : getVerifiedStatusResponse;
+				getVerifiedStatusResponse.setAccountStatus(map.get(prefix + "accountStatus"));
 		}
-		if(map.containsKey(prefix + "userInfo" + ".emailAddress")){
-			String newPrefix = prefix + "userInfo" + ".";
-			this.userInfo =  new UserInfoType(map, newPrefix);
+		if (map.containsKey(prefix + "countryCode")) {
+				getVerifiedStatusResponse = (getVerifiedStatusResponse == null) ? new GetVerifiedStatusResponse() : getVerifiedStatusResponse;
+				getVerifiedStatusResponse.setCountryCode(map.get(prefix + "countryCode"));
+		}
+		UserInfoType userInfo =  UserInfoType.createInstance(map, prefix + "userInfo", -1);
+		if (userInfo != null) {
+			getVerifiedStatusResponse = (getVerifiedStatusResponse == null) ? new GetVerifiedStatusResponse() : getVerifiedStatusResponse;
+			getVerifiedStatusResponse.setUserInfo(userInfo);
 		}
 		i = 0;
 		while(true) {
-			if(map.containsKey(prefix + "error" + "(" + i + ")" + ".errorId")){
-				String newPrefix = prefix + "error" + "(" + i + ")" + ".";
-				this.error.add(new ErrorData(map, newPrefix));
+			ErrorData error =  ErrorData.createInstance(map, prefix + "error", i);
+			if (error != null) {
+				getVerifiedStatusResponse = (getVerifiedStatusResponse == null) ? new GetVerifiedStatusResponse() : getVerifiedStatusResponse;
+				getVerifiedStatusResponse.getError().add(error);
+				i++;
 			} else {
 				break;
 			}
-			i++;
 		}
+		return getVerifiedStatusResponse;
 	}
-
+ 
 }
