@@ -8,15 +8,13 @@ public class ErrorParameter{
 
 
 	/**
-	 * 
-	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String name;
 
 	/**
-	 * 
-	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String value;
@@ -63,12 +61,11 @@ public class ErrorParameter{
 	public static ErrorParameter createInstance(Map<String, String> map, String prefix, int index) {
 		ErrorParameter errorParameter = null;
 		int i = 0;
-		if(index != -1) {
+		if (index != -1) {
 				if (!prefix.isEmpty() && !prefix.endsWith(".")) {
 					prefix = prefix + "(" + index + ").";
 				}
-		} 
-		else {
+		} else {
 			if (!prefix.isEmpty() && !prefix.endsWith(".")) {
 				prefix = prefix + ".";
 			}
