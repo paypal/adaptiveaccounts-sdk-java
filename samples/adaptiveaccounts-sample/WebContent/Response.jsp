@@ -59,7 +59,7 @@
 		<tr>
 			<td><%=mapEntry.getKey()%></td>
 			<td>:</td>
-			<td><%=mapEntry.getValue()%></td>
+			<td><div id="<%=mapEntry.getKey()%>"><%=mapEntry.getValue()%></div></td>
 		</tr>
 
 		<%

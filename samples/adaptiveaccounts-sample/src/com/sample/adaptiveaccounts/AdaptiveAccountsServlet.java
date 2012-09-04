@@ -407,8 +407,7 @@ public class AdaptiveAccountsServlet extends HttpServlet {
 						map.put("TimeStamp", resp.getResponseEnvelope()
 								.getTimestamp());
 						map.put("Redirect URL",
-								"<a href=\"" + resp.getRedirectURL() + "\">"
-										+ resp.getRedirectURL() + "</a>");
+								"<a href=\"" + resp.getRedirectURL() + "\">Redirect To PayPal</a>");
 						map.put("Execution Status", resp.getExecStatus());
 						map.put("CreateAccountKey", resp.getCreateAccountKey());
 						session.setAttribute("map", map);
@@ -507,8 +506,7 @@ public class AdaptiveAccountsServlet extends HttpServlet {
 						map.put("TimeStamp", resp.getResponseEnvelope()
 								.getTimestamp());
 						map.put("Redirect URL",
-								"<a href=\"" + resp.getRedirectURL() + "\">"
-										+ resp.getRedirectURL() + "</a>");
+								"<a href=\"" + resp.getRedirectURL() + "\">Redirect To PayPal</a>");
 						map.put("Execution Status", resp.getExecStatus());
 						map.put("Funding Source Key",
 								resp.getFundingSourceKey());
@@ -608,8 +606,7 @@ public class AdaptiveAccountsServlet extends HttpServlet {
 						map.put("TimeStamp", resp.getResponseEnvelope()
 								.getTimestamp());
 						map.put("Redirect URL",
-								"<a href=\"" + resp.getRedirectURL() + "\">"
-										+ resp.getRedirectURL() + "</a>");
+								"<a href=\"" + resp.getRedirectURL() + "\">Redirect To PayPal</a>");
 						map.put("Execution Status", resp.getExecStatus());
 						map.put("Funding Source Key",
 								resp.getFundingSourceKey());
