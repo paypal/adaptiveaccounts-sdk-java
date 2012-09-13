@@ -1,4 +1,4 @@
-package com.sample.adaptivepayments.filters;
+package com.sample.adaptiveaccounts.filters;
 
 import java.io.IOException;
 import java.util.Map;
