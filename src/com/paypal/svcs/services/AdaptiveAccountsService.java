@@ -15,6 +15,8 @@ import com.paypal.svcs.types.aa.AddPaymentCardRequest;
 import com.paypal.svcs.types.aa.AddPaymentCardResponse;
 import com.paypal.svcs.types.aa.SetFundingSourceConfirmedRequest;
 import com.paypal.svcs.types.aa.SetFundingSourceConfirmedResponse;
+import com.paypal.svcs.types.aa.CheckComplianceStatusRequest;
+import com.paypal.svcs.types.aa.CheckComplianceStatusResponse;
 import com.paypal.sdk.exceptions.OAuthException;
 
 public class AdaptiveAccountsService extends BaseService{
@@ -87,7 +89,7 @@ public class AdaptiveAccountsService extends BaseService{
 	 */
 	 public CreateAccountResponse createAccount(CreateAccountRequest createAccountRequest, String apiUsername) throws SSLConfigurationException, InvalidCredentialException, UnsupportedEncodingException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException {
 	 	String response = call("CreateAccount", createAccountRequest.toNVPString(), apiUsername);
-		return new CreateAccountResponse(NVPUtil.decode(response), "");
+		return CreateAccountResponse.createInstance(NVPUtil.decode(response), "", -1);
 	 }
 	 
 	/** 
@@ -175,7 +177,7 @@ public class AdaptiveAccountsService extends BaseService{
 	 */
 	 public GetUserAgreementResponse getUserAgreement(GetUserAgreementRequest getUserAgreementRequest, String apiUsername) throws SSLConfigurationException, InvalidCredentialException, UnsupportedEncodingException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException {
 	 	String response = call("GetUserAgreement", getUserAgreementRequest.toNVPString(), apiUsername);
-		return new GetUserAgreementResponse(NVPUtil.decode(response), "");
+		return GetUserAgreementResponse.createInstance(NVPUtil.decode(response), "", -1);
 	 }
 	 
 	/** 
@@ -238,7 +240,7 @@ public class AdaptiveAccountsService extends BaseService{
 	 */
 	 public GetVerifiedStatusResponse getVerifiedStatus(GetVerifiedStatusRequest getVerifiedStatusRequest, String apiUsername) throws SSLConfigurationException, InvalidCredentialException, UnsupportedEncodingException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException {
 	 	String response = call("GetVerifiedStatus", getVerifiedStatusRequest.toNVPString(), apiUsername);
-		return new GetVerifiedStatusResponse(NVPUtil.decode(response), "");
+		return GetVerifiedStatusResponse.createInstance(NVPUtil.decode(response), "", -1);
 	 }
 	 
 	/** 
@@ -286,7 +288,7 @@ public class AdaptiveAccountsService extends BaseService{
 	 */
 	 public AddBankAccountResponse addBankAccount(AddBankAccountRequest addBankAccountRequest, String apiUsername) throws SSLConfigurationException, InvalidCredentialException, UnsupportedEncodingException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException {
 	 	String response = call("AddBankAccount", addBankAccountRequest.toNVPString(), apiUsername);
-		return new AddBankAccountResponse(NVPUtil.decode(response), "");
+		return AddBankAccountResponse.createInstance(NVPUtil.decode(response), "", -1);
 	 }
 	 
 	/** 
@@ -360,7 +362,7 @@ public class AdaptiveAccountsService extends BaseService{
 	 */
 	 public AddPaymentCardResponse addPaymentCard(AddPaymentCardRequest addPaymentCardRequest, String apiUsername) throws SSLConfigurationException, InvalidCredentialException, UnsupportedEncodingException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException {
 	 	String response = call("AddPaymentCard", addPaymentCardRequest.toNVPString(), apiUsername);
-		return new AddPaymentCardResponse(NVPUtil.decode(response), "");
+		return AddPaymentCardResponse.createInstance(NVPUtil.decode(response), "", -1);
 	 }
 	 
 	/** 
@@ -452,7 +454,7 @@ public class AdaptiveAccountsService extends BaseService{
 	 */
 	 public SetFundingSourceConfirmedResponse setFundingSourceConfirmed(SetFundingSourceConfirmedRequest setFundingSourceConfirmedRequest, String apiUsername) throws SSLConfigurationException, InvalidCredentialException, UnsupportedEncodingException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException {
 	 	String response = call("SetFundingSourceConfirmed", setFundingSourceConfirmedRequest.toNVPString(), apiUsername);
-		return new SetFundingSourceConfirmedResponse(NVPUtil.decode(response), "");
+		return SetFundingSourceConfirmedResponse.createInstance(NVPUtil.decode(response), "", -1);
 	 }
 	 
 	/** 
@@ -499,6 +501,49 @@ public class AdaptiveAccountsService extends BaseService{
 	 */
 	 public SetFundingSourceConfirmedResponse setFundingSourceConfirmed(SetFundingSourceConfirmedRequest setFundingSourceConfirmedRequest) throws SSLConfigurationException, InvalidCredentialException, UnsupportedEncodingException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException {
 	 	return setFundingSourceConfirmed(setFundingSourceConfirmedRequest, null);
+	 }
+		
+	/**	
+	 * 
+	 *   To be updated.
+	 *   Countries Supported:
+	 *   US - United States
+	 * 
+	 * @throws SSLConfigurationException
+	 * @throws InvalidCredentialException
+	 * @throws UnsupportedEncodingException
+	 * @throws IOException
+	 * @throws HttpErrorException
+	 * @throws InvalidResponseDataException
+	 * @throws ClientActionRequiredException
+	 * @throws MissingCredentialException
+	 * @throws InterruptedException
+	 * @throws OAuthException
+	 */
+	 public CheckComplianceStatusResponse checkComplianceStatus(CheckComplianceStatusRequest checkComplianceStatusRequest, String apiUsername) throws SSLConfigurationException, InvalidCredentialException, UnsupportedEncodingException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException {
+	 	String response = call("CheckComplianceStatus", checkComplianceStatusRequest.toNVPString(), apiUsername);
+		return CheckComplianceStatusResponse.createInstance(NVPUtil.decode(response), "", -1);
+	 }
+	 
+	/** 
+	 * 
+	 *   To be updated.
+	 *   Countries Supported:
+	 *   US - United States
+	 * 
+	 * @throws SSLConfigurationException
+	 * @throws InvalidCredentialException
+	 * @throws UnsupportedEncodingException
+	 * @throws IOException
+	 * @throws HttpErrorException
+	 * @throws InvalidResponseDataException
+	 * @throws ClientActionRequiredException
+	 * @throws MissingCredentialException
+	 * @throws InterruptedException
+	 * @throws OAuthException
+	 */
+	 public CheckComplianceStatusResponse checkComplianceStatus(CheckComplianceStatusRequest checkComplianceStatusRequest) throws SSLConfigurationException, InvalidCredentialException, UnsupportedEncodingException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException {
+	 	return checkComplianceStatus(checkComplianceStatusRequest, null);
 	 }
 
 

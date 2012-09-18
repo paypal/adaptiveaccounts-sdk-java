@@ -120,31 +120,49 @@ public class AddBankAccountResponse{
 	 
 
 
-	public AddBankAccountResponse(Map<String, String> map, String prefix) {
+	
+	public static AddBankAccountResponse createInstance(Map<String, String> map, String prefix, int index) {
+		AddBankAccountResponse addBankAccountResponse = null;
 		int i = 0;
-		if(map.containsKey(prefix + "responseEnvelope" + ".timestamp")){
-			String newPrefix = prefix + "responseEnvelope" + ".";
-			this.responseEnvelope =  new ResponseEnvelope(map, newPrefix);
+		if (index != -1) {
+				if (!prefix.isEmpty() && !prefix.endsWith(".")) {
+					prefix = prefix + "(" + index + ").";
+				}
+		} else {
+			if (!prefix.isEmpty() && !prefix.endsWith(".")) {
+				prefix = prefix + ".";
+			}
 		}
-		if(map.containsKey(prefix + "execStatus")){
-			this.execStatus = map.get(prefix + "execStatus");
+			
+		ResponseEnvelope responseEnvelope =  ResponseEnvelope.createInstance(map, prefix + "responseEnvelope", -1);
+		if (responseEnvelope != null) {
+			addBankAccountResponse = (addBankAccountResponse == null) ? new AddBankAccountResponse() : addBankAccountResponse;
+			addBankAccountResponse.setResponseEnvelope(responseEnvelope);
 		}
-		if(map.containsKey(prefix + "redirectURL")){
-			this.redirectURL = map.get(prefix + "redirectURL");
+		if (map.containsKey(prefix + "execStatus")) {
+				addBankAccountResponse = (addBankAccountResponse == null) ? new AddBankAccountResponse() : addBankAccountResponse;
+				addBankAccountResponse.setExecStatus(map.get(prefix + "execStatus"));
 		}
-		if(map.containsKey(prefix + "fundingSourceKey")){
-			this.fundingSourceKey = map.get(prefix + "fundingSourceKey");
+		if (map.containsKey(prefix + "redirectURL")) {
+				addBankAccountResponse = (addBankAccountResponse == null) ? new AddBankAccountResponse() : addBankAccountResponse;
+				addBankAccountResponse.setRedirectURL(map.get(prefix + "redirectURL"));
+		}
+		if (map.containsKey(prefix + "fundingSourceKey")) {
+				addBankAccountResponse = (addBankAccountResponse == null) ? new AddBankAccountResponse() : addBankAccountResponse;
+				addBankAccountResponse.setFundingSourceKey(map.get(prefix + "fundingSourceKey"));
 		}
 		i = 0;
 		while(true) {
-			if(map.containsKey(prefix + "error" + "(" + i + ")" + ".errorId")){
-				String newPrefix = prefix + "error" + "(" + i + ")" + ".";
-				this.error.add(new ErrorData(map, newPrefix));
+			ErrorData error =  ErrorData.createInstance(map, prefix + "error", i);
+			if (error != null) {
+				addBankAccountResponse = (addBankAccountResponse == null) ? new AddBankAccountResponse() : addBankAccountResponse;
+				addBankAccountResponse.getError().add(error);
+				i++;
 			} else {
 				break;
 			}
-			i++;
 		}
+		return addBankAccountResponse;
 	}
-
+ 
 }

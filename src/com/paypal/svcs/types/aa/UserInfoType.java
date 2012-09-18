@@ -116,24 +116,42 @@ public class UserInfoType{
 	 
 
 
-	public UserInfoType(Map<String, String> map, String prefix) {
+	
+	public static UserInfoType createInstance(Map<String, String> map, String prefix, int index) {
+		UserInfoType userInfoType = null;
 		int i = 0;
-		if(map.containsKey(prefix + "emailAddress")){
-			this.emailAddress = map.get(prefix + "emailAddress");
+		if (index != -1) {
+				if (!prefix.isEmpty() && !prefix.endsWith(".")) {
+					prefix = prefix + "(" + index + ").";
+				}
+		} else {
+			if (!prefix.isEmpty() && !prefix.endsWith(".")) {
+				prefix = prefix + ".";
+			}
 		}
-		if(map.containsKey(prefix + "accountType")){
-			this.accountType = map.get(prefix + "accountType");
+			
+		if (map.containsKey(prefix + "emailAddress")) {
+				userInfoType = (userInfoType == null) ? new UserInfoType() : userInfoType;
+				userInfoType.setEmailAddress(map.get(prefix + "emailAddress"));
 		}
-		if(map.containsKey(prefix + "accountId")){
-			this.accountId = map.get(prefix + "accountId");
+		if (map.containsKey(prefix + "accountType")) {
+				userInfoType = (userInfoType == null) ? new UserInfoType() : userInfoType;
+				userInfoType.setAccountType(map.get(prefix + "accountType"));
 		}
-		if(map.containsKey(prefix + "name" + ".firstName")){
-			String newPrefix = prefix + "name" + ".";
-			this.name =  new NameType(map, newPrefix);
+		if (map.containsKey(prefix + "accountId")) {
+				userInfoType = (userInfoType == null) ? new UserInfoType() : userInfoType;
+				userInfoType.setAccountId(map.get(prefix + "accountId"));
 		}
-		if(map.containsKey(prefix + "businessName")){
-			this.businessName = map.get(prefix + "businessName");
+		NameType name =  NameType.createInstance(map, prefix + "name", -1);
+		if (name != null) {
+			userInfoType = (userInfoType == null) ? new UserInfoType() : userInfoType;
+			userInfoType.setName(name);
 		}
+		if (map.containsKey(prefix + "businessName")) {
+				userInfoType = (userInfoType == null) ? new UserInfoType() : userInfoType;
+				userInfoType.setBusinessName(map.get(prefix + "businessName"));
+		}
+		return userInfoType;
 	}
-
+ 
 }

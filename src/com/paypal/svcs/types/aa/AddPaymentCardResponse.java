@@ -120,31 +120,49 @@ public class AddPaymentCardResponse{
 	 
 
 
-	public AddPaymentCardResponse(Map<String, String> map, String prefix) {
+	
+	public static AddPaymentCardResponse createInstance(Map<String, String> map, String prefix, int index) {
+		AddPaymentCardResponse addPaymentCardResponse = null;
 		int i = 0;
-		if(map.containsKey(prefix + "responseEnvelope" + ".timestamp")){
-			String newPrefix = prefix + "responseEnvelope" + ".";
-			this.responseEnvelope =  new ResponseEnvelope(map, newPrefix);
+		if (index != -1) {
+				if (!prefix.isEmpty() && !prefix.endsWith(".")) {
+					prefix = prefix + "(" + index + ").";
+				}
+		} else {
+			if (!prefix.isEmpty() && !prefix.endsWith(".")) {
+				prefix = prefix + ".";
+			}
 		}
-		if(map.containsKey(prefix + "execStatus")){
-			this.execStatus = map.get(prefix + "execStatus");
+			
+		ResponseEnvelope responseEnvelope =  ResponseEnvelope.createInstance(map, prefix + "responseEnvelope", -1);
+		if (responseEnvelope != null) {
+			addPaymentCardResponse = (addPaymentCardResponse == null) ? new AddPaymentCardResponse() : addPaymentCardResponse;
+			addPaymentCardResponse.setResponseEnvelope(responseEnvelope);
 		}
-		if(map.containsKey(prefix + "redirectURL")){
-			this.redirectURL = map.get(prefix + "redirectURL");
+		if (map.containsKey(prefix + "execStatus")) {
+				addPaymentCardResponse = (addPaymentCardResponse == null) ? new AddPaymentCardResponse() : addPaymentCardResponse;
+				addPaymentCardResponse.setExecStatus(map.get(prefix + "execStatus"));
 		}
-		if(map.containsKey(prefix + "fundingSourceKey")){
-			this.fundingSourceKey = map.get(prefix + "fundingSourceKey");
+		if (map.containsKey(prefix + "redirectURL")) {
+				addPaymentCardResponse = (addPaymentCardResponse == null) ? new AddPaymentCardResponse() : addPaymentCardResponse;
+				addPaymentCardResponse.setRedirectURL(map.get(prefix + "redirectURL"));
+		}
+		if (map.containsKey(prefix + "fundingSourceKey")) {
+				addPaymentCardResponse = (addPaymentCardResponse == null) ? new AddPaymentCardResponse() : addPaymentCardResponse;
+				addPaymentCardResponse.setFundingSourceKey(map.get(prefix + "fundingSourceKey"));
 		}
 		i = 0;
 		while(true) {
-			if(map.containsKey(prefix + "error" + "(" + i + ")" + ".errorId")){
-				String newPrefix = prefix + "error" + "(" + i + ")" + ".";
-				this.error.add(new ErrorData(map, newPrefix));
+			ErrorData error =  ErrorData.createInstance(map, prefix + "error", i);
+			if (error != null) {
+				addPaymentCardResponse = (addPaymentCardResponse == null) ? new AddPaymentCardResponse() : addPaymentCardResponse;
+				addPaymentCardResponse.getError().add(error);
+				i++;
 			} else {
 				break;
 			}
-			i++;
 		}
+		return addPaymentCardResponse;
 	}
-
+ 
 }
