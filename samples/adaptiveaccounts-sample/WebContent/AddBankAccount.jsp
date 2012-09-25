@@ -140,7 +140,7 @@
 						<td class="param_value"><input type="text"
 							name="branchLocation" value="" />
 						</td>
-						<td class="param_value"><input type="text" name="bsb"
+						<td class="param_value"><input type="text" name="bsbNumber"
 							value="" />
 						</td>
 					</tr>

@@ -46,10 +46,10 @@
 							value="Mr." /></td>
 						<td class="param_value"><input type="text" name="firstName"
 							value="Bonzop" /></td>
+						<td class="param_value"><input type="text" name="lastName"
+							value="Simore" /></td>	
 						<td class="param_value"><input type="text" name="middleName"
 							value="Zaius" /></td>
-						<td class="param_value"><input type="text" name="lastName"
-							value="Simore" /></td>
 						<td class="param_value"><input type="text" name="suffix"
 							value="" /></td>
 					</tr>
