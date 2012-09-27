@@ -3,6 +3,7 @@ package com.paypal.core;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.util.Iterator;
 import java.util.Map;
@@ -52,6 +53,7 @@ public abstract class HttpConnection {
 		String errorResponse = Constants.EMPTY_STRING;
 		BufferedReader reader = null;
 		OutputStreamWriter writer = null;
+		OutputStream os = null;
 		connection.setRequestProperty("Content-Length", "" + payload.length());
 		if (headers != null) {
 			setHttpHeaders(this.connection, headers);
@@ -70,8 +72,8 @@ public abstract class HttpConnection {
 				}
 
 				try {
-					writer = new OutputStreamWriter(
-							this.connection.getOutputStream());
+					os = this.connection.getOutputStream();
+					writer = new OutputStreamWriter(os);
 					writer.write(payload);
 					writer.flush();
 					int responsecode = connection.getResponseCode();
@@ -127,11 +129,15 @@ public abstract class HttpConnection {
 				if (reader != null) {
 					reader.close();
 				}
+				if (os != null) {
+					os.close();
+				}
 				if (writer != null) {
 					writer.close();
 				}
 			} finally {
 				reader = null;
+				os = null;
 				writer = null;
 			}
 		}
