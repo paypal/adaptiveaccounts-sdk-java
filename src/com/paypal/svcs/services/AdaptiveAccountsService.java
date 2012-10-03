@@ -17,6 +17,10 @@ import com.paypal.svcs.types.aa.SetFundingSourceConfirmedRequest;
 import com.paypal.svcs.types.aa.SetFundingSourceConfirmedResponse;
 import com.paypal.svcs.types.aa.CheckComplianceStatusRequest;
 import com.paypal.svcs.types.aa.CheckComplianceStatusResponse;
+import com.paypal.svcs.types.aa.AddPartnerFinancialProductRequest;
+import com.paypal.svcs.types.aa.AddPartnerFinancialProductResponse;
+import com.paypal.svcs.types.aa.ActivateProductRequest;
+import com.paypal.svcs.types.aa.ActivateProductResponse;
 import com.paypal.sdk.exceptions.OAuthException;
 
 public class AdaptiveAccountsService extends BaseService{
@@ -29,17 +33,17 @@ public class AdaptiveAccountsService extends BaseService{
 	public static final String SERVICE_NAME = "AdaptiveAccounts";
 
 	
-	public AdaptiveAccountsService(File configFile) throws IOException, FileNotFoundException {
+	public AdaptiveAccountsService(File configFile) throws IOException {
 		super(SERVICE_NAME, SERVICE_VERSION);
 		initConfig(configFile);
 	}		
 
-	public AdaptiveAccountsService(InputStream config) throws IOException, FileNotFoundException {
+	public AdaptiveAccountsService(InputStream config) throws IOException {
 		super(SERVICE_NAME, SERVICE_VERSION);
 		initConfig(config);
 	}
 
-	public AdaptiveAccountsService(String configFilePath) throws IOException, FileNotFoundException {
+	public AdaptiveAccountsService(String configFilePath) throws IOException {
 		super(SERVICE_NAME, SERVICE_VERSION);
 		initConfig(configFilePath);
 	}
@@ -544,6 +548,92 @@ public class AdaptiveAccountsService extends BaseService{
 	 */
 	 public CheckComplianceStatusResponse checkComplianceStatus(CheckComplianceStatusRequest checkComplianceStatusRequest) throws SSLConfigurationException, InvalidCredentialException, UnsupportedEncodingException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException {
 	 	return checkComplianceStatus(checkComplianceStatusRequest, null);
+	 }
+		
+	/**	
+	 * 
+	 *   To be updated.
+	 *   Countries Supported:
+	 *   US - United States
+	 *   Supported FinancialProduct: PayPal netSpend Master Prepaid
+	 * Card
+	 * 
+	 * @throws SSLConfigurationException
+	 * @throws InvalidCredentialException
+	 * @throws UnsupportedEncodingException
+	 * @throws IOException
+	 * @throws HttpErrorException
+	 * @throws InvalidResponseDataException
+	 * @throws ClientActionRequiredException
+	 * @throws MissingCredentialException
+	 * @throws InterruptedException
+	 * @throws OAuthException
+	 */
+	 public AddPartnerFinancialProductResponse addPartnerFinancialProduct(AddPartnerFinancialProductRequest addPartnerFinancialProductRequest, String apiUsername) throws SSLConfigurationException, InvalidCredentialException, UnsupportedEncodingException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException {
+	 	String response = call("AddPartnerFinancialProduct", addPartnerFinancialProductRequest.toNVPString(), apiUsername);
+		return AddPartnerFinancialProductResponse.createInstance(NVPUtil.decode(response), "", -1);
+	 }
+	 
+	/** 
+	 * 
+	 *   To be updated.
+	 *   Countries Supported:
+	 *   US - United States
+	 *   Supported FinancialProduct: PayPal netSpend Master Prepaid
+	 * Card
+	 * 
+	 * @throws SSLConfigurationException
+	 * @throws InvalidCredentialException
+	 * @throws UnsupportedEncodingException
+	 * @throws IOException
+	 * @throws HttpErrorException
+	 * @throws InvalidResponseDataException
+	 * @throws ClientActionRequiredException
+	 * @throws MissingCredentialException
+	 * @throws InterruptedException
+	 * @throws OAuthException
+	 */
+	 public AddPartnerFinancialProductResponse addPartnerFinancialProduct(AddPartnerFinancialProductRequest addPartnerFinancialProductRequest) throws SSLConfigurationException, InvalidCredentialException, UnsupportedEncodingException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException {
+	 	return addPartnerFinancialProduct(addPartnerFinancialProductRequest, null);
+	 }
+		
+	/**	
+	 * 
+	 *   To Activate POS - For a POC - Internal Purposes
+	 * 
+	 * @throws SSLConfigurationException
+	 * @throws InvalidCredentialException
+	 * @throws UnsupportedEncodingException
+	 * @throws IOException
+	 * @throws HttpErrorException
+	 * @throws InvalidResponseDataException
+	 * @throws ClientActionRequiredException
+	 * @throws MissingCredentialException
+	 * @throws InterruptedException
+	 * @throws OAuthException
+	 */
+	 public ActivateProductResponse activateProduct(ActivateProductRequest activateProductRequest, String apiUsername) throws SSLConfigurationException, InvalidCredentialException, UnsupportedEncodingException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException {
+	 	String response = call("ActivateProduct", activateProductRequest.toNVPString(), apiUsername);
+		return ActivateProductResponse.createInstance(NVPUtil.decode(response), "", -1);
+	 }
+	 
+	/** 
+	 * 
+	 *   To Activate POS - For a POC - Internal Purposes
+	 * 
+	 * @throws SSLConfigurationException
+	 * @throws InvalidCredentialException
+	 * @throws UnsupportedEncodingException
+	 * @throws IOException
+	 * @throws HttpErrorException
+	 * @throws InvalidResponseDataException
+	 * @throws ClientActionRequiredException
+	 * @throws MissingCredentialException
+	 * @throws InterruptedException
+	 * @throws OAuthException
+	 */
+	 public ActivateProductResponse activateProduct(ActivateProductRequest activateProductRequest) throws SSLConfigurationException, InvalidCredentialException, UnsupportedEncodingException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException {
+	 	return activateProduct(activateProductRequest, null);
 	 }
 
 

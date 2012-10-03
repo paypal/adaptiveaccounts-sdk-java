@@ -27,9 +27,11 @@ public enum  ConfirmationType {
 	}
 	
 	public static ConfirmationType fromValue(String v) {
-		for (ConfirmationType c : values())
-			if (c.value.equals(v))
+		for (ConfirmationType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

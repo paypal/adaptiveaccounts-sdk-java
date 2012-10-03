@@ -38,9 +38,11 @@ public enum  StakeholderRoleType {
 	}
 	
 	public static StakeholderRoleType fromValue(String v) {
-		for (StakeholderRoleType c : values())
-			if (c.value.equals(v))
+		for (StakeholderRoleType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

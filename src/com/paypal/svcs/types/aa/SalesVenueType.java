@@ -26,9 +26,11 @@ public enum  SalesVenueType {
 	}
 	
 	public static SalesVenueType fromValue(String v) {
-		for (SalesVenueType c : values())
-			if (c.value.equals(v))
+		for (SalesVenueType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

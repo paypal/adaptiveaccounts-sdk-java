@@ -6,9 +6,9 @@ import com.paypal.svcs.types.common.ErrorData;
 import java.util.Map;
 
 /**
- * Returned values are: ALLOW|DENY 
+ * Valid values are: CARD_ADDED 
  */
-public class CheckComplianceStatusResponse{
+public class AddPartnerFinancialProductResponse{
 
 
 	/**
@@ -18,17 +18,10 @@ public class CheckComplianceStatusResponse{
 	private ResponseEnvelope responseEnvelope;
 
 	/**
-	 * Returned values are: ALLOW|DENY 	  
+	 * Valid values are: CARD_ADDED 	  
 	 *@Required	 
 	 */ 
 	private String execStatus;
-
-	/**
-	 * Returned values are: CLIENT_NOT_SUPPORTED,
-	 * COUNTRY_NOT_SUPPORTED, VERIFICATION_NOT_COMPLETED,
-	 * DOCUMENTS_UNDER_REVIEW, DENIED 	 
-	 */ 
-	private String denialReason;
 
 	/**
 	 * 	 
@@ -40,7 +33,7 @@ public class CheckComplianceStatusResponse{
 	/**
 	 * Default Constructor
 	 */
-	public CheckComplianceStatusResponse (){
+	public AddPartnerFinancialProductResponse (){
 	}	
 
 	/**
@@ -72,20 +65,6 @@ public class CheckComplianceStatusResponse{
 	 }
 	 
 	/**
-	 * Getter for denialReason
-	 */
-	 public String getDenialReason() {
-	 	return denialReason;
-	 }
-	 
-	/**
-	 * Setter for denialReason
-	 */
-	 public void setDenialReason(String denialReason) {
-	 	this.denialReason = denialReason;
-	 }
-	 
-	/**
 	 * Getter for error
 	 */
 	 public List<ErrorData> getError() {
@@ -102,8 +81,8 @@ public class CheckComplianceStatusResponse{
 
 
 	
-	public static CheckComplianceStatusResponse createInstance(Map<String, String> map, String prefix, int index) {
-		CheckComplianceStatusResponse checkComplianceStatusResponse = null;
+	public static AddPartnerFinancialProductResponse createInstance(Map<String, String> map, String prefix, int index) {
+		AddPartnerFinancialProductResponse addPartnerFinancialProductResponse = null;
 		int i = 0;
 		if (index != -1) {
 				if (prefix != null && prefix.length() != 0 && !prefix.endsWith(".")) {
@@ -117,29 +96,25 @@ public class CheckComplianceStatusResponse{
 			
 		ResponseEnvelope responseEnvelope =  ResponseEnvelope.createInstance(map, prefix + "responseEnvelope", -1);
 		if (responseEnvelope != null) {
-			checkComplianceStatusResponse = (checkComplianceStatusResponse == null) ? new CheckComplianceStatusResponse() : checkComplianceStatusResponse;
-			checkComplianceStatusResponse.setResponseEnvelope(responseEnvelope);
+			addPartnerFinancialProductResponse = (addPartnerFinancialProductResponse == null) ? new AddPartnerFinancialProductResponse() : addPartnerFinancialProductResponse;
+			addPartnerFinancialProductResponse.setResponseEnvelope(responseEnvelope);
 		}
 		if (map.containsKey(prefix + "execStatus")) {
-				checkComplianceStatusResponse = (checkComplianceStatusResponse == null) ? new CheckComplianceStatusResponse() : checkComplianceStatusResponse;
-				checkComplianceStatusResponse.setExecStatus(map.get(prefix + "execStatus"));
-		}
-		if (map.containsKey(prefix + "denialReason")) {
-				checkComplianceStatusResponse = (checkComplianceStatusResponse == null) ? new CheckComplianceStatusResponse() : checkComplianceStatusResponse;
-				checkComplianceStatusResponse.setDenialReason(map.get(prefix + "denialReason"));
+				addPartnerFinancialProductResponse = (addPartnerFinancialProductResponse == null) ? new AddPartnerFinancialProductResponse() : addPartnerFinancialProductResponse;
+				addPartnerFinancialProductResponse.setExecStatus(map.get(prefix + "execStatus"));
 		}
 		i = 0;
 		while(true) {
 			ErrorData error =  ErrorData.createInstance(map, prefix + "error", i);
 			if (error != null) {
-				checkComplianceStatusResponse = (checkComplianceStatusResponse == null) ? new CheckComplianceStatusResponse() : checkComplianceStatusResponse;
-				checkComplianceStatusResponse.getError().add(error);
+				addPartnerFinancialProductResponse = (addPartnerFinancialProductResponse == null) ? new AddPartnerFinancialProductResponse() : addPartnerFinancialProductResponse;
+				addPartnerFinancialProductResponse.getError().add(error);
 				i++;
 			} else {
 				break;
 			}
 		}
-		return checkComplianceStatusResponse;
+		return addPartnerFinancialProductResponse;
 	}
  
 }

@@ -60,9 +60,11 @@ public enum  BusinessType {
 	}
 	
 	public static BusinessType fromValue(String v) {
-		for (BusinessType c : values())
-			if (c.value.equals(v))
+		for (BusinessType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

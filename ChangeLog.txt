@@ -1,4 +1,11 @@
 
+Version 1.2.95 - September 28, 2012
+ 
+	- Updated SDK sample
+	
+--------------------------------------------------------------------------------------------------
+
+
 Version 1.1.93 - August 13, 2012
  
 	- SDK Core - Deserialization Logic Change

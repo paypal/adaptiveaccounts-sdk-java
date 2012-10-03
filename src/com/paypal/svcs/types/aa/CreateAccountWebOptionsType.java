@@ -39,6 +39,16 @@ public class CreateAccountWebOptionsType{
 	 */ 
 	private Boolean useMiniBrowser;
 
+	/**
+	 * Indicates the frequency of the reminder emails sent to the
+	 * PayPal user after CreateAccount. Used only when
+	 * registrationType is Web. Valid values: DEFAULT: All reminder
+	 * emails will be sent (same behaviour as when this paramter is
+	 * not present) NONE: No reminder emails will be sent (More
+	 * values to be added in future) 	 
+	 */ 
+	private String reminderEmailFrequency;
+
 	
 
 	/**
@@ -117,6 +127,20 @@ public class CreateAccountWebOptionsType{
 	 	this.useMiniBrowser = useMiniBrowser;
 	 }
 	 
+	/**
+	 * Getter for reminderEmailFrequency
+	 */
+	 public String getReminderEmailFrequency() {
+	 	return reminderEmailFrequency;
+	 }
+	 
+	/**
+	 * Setter for reminderEmailFrequency
+	 */
+	 public void setReminderEmailFrequency(String reminderEmailFrequency) {
+	 	this.reminderEmailFrequency = reminderEmailFrequency;
+	 }
+	 
 
 
 	public String toNVPString() throws UnsupportedEncodingException {
@@ -143,6 +167,10 @@ public class CreateAccountWebOptionsType{
 		}
 		if (useMiniBrowser != null) {
 			sb.append(prefix).append("useMiniBrowser=").append(useMiniBrowser);
+			sb.append("&");
+		}
+		if (reminderEmailFrequency != null) {
+			sb.append(prefix).append("reminderEmailFrequency=").append(NVPUtil.encodeUrl(reminderEmailFrequency));
 			sb.append("&");
 		}
 		return sb.toString();

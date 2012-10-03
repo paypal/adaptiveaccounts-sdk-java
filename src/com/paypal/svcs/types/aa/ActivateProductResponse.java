@@ -2,13 +2,14 @@ package com.paypal.svcs.types.aa;
 import com.paypal.svcs.types.common.ResponseEnvelope;
 import java.util.List;
 import java.util.ArrayList;
+import com.paypal.svcs.types.aa.ProductActivationErrors;
 import com.paypal.svcs.types.common.ErrorData;
 import java.util.Map;
 
 /**
- * Returned values are: ALLOW|DENY 
+ * Valid values are: SUCCESS, FAILED 
  */
-public class CheckComplianceStatusResponse{
+public class ActivateProductResponse{
 
 
 	/**
@@ -18,17 +19,15 @@ public class CheckComplianceStatusResponse{
 	private ResponseEnvelope responseEnvelope;
 
 	/**
-	 * Returned values are: ALLOW|DENY 	  
+	 * Valid values are: SUCCESS, FAILED 	  
 	 *@Required	 
 	 */ 
 	private String execStatus;
 
 	/**
-	 * Returned values are: CLIENT_NOT_SUPPORTED,
-	 * COUNTRY_NOT_SUPPORTED, VERIFICATION_NOT_COMPLETED,
-	 * DOCUMENTS_UNDER_REVIEW, DENIED 	 
+	 * 	 
 	 */ 
-	private String denialReason;
+	private List<ProductActivationErrors> productActivationErrors = new ArrayList<ProductActivationErrors>();
 
 	/**
 	 * 	 
@@ -40,7 +39,7 @@ public class CheckComplianceStatusResponse{
 	/**
 	 * Default Constructor
 	 */
-	public CheckComplianceStatusResponse (){
+	public ActivateProductResponse (){
 	}	
 
 	/**
@@ -72,17 +71,17 @@ public class CheckComplianceStatusResponse{
 	 }
 	 
 	/**
-	 * Getter for denialReason
+	 * Getter for productActivationErrors
 	 */
-	 public String getDenialReason() {
-	 	return denialReason;
+	 public List<ProductActivationErrors> getProductActivationErrors() {
+	 	return productActivationErrors;
 	 }
 	 
 	/**
-	 * Setter for denialReason
+	 * Setter for productActivationErrors
 	 */
-	 public void setDenialReason(String denialReason) {
-	 	this.denialReason = denialReason;
+	 public void setProductActivationErrors(List<ProductActivationErrors> productActivationErrors) {
+	 	this.productActivationErrors = productActivationErrors;
 	 }
 	 
 	/**
@@ -102,8 +101,8 @@ public class CheckComplianceStatusResponse{
 
 
 	
-	public static CheckComplianceStatusResponse createInstance(Map<String, String> map, String prefix, int index) {
-		CheckComplianceStatusResponse checkComplianceStatusResponse = null;
+	public static ActivateProductResponse createInstance(Map<String, String> map, String prefix, int index) {
+		ActivateProductResponse activateProductResponse = null;
 		int i = 0;
 		if (index != -1) {
 				if (prefix != null && prefix.length() != 0 && !prefix.endsWith(".")) {
@@ -117,29 +116,35 @@ public class CheckComplianceStatusResponse{
 			
 		ResponseEnvelope responseEnvelope =  ResponseEnvelope.createInstance(map, prefix + "responseEnvelope", -1);
 		if (responseEnvelope != null) {
-			checkComplianceStatusResponse = (checkComplianceStatusResponse == null) ? new CheckComplianceStatusResponse() : checkComplianceStatusResponse;
-			checkComplianceStatusResponse.setResponseEnvelope(responseEnvelope);
+			activateProductResponse = (activateProductResponse == null) ? new ActivateProductResponse() : activateProductResponse;
+			activateProductResponse.setResponseEnvelope(responseEnvelope);
 		}
 		if (map.containsKey(prefix + "execStatus")) {
-				checkComplianceStatusResponse = (checkComplianceStatusResponse == null) ? new CheckComplianceStatusResponse() : checkComplianceStatusResponse;
-				checkComplianceStatusResponse.setExecStatus(map.get(prefix + "execStatus"));
-		}
-		if (map.containsKey(prefix + "denialReason")) {
-				checkComplianceStatusResponse = (checkComplianceStatusResponse == null) ? new CheckComplianceStatusResponse() : checkComplianceStatusResponse;
-				checkComplianceStatusResponse.setDenialReason(map.get(prefix + "denialReason"));
+				activateProductResponse = (activateProductResponse == null) ? new ActivateProductResponse() : activateProductResponse;
+				activateProductResponse.setExecStatus(map.get(prefix + "execStatus"));
 		}
 		i = 0;
 		while(true) {
-			ErrorData error =  ErrorData.createInstance(map, prefix + "error", i);
-			if (error != null) {
-				checkComplianceStatusResponse = (checkComplianceStatusResponse == null) ? new CheckComplianceStatusResponse() : checkComplianceStatusResponse;
-				checkComplianceStatusResponse.getError().add(error);
+			if (map.containsKey(prefix + "productActivationErrors" + "(" + i + ")")) {
+				activateProductResponse = (activateProductResponse == null) ? new ActivateProductResponse() : activateProductResponse;
+				activateProductResponse.getProductActivationErrors().add(ProductActivationErrors.fromValue(map.get(prefix + "productActivationErrors" + "(" + i + ")")));
 				i++;
 			} else {
 				break;
 			}
 		}
-		return checkComplianceStatusResponse;
+		i = 0;
+		while(true) {
+			ErrorData error =  ErrorData.createInstance(map, prefix + "error", i);
+			if (error != null) {
+				activateProductResponse = (activateProductResponse == null) ? new ActivateProductResponse() : activateProductResponse;
+				activateProductResponse.getError().add(error);
+				i++;
+			} else {
+				break;
+			}
+		}
+		return activateProductResponse;
 	}
  
 }

@@ -37,9 +37,11 @@ public enum  BusinessSubtypeType {
 	}
 	
 	public static BusinessSubtypeType fromValue(String v) {
-		for (BusinessSubtypeType c : values())
-			if (c.value.equals(v))
+		for (BusinessSubtypeType c : values()) {
+			if (c.value.equals(v)) {
 				return c;
+			}
+		}
 		throw new IllegalArgumentException(v);
 	}
 

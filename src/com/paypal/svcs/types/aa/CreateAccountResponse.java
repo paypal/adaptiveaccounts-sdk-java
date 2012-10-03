@@ -6,8 +6,7 @@ import com.paypal.svcs.types.common.ErrorData;
 import java.util.Map;
 
 /**
- * Valid values are: COMPLETED,
- * COMPLETED:MERCHANT_REFERRAL_BONUS_ID_ASSOCIATION_FAILED 
+ * Valid values are: COMPLETED 
  */
 public class CreateAccountResponse{
 
@@ -24,8 +23,7 @@ public class CreateAccountResponse{
 	private String createAccountKey;
 
 	/**
-	 * Valid values are: COMPLETED,
-	 * COMPLETED:MERCHANT_REFERRAL_BONUS_ID_ASSOCIATION_FAILED 	  
+	 * Valid values are: COMPLETED 	  
 	 *@Required	 
 	 */ 
 	private String execStatus;
@@ -145,11 +143,11 @@ public class CreateAccountResponse{
 		CreateAccountResponse createAccountResponse = null;
 		int i = 0;
 		if (index != -1) {
-				if (!prefix.isEmpty() && !prefix.endsWith(".")) {
+				if (prefix != null && prefix.length() != 0 && !prefix.endsWith(".")) {
 					prefix = prefix + "(" + index + ").";
 				}
 		} else {
-			if (!prefix.isEmpty() && !prefix.endsWith(".")) {
+			if (prefix != null && prefix.length() != 0 && !prefix.endsWith(".")) {
 				prefix = prefix + ".";
 			}
 		}
