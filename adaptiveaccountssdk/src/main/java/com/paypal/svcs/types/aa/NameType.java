@@ -8,6 +8,8 @@ import java.util.Map;
  */
 public class NameType{
 
+	private static final String nameSpace="com.paypal.svcs.types.aa";
+	private static final String preferredPrefix="";
 
 	/**
 	 * 	 

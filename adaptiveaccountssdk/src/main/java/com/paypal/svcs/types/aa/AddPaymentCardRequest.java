@@ -16,6 +16,8 @@ import com.paypal.core.NVPUtil;
  */
 public class AddPaymentCardRequest{
 
+	private static final String nameSpace="com.paypal.svcs.types.aa";
+	private static final String preferredPrefix="";
 
 	/**
 	 * 	  
@@ -88,7 +90,7 @@ public class AddPaymentCardRequest{
 	private CardDateType startDate;
 
 	/**
-	 * Up to 2 digit for Switch/Maestro/Solo cards. 	 
+	 * Up to 2 digit for Switch/Maestro cards. 	 
 	 */ 
 	private String issueNumber;
 

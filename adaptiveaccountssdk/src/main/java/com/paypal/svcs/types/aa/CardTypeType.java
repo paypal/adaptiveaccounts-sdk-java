@@ -2,6 +2,9 @@ package com.paypal.svcs.types.aa;
 
 /**
  * 
+ *                  SwitchMaestro, deprecated card type, use
+ * UKMaestro instead
+ * 
  */
 public enum  CardTypeType {
 
@@ -15,7 +18,7 @@ public enum  CardTypeType {
 
 	SWITCHMAESTRO("SwitchMaestro"),
 
-	SOLO("Solo"),
+	UKMAESTRO("UKMaestro"),
 
 	CARTEAURORE("CarteAurore"),
 
@@ -29,7 +32,9 @@ public enum  CardTypeType {
 
 	TARJETAAURORA("TarjetaAurora"),
 
-	JCB("JCB");
+	JCB("JCB"),
+
+	MAESTRO("Maestro");
 
 	private String value;
 

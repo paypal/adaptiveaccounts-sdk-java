@@ -7,6 +7,8 @@ import com.paypal.core.NVPUtil;
  */
 public class CardDateType{
 
+	private static final String nameSpace="com.paypal.svcs.types.aa";
+	private static final String preferredPrefix="";
 
 	/**
 	 * Month in integer format, between 1 and 12 	  

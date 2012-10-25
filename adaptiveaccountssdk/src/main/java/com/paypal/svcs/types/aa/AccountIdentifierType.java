@@ -9,6 +9,8 @@ import com.paypal.core.NVPUtil;
  */
 public class AccountIdentifierType{
 
+	private static final String nameSpace="com.paypal.svcs.types.aa";
+	private static final String preferredPrefix="";
 
 	/**
 	 * Identifies the PayPal account based on the emailAddress. 	  

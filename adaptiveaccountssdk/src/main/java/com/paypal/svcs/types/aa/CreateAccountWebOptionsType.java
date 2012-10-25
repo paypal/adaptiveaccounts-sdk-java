@@ -9,6 +9,8 @@ import com.paypal.core.NVPUtil;
  */
 public class CreateAccountWebOptionsType{
 
+	private static final String nameSpace="com.paypal.svcs.types.aa";
+	private static final String preferredPrefix="";
 
 	/**
 	 * 	 
@@ -48,6 +50,17 @@ public class CreateAccountWebOptionsType{
 	 * values to be added in future) 	 
 	 */ 
 	private String reminderEmailFrequency;
+
+	/**
+	 * Indicates if the Return URL is used to confirm email. On
+	 * accessing the Return URL successfully, confirm the email if
+	 * this parameter is true, otherwise, do not confirm the email.
+	 * Used only when registrationType is Web. Valid values (mixed
+	 * case): true: Append the Email Confirmation Code to the
+	 * Return URL. false: Do not append the Email Confirmation Code
+	 * to the Return URL. 	 
+	 */ 
+	private String confirmEmail;
 
 	
 
@@ -141,6 +154,20 @@ public class CreateAccountWebOptionsType{
 	 	this.reminderEmailFrequency = reminderEmailFrequency;
 	 }
 	 
+	/**
+	 * Getter for confirmEmail
+	 */
+	 public String getConfirmEmail() {
+	 	return confirmEmail;
+	 }
+	 
+	/**
+	 * Setter for confirmEmail
+	 */
+	 public void setConfirmEmail(String confirmEmail) {
+	 	this.confirmEmail = confirmEmail;
+	 }
+	 
 
 
 	public String toNVPString() throws UnsupportedEncodingException {
@@ -171,6 +198,10 @@ public class CreateAccountWebOptionsType{
 		}
 		if (reminderEmailFrequency != null) {
 			sb.append(prefix).append("reminderEmailFrequency=").append(NVPUtil.encodeUrl(reminderEmailFrequency));
+			sb.append("&");
+		}
+		if (confirmEmail != null) {
+			sb.append(prefix).append("confirmEmail=").append(NVPUtil.encodeUrl(confirmEmail));
 			sb.append("&");
 		}
 		return sb.toString();

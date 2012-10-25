@@ -8,6 +8,8 @@ import com.paypal.core.NVPUtil;
  */
 public class GetUserAgreementRequest{
 
+	private static final String nameSpace="com.paypal.svcs.types.aa";
+	private static final String preferredPrefix="";
 
 	/**
 	 * 	  
