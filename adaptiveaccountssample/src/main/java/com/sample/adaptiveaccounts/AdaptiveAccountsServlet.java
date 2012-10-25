@@ -104,12 +104,11 @@ public class AdaptiveAccountsServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
 		session.setAttribute("url", request.getRequestURI());
-	
+
 		response.setContentType("text/html");
 		try {
 			AdaptiveAccountsService service = new AdaptiveAccountsService(this
-					.getServletContext().getRealPath("/")
-					+ "/WEB-INF/sdk_config.properties");
+					.getClass().getResourceAsStream("/sdk_config.properties"));
 			if (request.getRequestURI().contains("CreateAccount")) {
 				RequestEnvelope requestEnvelope = new RequestEnvelope();
 				requestEnvelope.setErrorLanguage("en_US");
@@ -407,7 +406,8 @@ public class AdaptiveAccountsServlet extends HttpServlet {
 						map.put("TimeStamp", resp.getResponseEnvelope()
 								.getTimestamp());
 						map.put("Redirect URL",
-								"<a href=\"" + resp.getRedirectURL() + "\">Redirect To PayPal</a>");
+								"<a href=\"" + resp.getRedirectURL()
+										+ "\">Redirect To PayPal</a>");
 						map.put("Execution Status", resp.getExecStatus());
 						map.put("CreateAccountKey", resp.getCreateAccountKey());
 						session.setAttribute("map", map);
@@ -506,7 +506,8 @@ public class AdaptiveAccountsServlet extends HttpServlet {
 						map.put("TimeStamp", resp.getResponseEnvelope()
 								.getTimestamp());
 						map.put("Redirect URL",
-								"<a href=\"" + resp.getRedirectURL() + "\">Redirect To PayPal</a>");
+								"<a href=\"" + resp.getRedirectURL()
+										+ "\">Redirect To PayPal</a>");
 						map.put("Execution Status", resp.getExecStatus());
 						map.put("Funding Source Key",
 								resp.getFundingSourceKey());
@@ -606,7 +607,8 @@ public class AdaptiveAccountsServlet extends HttpServlet {
 						map.put("TimeStamp", resp.getResponseEnvelope()
 								.getTimestamp());
 						map.put("Redirect URL",
-								"<a href=\"" + resp.getRedirectURL() + "\">Redirect To PayPal</a>");
+								"<a href=\"" + resp.getRedirectURL()
+										+ "\">Redirect To PayPal</a>");
 						map.put("Execution Status", resp.getExecStatus());
 						map.put("Funding Source Key",
 								resp.getFundingSourceKey());
