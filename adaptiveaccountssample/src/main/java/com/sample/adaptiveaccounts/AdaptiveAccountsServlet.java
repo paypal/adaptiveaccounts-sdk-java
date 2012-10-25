@@ -411,10 +411,12 @@ public class AdaptiveAccountsServlet extends HttpServlet {
 						map.put("Execution Status", resp.getExecStatus());
 						map.put("CreateAccountKey", resp.getCreateAccountKey());
 						session.setAttribute("map", map);
-						response.sendRedirect("/adaptiveaccounts-sample/Response.jsp");
+						response.sendRedirect(this.getServletContext()
+								.getContextPath() + "/Response.jsp");
+
 					} else {
 						session.setAttribute("Error", resp.getError());
-						response.sendRedirect("/adaptiveaccounts-sample/Error.jsp");
+						response.sendRedirect(this.getServletContext().getContextPath()+"/Error.jsp");
 					}
 				}
 			} else if (request.getRequestURI().contains("AddPaymentCard")) {
@@ -512,10 +514,10 @@ public class AdaptiveAccountsServlet extends HttpServlet {
 						map.put("Funding Source Key",
 								resp.getFundingSourceKey());
 						session.setAttribute("map", map);
-						response.sendRedirect("/adaptiveaccounts-sample/Response.jsp");
+						response.sendRedirect(this.getServletContext().getContextPath()+"/Response.jsp");
 					} else {
 						session.setAttribute("Error", resp.getError());
-						response.sendRedirect("/adaptiveaccounts-sample/Error.jsp");
+						response.sendRedirect(this.getServletContext().getContextPath()+"/Error.jsp");
 					}
 				}
 			} else if (request.getRequestURI().contains("AddBankAccount")) {
@@ -613,10 +615,10 @@ public class AdaptiveAccountsServlet extends HttpServlet {
 						map.put("Funding Source Key",
 								resp.getFundingSourceKey());
 						session.setAttribute("map", map);
-						response.sendRedirect("/adaptiveaccounts-sample/Response.jsp");
+						response.sendRedirect(this.getServletContext().getContextPath()+"/Response.jsp");
 					} else {
 						session.setAttribute("Error", resp.getError());
-						response.sendRedirect("/adaptiveaccounts-sample/Error.jsp");
+						response.sendRedirect(this.getServletContext().getContextPath()+"/Error.jsp");
 					}
 				}
 			} else if (request.getRequestURI().contains("GetUserAgreement")) {
@@ -647,10 +649,10 @@ public class AdaptiveAccountsServlet extends HttpServlet {
 								.getTimestamp());
 						map.put("Agreement", resp.getAgreement());
 						session.setAttribute("map", map);
-						response.sendRedirect("/adaptiveaccounts-sample/Response.jsp");
+						response.sendRedirect(this.getServletContext().getContextPath()+"/Response.jsp");
 					} else {
 						session.setAttribute("Error", resp.getError());
-						response.sendRedirect("/adaptiveaccounts-sample/Error.jsp");
+						response.sendRedirect(this.getServletContext().getContextPath()+"/Error.jsp");
 					}
 				}
 
@@ -683,10 +685,10 @@ public class AdaptiveAccountsServlet extends HttpServlet {
 						map.put("Account Type", resp.getUserInfo()
 								.getAccountType());
 						session.setAttribute("map", map);
-						response.sendRedirect("/adaptiveaccounts-sample/Response.jsp");
+						response.sendRedirect(this.getServletContext().getContextPath()+"/Response.jsp");
 					} else {
 						session.setAttribute("Error", resp.getError());
-						response.sendRedirect("/adaptiveaccounts-sample/Error.jsp");
+						response.sendRedirect(this.getServletContext().getContextPath()+"/Error.jsp");
 					}
 				}
 
@@ -717,10 +719,11 @@ public class AdaptiveAccountsServlet extends HttpServlet {
 						map.put("TimeStamp", resp.getResponseEnvelope()
 								.getTimestamp());
 						session.setAttribute("map", map);
-						response.sendRedirect("/adaptiveaccounts-sample/Response.jsp");
+						response.sendRedirect(this.getServletContext().getContextPath()+"/Response.jsp");
 					} else {
 						session.setAttribute("Error", resp.getError());
-						response.sendRedirect("/adaptiveaccounts-sample/Error.jsp");
+						response.sendRedirect(this.getServletContext()
+								.getContextPath() + "/Error.jsp");
 					}
 				}
 			}
