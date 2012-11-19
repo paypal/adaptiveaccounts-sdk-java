@@ -1,7 +1,6 @@
 package com.sample.adaptiveaccounts;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -111,7 +110,289 @@ public class AdaptiveAccountsServlet extends HttpServlet {
 			AdaptiveAccountsService service = new AdaptiveAccountsService(this
 					.getClass().getResourceAsStream("/sdk_config.properties"));
 			if (request.getRequestURI().contains("CreateAccount")) {
-				CreateAccountResponse resp = createAccount(request);
+				RequestEnvelope requestEnvelope = new RequestEnvelope();
+				requestEnvelope.setErrorLanguage("en_US");
+				NameType name = null;
+				if (request.getParameter("firstName") != "") {
+					name = new NameType(request.getParameter("firstName"),
+							request.getParameter("lastName"));
+
+				}
+				if (request.getParameter("middleName") != "")
+					name.setMiddleName(request.getParameter("middleName"));
+				if (request.getParameter("suffix") != "")
+					name.setSuffix(request.getParameter("suffix"));
+				if (request.getParameter("salutation") != "")
+					name.setSalutation(request.getParameter("salutation"));
+				String preferredLanguageCode = request
+						.getParameter("preferredLanguageCode");
+				AddressType address = new AddressType(
+						request.getParameter("street"),
+						request.getParameter("countryCode"));
+				if (request.getParameter("postalCode") != "")
+					address.setPostalCode(request.getParameter("postalCode"));
+				if (request.getParameter("state") != "")
+					address.setState(request.getParameter("state"));
+				if (request.getParameter("city") != "")
+					address.setCity(request.getParameter("city"));
+				if (request.getParameter("line2") != "")
+					address.setLine2(request.getParameter("line2"));
+
+				CreateAccountRequest req = new CreateAccountRequest(
+						requestEnvelope, name, address, preferredLanguageCode);
+				if (request.getParameter("partnerField1") != "")
+					req.setPartnerField1(request.getParameter("partnerField1"));
+				if (request.getParameter("partnerField2") != "")
+					req.setPartnerField2(request.getParameter("partnerField2"));
+				if (request.getParameter("partnerField3") != "")
+					req.setPartnerField3(request.getParameter("partnerField3"));
+				if (request.getParameter("partnerField4") != "")
+					req.setPartnerField4(request.getParameter("partnerField4"));
+				if (request.getParameter("partnerField5") != "")
+					req.setPartnerField5(request.getParameter("partnerField5"));
+				if (request.getParameter("contactNum") != "")
+					req.setContactPhoneNumber(request
+							.getParameter("contactNum"));
+				if (request.getParameter("homeNum") != "")
+					req.setContactPhoneNumber(request.getParameter("homeNum"));
+				if (request.getParameter("mobileNum") != "")
+					req.setContactPhoneNumber(request.getParameter("mobileNum"));
+				if (request.getParameter("dateOfBirth") != "")
+					req.setDateOfBirth(request.getParameter("dateOfBirth"));
+				if (request.getParameter("accountType") != "")
+
+					req.setAccountType(request.getParameter("accountType"));
+
+				// TODO
+				AddressType businessAddress = new AddressType(
+						request.getParameter("businessStreet"),
+						request.getParameter("businessCountryCode"));
+				if (request.getParameter("businessPostalCode") != "")
+					businessAddress.setPostalCode(request
+							.getParameter("businessPostalCode"));
+				if (request.getParameter("businessState") != "")
+					businessAddress.setState(request
+							.getParameter("businessState"));
+				if (request.getParameter("businessCity") != "")
+					businessAddress.setCity(request
+							.getParameter("businessCity"));
+				if (request.getParameter("businessLine2") != "")
+					businessAddress.setLine2(request
+							.getParameter("businessLine2"));
+				if (request.getParameter("accountType").equalsIgnoreCase(
+						"Business")) {
+					BusinessInfoType businessInfoType = new BusinessInfoType(
+							request.getParameter("businessName"),
+							businessAddress, request.getParameter("workPhone"));
+					if (request.getParameter("averageMonthlyVolume") != "")
+						businessInfoType.setAverageMonthlyVolume(Double
+								.parseDouble(request
+										.getParameter("averageMonthlyVolume")));
+					if (request.getParameter("averagePrice") != "")
+						businessInfoType.setAveragePrice(Double
+								.parseDouble(request
+										.getParameter("averagePrice")));
+
+					List<BusinessStakeholderType> businessStakeHolderList = new ArrayList<BusinessStakeholderType>();
+					BusinessStakeholderType businessStakeHolder = null;
+					if (request.getParameter("role") != "") {
+						businessStakeHolder = new BusinessStakeholderType(
+								StakeholderRoleType.fromValue(request
+										.getParameter("role")));
+						AddressType stakeHolderAddress = new AddressType(
+								request.getParameter("stakeHolderStreet"),
+								request.getParameter("stakeHolderCountryCode"));
+						if (request.getParameter("stakeHolderPostalCode") != "")
+							stakeHolderAddress.setPostalCode(request
+									.getParameter("stakeHolderPostalCode"));
+						if (request.getParameter("stakeHolderState") != "")
+							stakeHolderAddress.setState(request
+									.getParameter("stakeHolderState"));
+						if (request.getParameter("stakeHolderCity") != "")
+							stakeHolderAddress.setCity(request
+									.getParameter("stakeHolderCity"));
+						if (request.getParameter("stakeHolderLine2") != "")
+							stakeHolderAddress.setLine2(request
+									.getParameter("stakeHolderLine2"));
+						businessStakeHolder.setAddress(stakeHolderAddress);
+						if (request.getParameter("stakeHolderDateofBirth") != "")
+							businessStakeHolder.setDateOfBirth(request
+									.getParameter("stakeHolderDateofBirth"));
+						if (request.getParameter("fullLegalName") != "")
+							businessStakeHolder.setFullLegalName(request
+									.getParameter("fullLegalName"));
+						NameType stakeHolderName = null;
+						if (request.getParameter("stakeHolderFirstName") != "") {
+							name = new NameType(
+									request.getParameter("stakeHolderFirstName"),
+									request.getParameter("stakeHolderLastName"));
+
+						}
+						if (request.getParameter("stakeHolderMiddleName") != "")
+							name.setMiddleName(request
+									.getParameter("stakeHolderMiddleName"));
+						if (request.getParameter("stakeHolderSuffix") != "")
+							name.setSuffix(request
+									.getParameter("stakeHolderSuffix"));
+						if (request.getParameter("stakeHolderSalutation") != "")
+							name.setSalutation(request
+									.getParameter("stakeHolderSalutation"));
+						businessStakeHolder.setName(stakeHolderName);
+
+						businessStakeHolderList.add(businessStakeHolder);
+						businessInfoType
+								.setBusinessStakeholder(businessStakeHolderList);
+					}
+					if (request.getParameter("businessSubtype") != "")
+						businessInfoType.setBusinessSubtype(BusinessSubtypeType
+								.fromValue(request
+										.getParameter("businessSubtype")));
+					if (request.getParameter("businessType") != "")
+						businessInfoType
+								.setBusinessType(BusinessType.fromValue(request
+										.getParameter("businessType")));
+					if (request.getParameter("category") != "")
+						businessInfoType.setCategory(Integer.parseInt(request
+								.getParameter("category")));
+					if (request.getParameter("commercialRegistrationLocation") != "")
+						businessInfoType
+								.setCommercialRegistrationLocation(request
+										.getParameter("commercialRegistrationLocation"));
+					if (request.getParameter("companyId") != "")
+						businessInfoType.setCompanyId(request
+								.getParameter("companyId"));
+					if (request.getParameter("customerServiceEmail") != "")
+						businessInfoType.setCustomerServiceEmail(request
+								.getParameter("customerServiceEmail"));
+					if (request.getParameter("customerServicePhone") != "")
+						businessInfoType.setCustomerServicePhone(request
+								.getParameter("customerServicePhone"));
+					if (request.getParameter("dateOfEstablishment") != "")
+						businessInfoType.setDateOfEstablishment(request
+								.getParameter("dateOfEstablishment"));
+					if (request.getParameter("disputeEmail") != "")
+						businessInfoType.setDisputeEmail(request
+								.getParameter("disputeEmail"));
+					if (request.getParameter("doingBusinessAs") != "")
+						businessInfoType.setDoingBusinessAs(request
+								.getParameter("doingBusinessAs"));
+					if (request.getParameter("establishmentCountryCode") != "")
+						businessInfoType.setEstablishmentCountryCode(request
+								.getParameter("establishmentCountryCode"));
+					if (request.getParameter("establishmentState") != "")
+						businessInfoType.setEstablishmentState(request
+								.getParameter("establishmentState"));
+					if (request.getParameter("incorporationId") != "")
+						businessInfoType.setIncorporationId(request
+								.getParameter("incorporationId"));
+					if (request.getParameter("merchantCategoryCode") != "")
+						businessInfoType.setMerchantCategoryCode(Integer
+								.parseInt(request
+										.getParameter("merchantCategoryCode")));
+					if (request.getParameter("percentageRevenueFromOnline") != "")
+						businessInfoType
+								.setPercentageRevenueFromOnline(Integer.parseInt(request
+										.getParameter("percentageRevenueFromOnline")));
+					if (request.getParameter("placeOfBusinessStreet") != "") {
+						AddressType placeOfBusinessAddress = new AddressType(
+								request.getParameter("placeOfBusinessStreet"),
+								request.getParameter("placeOfBusinessCountryCode"));
+						if (request.getParameter("placeOfBusinessPostalCode") != "")
+							placeOfBusinessAddress.setPostalCode(request
+									.getParameter("placeOfBusinessPostalCode"));
+						if (request.getParameter("placeOfBusinessState") != "")
+							placeOfBusinessAddress.setState(request
+									.getParameter("placeOfBusinessState"));
+						if (request.getParameter("placeOfBusinessCity") != "")
+							placeOfBusinessAddress.setCity(request
+									.getParameter("placeOfBusinessCity"));
+						if (request.getParameter("placeOfBusinessLine2") != "")
+							placeOfBusinessAddress.setLine2(request
+									.getParameter("placeOfBusinessLine2"));
+						businessInfoType
+								.setPrincipalPlaceOfBusinessAddress(placeOfBusinessAddress);
+					}
+					if (request.getParameter("registeredOfficeStreet") != "") {
+						AddressType registeredOfficeAddress = new AddressType(
+								request.getParameter("registeredOfficeStreet"),
+								request.getParameter("registeredOfficeCountryCode"));
+						if (request.getParameter("registeredOfficePostalCode") != "")
+							registeredOfficeAddress
+									.setPostalCode(request
+											.getParameter("registeredOfficePostalCode"));
+						if (request.getParameter("registeredOfficeState") != "")
+							registeredOfficeAddress.setState(request
+									.getParameter("registeredOfficeState"));
+						if (request.getParameter("registeredOfficeCity") != "")
+							registeredOfficeAddress.setCity(request
+									.getParameter("registeredOfficeCity"));
+						if (request.getParameter("registeredOfficeLine2") != "")
+							registeredOfficeAddress.setLine2(request
+									.getParameter("registeredOfficeLine2"));
+						businessInfoType
+								.setRegisteredOfficeAddress(registeredOfficeAddress);
+					}
+					List<SalesVenueType> salesVenueList = new ArrayList<SalesVenueType>();
+					if (request.getParameter("salesVenue") != "")
+						salesVenueList.add(SalesVenueType.fromValue(request
+								.getParameter("salesVenue")));
+					businessInfoType.setSalesVenue(salesVenueList);
+					if (request.getParameter("salesVenuDesc") != "")
+						businessInfoType.setSalesVenueDesc(request
+								.getParameter("salesVenuDesc"));
+					if (request.getParameter("subCategory") != "")
+						businessInfoType.setSubCategory(Integer
+								.parseInt(request.getParameter("subCategory")));
+					if (request.getParameter("vatCountryCode") != "")
+						businessInfoType.setVatCountryCode(request
+								.getParameter("vatCountryCode"));
+					if (request.getParameter("vatId") != "")
+						businessInfoType
+								.setVatId(request.getParameter("vatId"));
+					if (request.getParameter("webSite") != "")
+						businessInfoType.setWebSite(request
+								.getParameter("webSite"));
+
+					req.setBusinessInfo(businessInfoType);
+				}
+				if (request.getParameter("taxID") != "")
+					req.setTaxId(request.getParameter("taxID"));
+				if (request.getParameter("notificationURL") != "")
+					req.setNotificationURL(request
+							.getParameter("notificationURL"));
+				if (request.getParameter("performExtraVettingOnThisAccount") != "")
+					req.setPerformExtraVettingOnThisAccount(Boolean.parseBoolean(request
+							.getParameter("performExtraVettingOnThisAccount")));
+				if (request.getParameter("citizenshipCtryCode") != "")
+					req.setCitizenshipCountryCode(request
+							.getParameter("citizenshipCtryCode"));
+				if (request.getParameter("currencyCode") != "")
+					req.setCurrencyCode(request.getParameter("currencyCode"));
+				if (request.getParameter("email") != "")
+					req.setEmailAddress(request.getParameter("email"));
+
+				CreateAccountWebOptionsType webOptions = new CreateAccountWebOptionsType();
+				if (request.getParameter("returnUrl") != "")
+					webOptions.setReturnUrl(request.getParameter("returnUrl"));
+				if (request.getParameter("returnUrlDescription") != "")
+					webOptions.setReturnUrlDescription(request
+							.getParameter("returnUrlDescription"));
+				if (request.getParameter("useMiniBrowser") != "")
+					webOptions.setUseMiniBrowser(Boolean.parseBoolean(request
+							.getParameter("useMiniBrowser")));
+				if (request.getParameter("showMobileConfirm") != "")
+					webOptions.setShowMobileConfirm(Boolean
+							.parseBoolean(request
+									.getParameter("showMobileConfirm")));
+				if (request.getParameter("showAddCreditCard") != "")
+					webOptions.setShowAddCreditCard(Boolean
+							.parseBoolean(request
+									.getParameter("showAddCreditCard")));
+				if (request.getParameter("regType") != "")
+					req.setRegistrationType(request.getParameter("regType"));
+				req.setCreateAccountWebOptions(webOptions);
+
+				CreateAccountResponse resp = service.createAccount(req);
 				if (resp != null) {
 					session.setAttribute("RESPONSE_OBJECT", resp);
 					session.setAttribute("lastReq", service.getLastRequest());
@@ -135,8 +416,7 @@ public class AdaptiveAccountsServlet extends HttpServlet {
 
 					} else {
 						session.setAttribute("Error", resp.getError());
-						response.sendRedirect(this.getServletContext()
-								.getContextPath() + "/Error.jsp");
+						response.sendRedirect(this.getServletContext().getContextPath()+"/Error.jsp");
 					}
 				}
 			} else if (request.getRequestURI().contains("AddPaymentCard")) {
@@ -234,12 +514,10 @@ public class AdaptiveAccountsServlet extends HttpServlet {
 						map.put("Funding Source Key",
 								resp.getFundingSourceKey());
 						session.setAttribute("map", map);
-						response.sendRedirect(this.getServletContext()
-								.getContextPath() + "/Response.jsp");
+						response.sendRedirect(this.getServletContext().getContextPath()+"/Response.jsp");
 					} else {
 						session.setAttribute("Error", resp.getError());
-						response.sendRedirect(this.getServletContext()
-								.getContextPath() + "/Error.jsp");
+						response.sendRedirect(this.getServletContext().getContextPath()+"/Error.jsp");
 					}
 				}
 			} else if (request.getRequestURI().contains("AddBankAccount")) {
@@ -337,12 +615,10 @@ public class AdaptiveAccountsServlet extends HttpServlet {
 						map.put("Funding Source Key",
 								resp.getFundingSourceKey());
 						session.setAttribute("map", map);
-						response.sendRedirect(this.getServletContext()
-								.getContextPath() + "/Response.jsp");
+						response.sendRedirect(this.getServletContext().getContextPath()+"/Response.jsp");
 					} else {
 						session.setAttribute("Error", resp.getError());
-						response.sendRedirect(this.getServletContext()
-								.getContextPath() + "/Error.jsp");
+						response.sendRedirect(this.getServletContext().getContextPath()+"/Error.jsp");
 					}
 				}
 			} else if (request.getRequestURI().contains("GetUserAgreement")) {
@@ -373,12 +649,10 @@ public class AdaptiveAccountsServlet extends HttpServlet {
 								.getTimestamp());
 						map.put("Agreement", resp.getAgreement());
 						session.setAttribute("map", map);
-						response.sendRedirect(this.getServletContext()
-								.getContextPath() + "/Response.jsp");
+						response.sendRedirect(this.getServletContext().getContextPath()+"/Response.jsp");
 					} else {
 						session.setAttribute("Error", resp.getError());
-						response.sendRedirect(this.getServletContext()
-								.getContextPath() + "/Error.jsp");
+						response.sendRedirect(this.getServletContext().getContextPath()+"/Error.jsp");
 					}
 				}
 
@@ -411,12 +685,10 @@ public class AdaptiveAccountsServlet extends HttpServlet {
 						map.put("Account Type", resp.getUserInfo()
 								.getAccountType());
 						session.setAttribute("map", map);
-						response.sendRedirect(this.getServletContext()
-								.getContextPath() + "/Response.jsp");
+						response.sendRedirect(this.getServletContext().getContextPath()+"/Response.jsp");
 					} else {
 						session.setAttribute("Error", resp.getError());
-						response.sendRedirect(this.getServletContext()
-								.getContextPath() + "/Error.jsp");
+						response.sendRedirect(this.getServletContext().getContextPath()+"/Error.jsp");
 					}
 				}
 
@@ -447,8 +719,7 @@ public class AdaptiveAccountsServlet extends HttpServlet {
 						map.put("TimeStamp", resp.getResponseEnvelope()
 								.getTimestamp());
 						session.setAttribute("map", map);
-						response.sendRedirect(this.getServletContext()
-								.getContextPath() + "/Response.jsp");
+						response.sendRedirect(this.getServletContext().getContextPath()+"/Response.jsp");
 					} else {
 						session.setAttribute("Error", resp.getError());
 						response.sendRedirect(this.getServletContext()
@@ -482,297 +753,5 @@ public class AdaptiveAccountsServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
-
-	/**
-	 * @param request
-	 * @param service
-	 * @return
-	 * @throws SSLConfigurationException
-	 * @throws InvalidCredentialException
-	 * @throws UnsupportedEncodingException
-	 * @throws IOException
-	 * @throws HttpErrorException
-	 * @throws InvalidResponseDataException
-	 * @throws ClientActionRequiredException
-	 * @throws MissingCredentialException
-	 * @throws InterruptedException
-	 * @throws OAuthException
-	 */
-	public CreateAccountResponse createAccount(HttpServletRequest request)
-			throws SSLConfigurationException, InvalidCredentialException,
-			UnsupportedEncodingException, IOException, HttpErrorException,
-			InvalidResponseDataException, ClientActionRequiredException,
-			MissingCredentialException, InterruptedException, OAuthException {
-		AdaptiveAccountsService service = new AdaptiveAccountsService(this
-				.getClass().getResourceAsStream("/sdk_config.properties"));
-		RequestEnvelope requestEnvelope = new RequestEnvelope();
-		requestEnvelope.setErrorLanguage("en_US");
-		NameType name = null;
-		if (request.getParameter("firstName") != "") {
-			name = new NameType(request.getParameter("firstName"),
-					request.getParameter("lastName"));
-
-		}
-		if (request.getParameter("middleName") != "")
-			name.setMiddleName(request.getParameter("middleName"));
-		if (request.getParameter("suffix") != "")
-			name.setSuffix(request.getParameter("suffix"));
-		if (request.getParameter("salutation") != "")
-			name.setSalutation(request.getParameter("salutation"));
-		String preferredLanguageCode = request
-				.getParameter("preferredLanguageCode");
-		AddressType address = new AddressType(request.getParameter("street"),
-				request.getParameter("countryCode"));
-		if (request.getParameter("postalCode") != "")
-			address.setPostalCode(request.getParameter("postalCode"));
-		if (request.getParameter("state") != "")
-			address.setState(request.getParameter("state"));
-		if (request.getParameter("city") != "")
-			address.setCity(request.getParameter("city"));
-		if (request.getParameter("line2") != "")
-			address.setLine2(request.getParameter("line2"));
-
-		CreateAccountRequest req = new CreateAccountRequest(requestEnvelope,
-				name, address, preferredLanguageCode);
-		if (request.getParameter("partnerField1") != "")
-			req.setPartnerField1(request.getParameter("partnerField1"));
-		if (request.getParameter("partnerField2") != "")
-			req.setPartnerField2(request.getParameter("partnerField2"));
-		if (request.getParameter("partnerField3") != "")
-			req.setPartnerField3(request.getParameter("partnerField3"));
-		if (request.getParameter("partnerField4") != "")
-			req.setPartnerField4(request.getParameter("partnerField4"));
-		if (request.getParameter("partnerField5") != "")
-			req.setPartnerField5(request.getParameter("partnerField5"));
-		if (request.getParameter("contactNum") != "")
-			req.setContactPhoneNumber(request.getParameter("contactNum"));
-		if (request.getParameter("homeNum") != "")
-			req.setContactPhoneNumber(request.getParameter("homeNum"));
-		if (request.getParameter("mobileNum") != "")
-			req.setContactPhoneNumber(request.getParameter("mobileNum"));
-		if (request.getParameter("dateOfBirth") != "")
-			req.setDateOfBirth(request.getParameter("dateOfBirth"));
-		if (request.getParameter("accountType") != "")
-
-			req.setAccountType(request.getParameter("accountType"));
-
-		// TODO
-		AddressType businessAddress = new AddressType(
-				request.getParameter("businessStreet"),
-				request.getParameter("businessCountryCode"));
-		if (request.getParameter("businessPostalCode") != "")
-			businessAddress.setPostalCode(request
-					.getParameter("businessPostalCode"));
-		if (request.getParameter("businessState") != "")
-			businessAddress.setState(request.getParameter("businessState"));
-		if (request.getParameter("businessCity") != "")
-			businessAddress.setCity(request.getParameter("businessCity"));
-		if (request.getParameter("businessLine2") != "")
-			businessAddress.setLine2(request.getParameter("businessLine2"));
-		if (request.getParameter("accountType").equalsIgnoreCase("Business")) {
-			BusinessInfoType businessInfoType = new BusinessInfoType(
-					request.getParameter("businessName"), businessAddress,
-					request.getParameter("workPhone"));
-			if (request.getParameter("averageMonthlyVolume") != "")
-				businessInfoType.setAverageMonthlyVolume(Double
-						.parseDouble(request
-								.getParameter("averageMonthlyVolume")));
-			if (request.getParameter("averagePrice") != "")
-				businessInfoType.setAveragePrice(Double.parseDouble(request
-						.getParameter("averagePrice")));
-
-			List<BusinessStakeholderType> businessStakeHolderList = new ArrayList<BusinessStakeholderType>();
-			BusinessStakeholderType businessStakeHolder = null;
-			if (request.getParameter("role") != "") {
-				businessStakeHolder = new BusinessStakeholderType(
-						StakeholderRoleType.fromValue(request
-								.getParameter("role")));
-				AddressType stakeHolderAddress = new AddressType(
-						request.getParameter("stakeHolderStreet"),
-						request.getParameter("stakeHolderCountryCode"));
-				if (request.getParameter("stakeHolderPostalCode") != "")
-					stakeHolderAddress.setPostalCode(request
-							.getParameter("stakeHolderPostalCode"));
-				if (request.getParameter("stakeHolderState") != "")
-					stakeHolderAddress.setState(request
-							.getParameter("stakeHolderState"));
-				if (request.getParameter("stakeHolderCity") != "")
-					stakeHolderAddress.setCity(request
-							.getParameter("stakeHolderCity"));
-				if (request.getParameter("stakeHolderLine2") != "")
-					stakeHolderAddress.setLine2(request
-							.getParameter("stakeHolderLine2"));
-				businessStakeHolder.setAddress(stakeHolderAddress);
-				if (request.getParameter("stakeHolderDateofBirth") != "")
-					businessStakeHolder.setDateOfBirth(request
-							.getParameter("stakeHolderDateofBirth"));
-				if (request.getParameter("fullLegalName") != "")
-					businessStakeHolder.setFullLegalName(request
-							.getParameter("fullLegalName"));
-				NameType stakeHolderName = null;
-				if (request.getParameter("stakeHolderFirstName") != "") {
-					name = new NameType(
-							request.getParameter("stakeHolderFirstName"),
-							request.getParameter("stakeHolderLastName"));
-
-				}
-				if (request.getParameter("stakeHolderMiddleName") != "")
-					name.setMiddleName(request
-							.getParameter("stakeHolderMiddleName"));
-				if (request.getParameter("stakeHolderSuffix") != "")
-					name.setSuffix(request.getParameter("stakeHolderSuffix"));
-				if (request.getParameter("stakeHolderSalutation") != "")
-					name.setSalutation(request
-							.getParameter("stakeHolderSalutation"));
-				businessStakeHolder.setName(stakeHolderName);
-
-				businessStakeHolderList.add(businessStakeHolder);
-				businessInfoType
-						.setBusinessStakeholder(businessStakeHolderList);
-			}
-			if (request.getParameter("businessSubtype") != "")
-				businessInfoType.setBusinessSubtype(BusinessSubtypeType
-						.fromValue(request.getParameter("businessSubtype")));
-			if (request.getParameter("businessType") != "")
-				businessInfoType.setBusinessType(BusinessType.fromValue(request
-						.getParameter("businessType")));
-			if (request.getParameter("category") != "")
-				businessInfoType.setCategory(Integer.parseInt(request
-						.getParameter("category")));
-			if (request.getParameter("commercialRegistrationLocation") != "")
-				businessInfoType.setCommercialRegistrationLocation(request
-						.getParameter("commercialRegistrationLocation"));
-			if (request.getParameter("companyId") != "")
-				businessInfoType
-						.setCompanyId(request.getParameter("companyId"));
-			if (request.getParameter("customerServiceEmail") != "")
-				businessInfoType.setCustomerServiceEmail(request
-						.getParameter("customerServiceEmail"));
-			if (request.getParameter("customerServicePhone") != "")
-				businessInfoType.setCustomerServicePhone(request
-						.getParameter("customerServicePhone"));
-			if (request.getParameter("dateOfEstablishment") != "")
-				businessInfoType.setDateOfEstablishment(request
-						.getParameter("dateOfEstablishment"));
-			if (request.getParameter("disputeEmail") != "")
-				businessInfoType.setDisputeEmail(request
-						.getParameter("disputeEmail"));
-			if (request.getParameter("doingBusinessAs") != "")
-				businessInfoType.setDoingBusinessAs(request
-						.getParameter("doingBusinessAs"));
-			if (request.getParameter("establishmentCountryCode") != "")
-				businessInfoType.setEstablishmentCountryCode(request
-						.getParameter("establishmentCountryCode"));
-			if (request.getParameter("establishmentState") != "")
-				businessInfoType.setEstablishmentState(request
-						.getParameter("establishmentState"));
-			if (request.getParameter("incorporationId") != "")
-				businessInfoType.setIncorporationId(request
-						.getParameter("incorporationId"));
-			if (request.getParameter("merchantCategoryCode") != "")
-				businessInfoType
-						.setMerchantCategoryCode(Integer.parseInt(request
-								.getParameter("merchantCategoryCode")));
-			if (request.getParameter("percentageRevenueFromOnline") != "")
-				businessInfoType.setPercentageRevenueFromOnline(Integer
-						.parseInt(request
-								.getParameter("percentageRevenueFromOnline")));
-			if (request.getParameter("placeOfBusinessStreet") != "") {
-				AddressType placeOfBusinessAddress = new AddressType(
-						request.getParameter("placeOfBusinessStreet"),
-						request.getParameter("placeOfBusinessCountryCode"));
-				if (request.getParameter("placeOfBusinessPostalCode") != "")
-					placeOfBusinessAddress.setPostalCode(request
-							.getParameter("placeOfBusinessPostalCode"));
-				if (request.getParameter("placeOfBusinessState") != "")
-					placeOfBusinessAddress.setState(request
-							.getParameter("placeOfBusinessState"));
-				if (request.getParameter("placeOfBusinessCity") != "")
-					placeOfBusinessAddress.setCity(request
-							.getParameter("placeOfBusinessCity"));
-				if (request.getParameter("placeOfBusinessLine2") != "")
-					placeOfBusinessAddress.setLine2(request
-							.getParameter("placeOfBusinessLine2"));
-				businessInfoType
-						.setPrincipalPlaceOfBusinessAddress(placeOfBusinessAddress);
-			}
-			if (request.getParameter("registeredOfficeStreet") != "") {
-				AddressType registeredOfficeAddress = new AddressType(
-						request.getParameter("registeredOfficeStreet"),
-						request.getParameter("registeredOfficeCountryCode"));
-				if (request.getParameter("registeredOfficePostalCode") != "")
-					registeredOfficeAddress.setPostalCode(request
-							.getParameter("registeredOfficePostalCode"));
-				if (request.getParameter("registeredOfficeState") != "")
-					registeredOfficeAddress.setState(request
-							.getParameter("registeredOfficeState"));
-				if (request.getParameter("registeredOfficeCity") != "")
-					registeredOfficeAddress.setCity(request
-							.getParameter("registeredOfficeCity"));
-				if (request.getParameter("registeredOfficeLine2") != "")
-					registeredOfficeAddress.setLine2(request
-							.getParameter("registeredOfficeLine2"));
-				businessInfoType
-						.setRegisteredOfficeAddress(registeredOfficeAddress);
-			}
-			List<SalesVenueType> salesVenueList = new ArrayList<SalesVenueType>();
-			if (request.getParameter("salesVenue") != "")
-				salesVenueList.add(SalesVenueType.fromValue(request
-						.getParameter("salesVenue")));
-			businessInfoType.setSalesVenue(salesVenueList);
-			if (request.getParameter("salesVenuDesc") != "")
-				businessInfoType.setSalesVenueDesc(request
-						.getParameter("salesVenuDesc"));
-			if (request.getParameter("subCategory") != "")
-				businessInfoType.setSubCategory(Integer.parseInt(request
-						.getParameter("subCategory")));
-			if (request.getParameter("vatCountryCode") != "")
-				businessInfoType.setVatCountryCode(request
-						.getParameter("vatCountryCode"));
-			if (request.getParameter("vatId") != "")
-				businessInfoType.setVatId(request.getParameter("vatId"));
-			if (request.getParameter("webSite") != "")
-				businessInfoType.setWebSite(request.getParameter("webSite"));
-
-			req.setBusinessInfo(businessInfoType);
-		}
-		if (request.getParameter("taxID") != "")
-			req.setTaxId(request.getParameter("taxID"));
-		if (request.getParameter("notificationURL") != "")
-			req.setNotificationURL(request.getParameter("notificationURL"));
-		if (request.getParameter("performExtraVettingOnThisAccount") != "")
-			req.setPerformExtraVettingOnThisAccount(Boolean
-					.parseBoolean(request
-							.getParameter("performExtraVettingOnThisAccount")));
-		if (request.getParameter("citizenshipCtryCode") != "")
-			req.setCitizenshipCountryCode(request
-					.getParameter("citizenshipCtryCode"));
-		if (request.getParameter("currencyCode") != "")
-			req.setCurrencyCode(request.getParameter("currencyCode"));
-		if (request.getParameter("email") != "")
-			req.setEmailAddress(request.getParameter("email"));
-
-		CreateAccountWebOptionsType webOptions = new CreateAccountWebOptionsType();
-		if (request.getParameter("returnUrl") != "")
-			webOptions.setReturnUrl(request.getParameter("returnUrl"));
-		if (request.getParameter("returnUrlDescription") != "")
-			webOptions.setReturnUrlDescription(request
-					.getParameter("returnUrlDescription"));
-		if (request.getParameter("useMiniBrowser") != "")
-			webOptions.setUseMiniBrowser(Boolean.parseBoolean(request
-					.getParameter("useMiniBrowser")));
-		if (request.getParameter("showMobileConfirm") != "")
-			webOptions.setShowMobileConfirm(Boolean.parseBoolean(request
-					.getParameter("showMobileConfirm")));
-		if (request.getParameter("showAddCreditCard") != "")
-			webOptions.setShowAddCreditCard(Boolean.parseBoolean(request
-					.getParameter("showAddCreditCard")));
-		if (request.getParameter("regType") != "")
-			req.setRegistrationType(request.getParameter("regType"));
-		req.setCreateAccountWebOptions(webOptions);
-
-		CreateAccountResponse resp = service.createAccount(req);
-		return resp;
 	}
 }
