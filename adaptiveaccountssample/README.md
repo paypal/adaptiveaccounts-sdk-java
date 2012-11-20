@@ -1,4 +1,4 @@
-This application contains API based samples. 
+This application contains API based samples for AdaptiveAccounts. 
 
 Prerequisities:
 ---------------
