@@ -20,7 +20,8 @@ SDK Integration:
 *	Import AdaptiveAccountsService.java into your code.
 		
 *	Copy the configuration file 'sdk_config.properties' in 'adaptiveaccountssample/src/main/resources' folder to your application 'src/main/resources'. And load it using,  
-		  new AdaptiveAccountsService(this.getClass().getResourceAsStream("/sdk_config.properties"));
+		  
+		new AdaptiveAccountsService(this.getClass().getResourceAsStream("/sdk_config.properties"));
 	
 *	Or load the configuration file from any location using absolute path with the below method calls as required.
 
