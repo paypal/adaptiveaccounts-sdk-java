@@ -73,9 +73,7 @@ For example,
 
 SDK Logging:
 ------------
-*	For logging - java.util.logging has been used. To change the default configuration, edit the
- 
-logging.properties file in 'jre/lib' folder under your JDK root.		  
+*	For logging - java.util.logging has been used. To change the default configuration, edit the logging.properties file in 'jre/lib' folder under your JDK root.		  
 
 		  
 SDK Configuration:
