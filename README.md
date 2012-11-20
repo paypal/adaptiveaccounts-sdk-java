@@ -66,8 +66,8 @@ For example,
 	      CreateAccountRequest createAccountRequest = new CreateAccountRequest(requestEnvelope, name, address, preferredLanguageCode);
           ...
 
-          //userName is optional
-		  AdaptiveAccountsService adaptiveAccountsService = new AdaptiveAccountsService(this.getClass().getResourceAsStream("/sdk_config.properties"));
+   		  AdaptiveAccountsService adaptiveAccountsService = new AdaptiveAccountsService(this.getClass().getResourceAsStream("/sdk_config.properties"));
+		  //userName is optional
 		  CreateAccountResponse createAccountResponse = adaptiveAccountsService.createAccount(createAccountRequest,userName);
 		  
 
