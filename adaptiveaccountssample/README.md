@@ -1,6 +1,6 @@
 This application contains API based samples for AdaptiveAccounts. 
 
-Prerequisities:
+Prerequisites:
 ---------------
 *	Java jdk-1.5 or higher
 *	Apache Maven 2 or higher
