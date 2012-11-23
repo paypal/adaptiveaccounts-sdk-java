@@ -3,12 +3,12 @@
   <parent>
     <groupId>com.paypal.sdk</groupId>
     <artifactId>adaptiveaccounts</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.2.95-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <groupId>com.paypal.sdk</groupId>
   <artifactId>adaptiveaccountssdk</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.2.95-SNAPSHOT</version>
   <name>AdaptiveAccountsSDK</name>
   <dependencies>
   	<dependency>
