@@ -20,7 +20,7 @@ For Maven Users:
         mvn install:install-file -Dfile=commons-codec-1.3.jar -DgroupId=commons-codec -DartifactId=commons-codec -Dversion=1.3 -Dpackaging=jar
         mvn install:install-file -Dfile=paypal-auth-signature-1.0.jar -DgroupId=com.paypal.sdk -DartifactId=paypal-auth-signature -Dversion=1.0 -Dpackaging=jar
         mvn install:install-file -Dfile=paypal-core-1.0.jar -DgroupId=com.paypal.sdk -DartifactId=paypal-core -Dversion=1.0 -Dpackaging=jar
-		mvn install:install-file -Dfile=adaptiveaccountssdk-2.2.96.jar -DgroupId=com.paypal.sdk -DartifactId=adaptiveaccounts -Dversion=2.2.96 -Dpackaging=jar	
+		mvn install:install-file -Dfile=adaptiveaccountssdk-2.2.96.jar -DgroupId=com.paypal.sdk -DartifactId=adaptiveaccountssdk -Dversion=2.2.96 -Dpackaging=jar	
 
 *	Create a new maven application.
 
@@ -33,7 +33,7 @@ For Maven Users:
 		</dependency>
 	
 To make an API call:
--------------------		
+--------------------		
 *	Import AdaptiveAccountsService.java into your code.
 		
 *	Copy the configuration file 'sdk_config.properties' in 'adaptiveaccountssample/src/main/resources' folder to your application 'src/main/resources'. And load it using,  
