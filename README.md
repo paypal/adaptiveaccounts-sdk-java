@@ -5,10 +5,10 @@ Prerequisites:
 *	Java jdk-1.5 or higher
 *	Apache Maven 2 or higher
 
-To build sdk:
--------------
-*	First, build core files in https://github.com/paypal/sdk-core-java.
-*	Then, run mvn install to build jar and war file.
+To build sdk and samples:
+--------------------------
+*	First, build core files in https://github.com/paypal/sdk-core-java, because it is a dependency for sdk.
+*	Then, run 'mvn install' to build sdk jar and sample war files.
 
 SDK Integration:
 ----------------
@@ -19,7 +19,7 @@ SDK Integration:
 		<dependency>
 			<groupId>com.paypal.sdk</groupId>
 			<artifactId>adaptiveaccountssdk</artifactId>
-			<version>2.2.96</version>
+			<version>2.0.96</version>
 		</dependency>
 	
 To make an API call:

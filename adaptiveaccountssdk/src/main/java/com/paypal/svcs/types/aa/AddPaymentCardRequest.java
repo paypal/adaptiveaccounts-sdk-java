@@ -16,8 +16,6 @@ import com.paypal.core.NVPUtil;
  */
 public class AddPaymentCardRequest{
 
-	private static final String nameSpace="com.paypal.svcs.types.aa";
-	private static final String preferredPrefix="";
 
 	/**
 	 * 	  
