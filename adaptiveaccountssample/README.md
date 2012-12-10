@@ -13,3 +13,5 @@ To build and run this application:
 *	Copy 'adaptiveaccountssample-2.0.96.war' into your 'tomcat/webapps' directory.
 *	Start your tomcat if it's not already running.
 *	Access 'http://<your-server-host:port>/adaptiveaccountssample-2.0.96/' in your browser to play with the test pages.
+
+ 
