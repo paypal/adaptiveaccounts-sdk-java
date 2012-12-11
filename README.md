@@ -99,6 +99,9 @@ The SDK uses .properties format configuration file. Sample of this file is at
 
 For additional information on Adaptive Accounts API, please refer to https://www.x.com/developers/paypal/documentation-tools/api
 
+Instant Payment Notification(IPN) 
+---------------------------------
+* Please refer readme at 'adaptiveaccountssample/IPN-README.md'
 
 
 

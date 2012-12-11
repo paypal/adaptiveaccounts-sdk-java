@@ -9,7 +9,7 @@ a response string "VERIFIED" or "INVALID".
 
 IPN configuration :
 -----------------
-    * Ipn endpoint url is specified in 'sdk_config.properties' as 'ipn.EndPoint'. This will be used for ipn post back.
+    * Ipn endpoint url is specified in 'sdk_config.properties' as 'service.IPNEndpoint'. This will be used for ipn post back.
     * A util class 'IPNMessage' is provided in java sdk-core for ipn message validation. IPN Listener can use this class 
       for message validation.
     * Ipn Listener sample provided under the package com/sample/ipn/IPNListenerServlet.java. 
