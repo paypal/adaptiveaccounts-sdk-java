@@ -19,20 +19,11 @@ public class IPNListenerServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		IPNMessage ipnlistener=null;
 		AdaptiveAccountsService service = new AdaptiveAccountsService(this
 				.getClass().getResourceAsStream("/sdk_config.properties"));
-		try{
-			
-			ipnlistener = new IPNMessage(request);
-
-		}catch(IOException io){
-			LoggingManager.debug(IPNListenerServlet.class, io.getMessage());
-		}
-		
-		
-		boolean isIpnVerified = ipnlistener.isIpnVerified();
-		Map<String,String> map = ipnlistener.getIpnParamValueMap();
+		IPNMessage ipnlistener = new IPNMessage(request);
+		boolean isIpnVerified = ipnlistener.validate();
+		Map<String,String> map = ipnlistener.getIpnMap();
 		
 		LoggingManager.info(IPNListenerServlet.class, "******* IPN (name:value) pair : "+ map + "  " +"  ======== IPN verified : "+ isIpnVerified);
 	}
