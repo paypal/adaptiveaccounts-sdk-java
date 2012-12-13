@@ -103,10 +103,6 @@ When using multiple SDKs in combination, like Merchant and Permissions etc..conf
 one for each service used, The existing service.EndPoint property is still supported for backward compatibility (using 
 a single SDK). The list below specifies endpoints for different services, in SANDBOX and PRODUCTION, with their 
 property keys and end-point as property values.
-------------------------------SANDBOX------------------------------
-* Merchant/Button Manager Service (3 Token)
-service.EndPoint.PayPalAPI=https://api-3t.sandbox.paypal.com/2.0
-service.EndPoint.PayPalAPIAA=https://api-3t.sandbox.paypal.com/2.0
 
 ------------------------------SANDBOX------------------------------  
 * Merchant/Button Manager Service (3 Token)  
