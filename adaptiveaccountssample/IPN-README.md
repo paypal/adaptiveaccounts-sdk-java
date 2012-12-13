@@ -9,36 +9,36 @@ a response string "VERIFIED" or "INVALID".
 
 IPN configuration :
 -----------------
-    * Ipn endpoint url is specified in 'sdk_config.properties' as 'service.IPNEndpoint'. This will be used for ipn post back.
-    * A util class 'IPNMessage' is provided in java sdk-core for ipn message validation. IPN Listener can use this class 
-      for message validation.
+* Ipn endpoint url is specified in 'sdk_config.properties' as 'service.IPNEndpoint'. This will be used for ipn post back.
+* A util class 'IPNMessage' is provided in java sdk-core for ipn message validation. IPN Listener can use this class 
+  for message validation.
      
 
 IPN How to run?
 --------------
-	* Ipn Listener sample provided under the package com/sample/ipn/IPNListenerServlet.java.
-	* Deploy IPN Listener sample in Cloud environment or you can expose your server port using any third party 
-	  LocalTunneling software , so that you can receive PayPal IPN call back.
-	* Make an PayPal api call (eg: CreateAccount request), setting the NotificationUrl field of api request class
-	  to the url of deployed IPNLIstener sample(eg: http://DNS-Name/adaptiveaccountssample/IPNListener).
-	* You will receive ipn call back from PayPal , which will be logged in to log file in case of IPN sample.   
-       
+* Ipn Listener sample provided under the package com/sample/ipn/IPNListenerServlet.java.
+* Deploy IPN Listener sample in Cloud environment or you can expose your server port using any third party 
+  LocalTunneling software , so that you can receive PayPal IPN call back.
+* Make an PayPal api call (eg: CreateAccount request), setting the NotificationUrl field of api request class
+  to the url of deployed IPNLIstener sample(eg: http://DNS-Name/adaptiveaccountssample/IPNListener).
+* You will receive ipn call back from PayPal , which will be logged in to log file in case of IPN sample.   
+   
 IPN variables :
 --------------
 
 [Transaction]
 -------------
-notify_version,
-verify_sign,
-charset,
-confirmation_code,
-event_type
-account_key
+* notify_version
+* verify_sign
+* charset
+* confirmation_code
+* event_type
+* account_key
 
 [BuyerInfo]
 -----------
-first_name,
-last_name
+* first_name
+* last_name
 
 * For a full list of ipn variables you need to check log file, that Ipn Listener is logging into.    
 
