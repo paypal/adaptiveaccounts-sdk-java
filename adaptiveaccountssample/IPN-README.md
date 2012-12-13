@@ -28,17 +28,17 @@ IPN variables :
 
 [Transaction]
 -------------
-notify_version,
-verify_sign,
-charset,
-confirmation_code,
-event_type
-account_key
+	notify_version,
+	verify_sign,
+	charset,
+	confirmation_code,
+	event_type
+	account_key
 
 [BuyerInfo]
 -----------
-first_name,
-last_name
+	first_name,
+	last_name
 
 * For a full list of ipn variables you need to check log file, that Ipn Listener is logging into.    
 
