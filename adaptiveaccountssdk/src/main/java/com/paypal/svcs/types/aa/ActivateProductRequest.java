@@ -77,13 +77,13 @@ public class ActivateProductRequest{
 	
 	public String toNVPString(String prefix) throws UnsupportedEncodingException {
 		StringBuilder sb = new StringBuilder();
-		if (requestEnvelope != null) {
+		if (this.requestEnvelope != null) {
 			String newPrefix = prefix + "requestEnvelope.";
-			sb.append(requestEnvelope.toNVPString(newPrefix));
+			sb.append(this.requestEnvelope.toNVPString(newPrefix));
 		}
-		if (accountIdentifier != null) {
+		if (this.accountIdentifier != null) {
 			String newPrefix = prefix + "accountIdentifier.";
-			sb.append(accountIdentifier.toNVPString(newPrefix));
+			sb.append(this.accountIdentifier.toNVPString(newPrefix));
 		}
 		return sb.toString();
 	}

@@ -138,24 +138,24 @@ public class GetVerifiedStatusRequest{
 	
 	public String toNVPString(String prefix) throws UnsupportedEncodingException {
 		StringBuilder sb = new StringBuilder();
-		if (requestEnvelope != null) {
+		if (this.requestEnvelope != null) {
 			String newPrefix = prefix + "requestEnvelope.";
-			sb.append(requestEnvelope.toNVPString(newPrefix));
+			sb.append(this.requestEnvelope.toNVPString(newPrefix));
 		}
-		if (emailAddress != null) {
-			sb.append(prefix).append("emailAddress=").append(NVPUtil.encodeUrl(emailAddress));
+		if (this.emailAddress != null) {
+			sb.append(prefix).append("emailAddress=").append(NVPUtil.encodeUrl(this.emailAddress));
 			sb.append("&");
 		}
-		if (matchCriteria != null) {
-			sb.append(prefix).append("matchCriteria=").append(NVPUtil.encodeUrl(matchCriteria));
+		if (this.matchCriteria != null) {
+			sb.append(prefix).append("matchCriteria=").append(NVPUtil.encodeUrl(this.matchCriteria));
 			sb.append("&");
 		}
-		if (firstName != null) {
-			sb.append(prefix).append("firstName=").append(NVPUtil.encodeUrl(firstName));
+		if (this.firstName != null) {
+			sb.append(prefix).append("firstName=").append(NVPUtil.encodeUrl(this.firstName));
 			sb.append("&");
 		}
-		if (lastName != null) {
-			sb.append(prefix).append("lastName=").append(NVPUtil.encodeUrl(lastName));
+		if (this.lastName != null) {
+			sb.append(prefix).append("lastName=").append(NVPUtil.encodeUrl(this.lastName));
 			sb.append("&");
 		}
 		return sb.toString();

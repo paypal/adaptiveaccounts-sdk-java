@@ -20,7 +20,7 @@ SDK Integration:
 		<dependency>
 			<groupId>com.paypal.sdk</groupId>
 			<artifactId>adaptiveaccountssdk</artifactId>
-			<version>2.0.96</version>
+			<version>2.1.96</version>
 		</dependency>
 	
 To make an API call:

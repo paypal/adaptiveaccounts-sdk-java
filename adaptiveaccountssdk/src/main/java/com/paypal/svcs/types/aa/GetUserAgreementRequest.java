@@ -109,20 +109,20 @@ public class GetUserAgreementRequest{
 	
 	public String toNVPString(String prefix) throws UnsupportedEncodingException {
 		StringBuilder sb = new StringBuilder();
-		if (requestEnvelope != null) {
+		if (this.requestEnvelope != null) {
 			String newPrefix = prefix + "requestEnvelope.";
-			sb.append(requestEnvelope.toNVPString(newPrefix));
+			sb.append(this.requestEnvelope.toNVPString(newPrefix));
 		}
-		if (createAccountKey != null) {
-			sb.append(prefix).append("createAccountKey=").append(NVPUtil.encodeUrl(createAccountKey));
+		if (this.createAccountKey != null) {
+			sb.append(prefix).append("createAccountKey=").append(NVPUtil.encodeUrl(this.createAccountKey));
 			sb.append("&");
 		}
-		if (countryCode != null) {
-			sb.append(prefix).append("countryCode=").append(NVPUtil.encodeUrl(countryCode));
+		if (this.countryCode != null) {
+			sb.append(prefix).append("countryCode=").append(NVPUtil.encodeUrl(this.countryCode));
 			sb.append("&");
 		}
-		if (languageCode != null) {
-			sb.append(prefix).append("languageCode=").append(NVPUtil.encodeUrl(languageCode));
+		if (this.languageCode != null) {
+			sb.append(prefix).append("languageCode=").append(NVPUtil.encodeUrl(this.languageCode));
 			sb.append("&");
 		}
 		return sb.toString();

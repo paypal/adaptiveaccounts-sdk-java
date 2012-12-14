@@ -95,16 +95,16 @@ public class AccountIdentifierType{
 	
 	public String toNVPString(String prefix) throws UnsupportedEncodingException {
 		StringBuilder sb = new StringBuilder();
-		if (emailAddress != null) {
-			sb.append(prefix).append("emailAddress=").append(NVPUtil.encodeUrl(emailAddress));
+		if (this.emailAddress != null) {
+			sb.append(prefix).append("emailAddress=").append(NVPUtil.encodeUrl(this.emailAddress));
 			sb.append("&");
 		}
-		if (phoneNumber != null) {
-			sb.append(prefix).append("phoneNumber=").append(NVPUtil.encodeUrl(phoneNumber));
+		if (this.phoneNumber != null) {
+			sb.append(prefix).append("phoneNumber=").append(NVPUtil.encodeUrl(this.phoneNumber));
 			sb.append("&");
 		}
-		if (accountId != null) {
-			sb.append(prefix).append("accountId=").append(NVPUtil.encodeUrl(accountId));
+		if (this.accountId != null) {
+			sb.append(prefix).append("accountId=").append(NVPUtil.encodeUrl(this.accountId));
 			sb.append("&");
 		}
 		return sb.toString();

@@ -262,48 +262,48 @@ public class AddPartnerFinancialProductRequest{
 	
 	public String toNVPString(String prefix) throws UnsupportedEncodingException {
 		StringBuilder sb = new StringBuilder();
-		if (requestEnvelope != null) {
+		if (this.requestEnvelope != null) {
 			String newPrefix = prefix + "requestEnvelope.";
-			sb.append(requestEnvelope.toNVPString(newPrefix));
+			sb.append(this.requestEnvelope.toNVPString(newPrefix));
 		}
-		if (accountIdentifier != null) {
+		if (this.accountIdentifier != null) {
 			String newPrefix = prefix + "accountIdentifier.";
-			sb.append(accountIdentifier.toNVPString(newPrefix));
+			sb.append(this.accountIdentifier.toNVPString(newPrefix));
 		}
-		if (nameOnCard != null) {
+		if (this.nameOnCard != null) {
 			String newPrefix = prefix + "nameOnCard.";
-			sb.append(nameOnCard.toNVPString(newPrefix));
+			sb.append(this.nameOnCard.toNVPString(newPrefix));
 		}
-		if (billingAddress != null) {
+		if (this.billingAddress != null) {
 			String newPrefix = prefix + "billingAddress.";
-			sb.append(billingAddress.toNVPString(newPrefix));
+			sb.append(this.billingAddress.toNVPString(newPrefix));
 		}
-		if (cardOwnerDateOfBirth != null) {
-			sb.append(prefix).append("cardOwnerDateOfBirth=").append(NVPUtil.encodeUrl(cardOwnerDateOfBirth));
+		if (this.cardOwnerDateOfBirth != null) {
+			sb.append(prefix).append("cardOwnerDateOfBirth=").append(NVPUtil.encodeUrl(this.cardOwnerDateOfBirth));
 			sb.append("&");
 		}
-		if (cardNumber != null) {
-			sb.append(prefix).append("cardNumber=").append(NVPUtil.encodeUrl(cardNumber));
+		if (this.cardNumber != null) {
+			sb.append(prefix).append("cardNumber=").append(NVPUtil.encodeUrl(this.cardNumber));
 			sb.append("&");
 		}
-		if (financialProductCategory != null) {
-			sb.append(prefix).append("financialProductCategory=").append(NVPUtil.encodeUrl(financialProductCategory));
+		if (this.financialProductCategory != null) {
+			sb.append(prefix).append("financialProductCategory=").append(NVPUtil.encodeUrl(this.financialProductCategory));
 			sb.append("&");
 		}
-		if (expirationDate != null) {
+		if (this.expirationDate != null) {
 			String newPrefix = prefix + "expirationDate.";
-			sb.append(expirationDate.toNVPString(newPrefix));
+			sb.append(this.expirationDate.toNVPString(newPrefix));
 		}
-		if (cardVerificationNumber != null) {
-			sb.append(prefix).append("cardVerificationNumber=").append(NVPUtil.encodeUrl(cardVerificationNumber));
+		if (this.cardVerificationNumber != null) {
+			sb.append(prefix).append("cardVerificationNumber=").append(NVPUtil.encodeUrl(this.cardVerificationNumber));
 			sb.append("&");
 		}
-		if (startDate != null) {
+		if (this.startDate != null) {
 			String newPrefix = prefix + "startDate.";
-			sb.append(startDate.toNVPString(newPrefix));
+			sb.append(this.startDate.toNVPString(newPrefix));
 		}
-		if (issueNumber != null) {
-			sb.append(prefix).append("issueNumber=").append(NVPUtil.encodeUrl(issueNumber));
+		if (this.issueNumber != null) {
+			sb.append(prefix).append("issueNumber=").append(NVPUtil.encodeUrl(this.issueNumber));
 			sb.append("&");
 		}
 		return sb.toString();

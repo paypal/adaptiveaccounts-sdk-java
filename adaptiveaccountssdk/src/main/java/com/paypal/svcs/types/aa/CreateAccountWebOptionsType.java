@@ -174,32 +174,32 @@ public class CreateAccountWebOptionsType{
 	
 	public String toNVPString(String prefix) throws UnsupportedEncodingException {
 		StringBuilder sb = new StringBuilder();
-		if (returnUrl != null) {
-			sb.append(prefix).append("returnUrl=").append(NVPUtil.encodeUrl(returnUrl));
+		if (this.returnUrl != null) {
+			sb.append(prefix).append("returnUrl=").append(NVPUtil.encodeUrl(this.returnUrl));
 			sb.append("&");
 		}
-		if (showAddCreditCard != null) {
-			sb.append(prefix).append("showAddCreditCard=").append(showAddCreditCard);
+		if (this.showAddCreditCard != null) {
+			sb.append(prefix).append("showAddCreditCard=").append(this.showAddCreditCard);
 			sb.append("&");
 		}
-		if (showMobileConfirm != null) {
-			sb.append(prefix).append("showMobileConfirm=").append(showMobileConfirm);
+		if (this.showMobileConfirm != null) {
+			sb.append(prefix).append("showMobileConfirm=").append(this.showMobileConfirm);
 			sb.append("&");
 		}
-		if (returnUrlDescription != null) {
-			sb.append(prefix).append("returnUrlDescription=").append(NVPUtil.encodeUrl(returnUrlDescription));
+		if (this.returnUrlDescription != null) {
+			sb.append(prefix).append("returnUrlDescription=").append(NVPUtil.encodeUrl(this.returnUrlDescription));
 			sb.append("&");
 		}
-		if (useMiniBrowser != null) {
-			sb.append(prefix).append("useMiniBrowser=").append(useMiniBrowser);
+		if (this.useMiniBrowser != null) {
+			sb.append(prefix).append("useMiniBrowser=").append(this.useMiniBrowser);
 			sb.append("&");
 		}
-		if (reminderEmailFrequency != null) {
-			sb.append(prefix).append("reminderEmailFrequency=").append(NVPUtil.encodeUrl(reminderEmailFrequency));
+		if (this.reminderEmailFrequency != null) {
+			sb.append(prefix).append("reminderEmailFrequency=").append(NVPUtil.encodeUrl(this.reminderEmailFrequency));
 			sb.append("&");
 		}
-		if (confirmEmail != null) {
-			sb.append(prefix).append("confirmEmail=").append(NVPUtil.encodeUrl(confirmEmail));
+		if (this.confirmEmail != null) {
+			sb.append(prefix).append("confirmEmail=").append(NVPUtil.encodeUrl(this.confirmEmail));
 			sb.append("&");
 		}
 		return sb.toString();

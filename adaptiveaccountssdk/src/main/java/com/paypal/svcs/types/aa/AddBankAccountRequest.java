@@ -541,109 +541,109 @@ public class AddBankAccountRequest{
 	
 	public String toNVPString(String prefix) throws UnsupportedEncodingException {
 		StringBuilder sb = new StringBuilder();
-		if (requestEnvelope != null) {
+		if (this.requestEnvelope != null) {
 			String newPrefix = prefix + "requestEnvelope.";
-			sb.append(requestEnvelope.toNVPString(newPrefix));
+			sb.append(this.requestEnvelope.toNVPString(newPrefix));
 		}
-		if (emailAddress != null) {
-			sb.append(prefix).append("emailAddress=").append(NVPUtil.encodeUrl(emailAddress));
+		if (this.emailAddress != null) {
+			sb.append(prefix).append("emailAddress=").append(NVPUtil.encodeUrl(this.emailAddress));
 			sb.append("&");
 		}
-		if (accountId != null) {
-			sb.append(prefix).append("accountId=").append(NVPUtil.encodeUrl(accountId));
+		if (this.accountId != null) {
+			sb.append(prefix).append("accountId=").append(NVPUtil.encodeUrl(this.accountId));
 			sb.append("&");
 		}
-		if (createAccountKey != null) {
-			sb.append(prefix).append("createAccountKey=").append(NVPUtil.encodeUrl(createAccountKey));
+		if (this.createAccountKey != null) {
+			sb.append(prefix).append("createAccountKey=").append(NVPUtil.encodeUrl(this.createAccountKey));
 			sb.append("&");
 		}
-		if (bankCountryCode != null) {
-			sb.append(prefix).append("bankCountryCode=").append(NVPUtil.encodeUrl(bankCountryCode));
+		if (this.bankCountryCode != null) {
+			sb.append(prefix).append("bankCountryCode=").append(NVPUtil.encodeUrl(this.bankCountryCode));
 			sb.append("&");
 		}
-		if (bankName != null) {
-			sb.append(prefix).append("bankName=").append(NVPUtil.encodeUrl(bankName));
+		if (this.bankName != null) {
+			sb.append(prefix).append("bankName=").append(NVPUtil.encodeUrl(this.bankName));
 			sb.append("&");
 		}
-		if (routingNumber != null) {
-			sb.append(prefix).append("routingNumber=").append(NVPUtil.encodeUrl(routingNumber));
+		if (this.routingNumber != null) {
+			sb.append(prefix).append("routingNumber=").append(NVPUtil.encodeUrl(this.routingNumber));
 			sb.append("&");
 		}
-		if (bankAccountType != null) {
-			sb.append(prefix).append("bankAccountType=").append(bankAccountType.getValue());
+		if (this.bankAccountType != null) {
+			sb.append(prefix).append("bankAccountType=").append(this.bankAccountType.getValue());
 			sb.append("&");
 		}
-		if (bankAccountNumber != null) {
-			sb.append(prefix).append("bankAccountNumber=").append(NVPUtil.encodeUrl(bankAccountNumber));
+		if (this.bankAccountNumber != null) {
+			sb.append(prefix).append("bankAccountNumber=").append(NVPUtil.encodeUrl(this.bankAccountNumber));
 			sb.append("&");
 		}
-		if (iban != null) {
-			sb.append(prefix).append("iban=").append(NVPUtil.encodeUrl(iban));
+		if (this.iban != null) {
+			sb.append(prefix).append("iban=").append(NVPUtil.encodeUrl(this.iban));
 			sb.append("&");
 		}
-		if (clabe != null) {
-			sb.append(prefix).append("clabe=").append(NVPUtil.encodeUrl(clabe));
+		if (this.clabe != null) {
+			sb.append(prefix).append("clabe=").append(NVPUtil.encodeUrl(this.clabe));
 			sb.append("&");
 		}
-		if (bsbNumber != null) {
-			sb.append(prefix).append("bsbNumber=").append(NVPUtil.encodeUrl(bsbNumber));
+		if (this.bsbNumber != null) {
+			sb.append(prefix).append("bsbNumber=").append(NVPUtil.encodeUrl(this.bsbNumber));
 			sb.append("&");
 		}
-		if (branchLocation != null) {
-			sb.append(prefix).append("branchLocation=").append(NVPUtil.encodeUrl(branchLocation));
+		if (this.branchLocation != null) {
+			sb.append(prefix).append("branchLocation=").append(NVPUtil.encodeUrl(this.branchLocation));
 			sb.append("&");
 		}
-		if (sortCode != null) {
-			sb.append(prefix).append("sortCode=").append(NVPUtil.encodeUrl(sortCode));
+		if (this.sortCode != null) {
+			sb.append(prefix).append("sortCode=").append(NVPUtil.encodeUrl(this.sortCode));
 			sb.append("&");
 		}
-		if (bankTransitNumber != null) {
-			sb.append(prefix).append("bankTransitNumber=").append(NVPUtil.encodeUrl(bankTransitNumber));
+		if (this.bankTransitNumber != null) {
+			sb.append(prefix).append("bankTransitNumber=").append(NVPUtil.encodeUrl(this.bankTransitNumber));
 			sb.append("&");
 		}
-		if (institutionNumber != null) {
-			sb.append(prefix).append("institutionNumber=").append(NVPUtil.encodeUrl(institutionNumber));
+		if (this.institutionNumber != null) {
+			sb.append(prefix).append("institutionNumber=").append(NVPUtil.encodeUrl(this.institutionNumber));
 			sb.append("&");
 		}
-		if (branchCode != null) {
-			sb.append(prefix).append("branchCode=").append(NVPUtil.encodeUrl(branchCode));
+		if (this.branchCode != null) {
+			sb.append(prefix).append("branchCode=").append(NVPUtil.encodeUrl(this.branchCode));
 			sb.append("&");
 		}
-		if (agencyNumber != null) {
-			sb.append(prefix).append("agencyNumber=").append(NVPUtil.encodeUrl(agencyNumber));
+		if (this.agencyNumber != null) {
+			sb.append(prefix).append("agencyNumber=").append(NVPUtil.encodeUrl(this.agencyNumber));
 			sb.append("&");
 		}
-		if (bankCode != null) {
-			sb.append(prefix).append("bankCode=").append(NVPUtil.encodeUrl(bankCode));
+		if (this.bankCode != null) {
+			sb.append(prefix).append("bankCode=").append(NVPUtil.encodeUrl(this.bankCode));
 			sb.append("&");
 		}
-		if (ribKey != null) {
-			sb.append(prefix).append("ribKey=").append(NVPUtil.encodeUrl(ribKey));
+		if (this.ribKey != null) {
+			sb.append(prefix).append("ribKey=").append(NVPUtil.encodeUrl(this.ribKey));
 			sb.append("&");
 		}
-		if (controlDigit != null) {
-			sb.append(prefix).append("controlDigit=").append(NVPUtil.encodeUrl(controlDigit));
+		if (this.controlDigit != null) {
+			sb.append(prefix).append("controlDigit=").append(NVPUtil.encodeUrl(this.controlDigit));
 			sb.append("&");
 		}
-		if (taxIdType != null) {
-			sb.append(prefix).append("taxIdType=").append(NVPUtil.encodeUrl(taxIdType));
+		if (this.taxIdType != null) {
+			sb.append(prefix).append("taxIdType=").append(NVPUtil.encodeUrl(this.taxIdType));
 			sb.append("&");
 		}
-		if (taxIdNumber != null) {
-			sb.append(prefix).append("taxIdNumber=").append(NVPUtil.encodeUrl(taxIdNumber));
+		if (this.taxIdNumber != null) {
+			sb.append(prefix).append("taxIdNumber=").append(NVPUtil.encodeUrl(this.taxIdNumber));
 			sb.append("&");
 		}
-		if (accountHolderDateOfBirth != null) {
-			sb.append(prefix).append("accountHolderDateOfBirth=").append(NVPUtil.encodeUrl(accountHolderDateOfBirth));
+		if (this.accountHolderDateOfBirth != null) {
+			sb.append(prefix).append("accountHolderDateOfBirth=").append(NVPUtil.encodeUrl(this.accountHolderDateOfBirth));
 			sb.append("&");
 		}
-		if (confirmationType != null) {
-			sb.append(prefix).append("confirmationType=").append(confirmationType.getValue());
+		if (this.confirmationType != null) {
+			sb.append(prefix).append("confirmationType=").append(this.confirmationType.getValue());
 			sb.append("&");
 		}
-		if (webOptions != null) {
+		if (this.webOptions != null) {
 			String newPrefix = prefix + "webOptions.";
-			sb.append(webOptions.toNVPString(newPrefix));
+			sb.append(this.webOptions.toNVPString(newPrefix));
 		}
 		return sb.toString();
 	}

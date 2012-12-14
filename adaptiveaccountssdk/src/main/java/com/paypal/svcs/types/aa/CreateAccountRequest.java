@@ -529,105 +529,105 @@ public class CreateAccountRequest{
 	
 	public String toNVPString(String prefix) throws UnsupportedEncodingException {
 		StringBuilder sb = new StringBuilder();
-		if (requestEnvelope != null) {
+		if (this.requestEnvelope != null) {
 			String newPrefix = prefix + "requestEnvelope.";
-			sb.append(requestEnvelope.toNVPString(newPrefix));
+			sb.append(this.requestEnvelope.toNVPString(newPrefix));
 		}
-		if (clientDetails != null) {
+		if (this.clientDetails != null) {
 			String newPrefix = prefix + "clientDetails.";
-			sb.append(clientDetails.toNVPString(newPrefix));
+			sb.append(this.clientDetails.toNVPString(newPrefix));
 		}
-		if (accountType != null) {
-			sb.append(prefix).append("accountType=").append(NVPUtil.encodeUrl(accountType));
+		if (this.accountType != null) {
+			sb.append(prefix).append("accountType=").append(NVPUtil.encodeUrl(this.accountType));
 			sb.append("&");
 		}
-		if (name != null) {
+		if (this.name != null) {
 			String newPrefix = prefix + "name.";
-			sb.append(name.toNVPString(newPrefix));
+			sb.append(this.name.toNVPString(newPrefix));
 		}
-		if (dateOfBirth != null) {
-			sb.append(prefix).append("dateOfBirth=").append(NVPUtil.encodeUrl(dateOfBirth));
+		if (this.dateOfBirth != null) {
+			sb.append(prefix).append("dateOfBirth=").append(NVPUtil.encodeUrl(this.dateOfBirth));
 			sb.append("&");
 		}
-		if (address != null) {
+		if (this.address != null) {
 			String newPrefix = prefix + "address.";
-			sb.append(address.toNVPString(newPrefix));
+			sb.append(this.address.toNVPString(newPrefix));
 		}
-		if (contactPhoneNumber != null) {
-			sb.append(prefix).append("contactPhoneNumber=").append(NVPUtil.encodeUrl(contactPhoneNumber));
+		if (this.contactPhoneNumber != null) {
+			sb.append(prefix).append("contactPhoneNumber=").append(NVPUtil.encodeUrl(this.contactPhoneNumber));
 			sb.append("&");
 		}
-		if (homePhoneNumber != null) {
-			sb.append(prefix).append("homePhoneNumber=").append(NVPUtil.encodeUrl(homePhoneNumber));
+		if (this.homePhoneNumber != null) {
+			sb.append(prefix).append("homePhoneNumber=").append(NVPUtil.encodeUrl(this.homePhoneNumber));
 			sb.append("&");
 		}
-		if (mobilePhoneNumber != null) {
-			sb.append(prefix).append("mobilePhoneNumber=").append(NVPUtil.encodeUrl(mobilePhoneNumber));
+		if (this.mobilePhoneNumber != null) {
+			sb.append(prefix).append("mobilePhoneNumber=").append(NVPUtil.encodeUrl(this.mobilePhoneNumber));
 			sb.append("&");
 		}
-		if (currencyCode != null) {
-			sb.append(prefix).append("currencyCode=").append(NVPUtil.encodeUrl(currencyCode));
+		if (this.currencyCode != null) {
+			sb.append(prefix).append("currencyCode=").append(NVPUtil.encodeUrl(this.currencyCode));
 			sb.append("&");
 		}
-		if (citizenshipCountryCode != null) {
-			sb.append(prefix).append("citizenshipCountryCode=").append(NVPUtil.encodeUrl(citizenshipCountryCode));
+		if (this.citizenshipCountryCode != null) {
+			sb.append(prefix).append("citizenshipCountryCode=").append(NVPUtil.encodeUrl(this.citizenshipCountryCode));
 			sb.append("&");
 		}
-		if (preferredLanguageCode != null) {
-			sb.append(prefix).append("preferredLanguageCode=").append(NVPUtil.encodeUrl(preferredLanguageCode));
+		if (this.preferredLanguageCode != null) {
+			sb.append(prefix).append("preferredLanguageCode=").append(NVPUtil.encodeUrl(this.preferredLanguageCode));
 			sb.append("&");
 		}
-		if (notificationURL != null) {
-			sb.append(prefix).append("notificationURL=").append(NVPUtil.encodeUrl(notificationURL));
+		if (this.notificationURL != null) {
+			sb.append(prefix).append("notificationURL=").append(NVPUtil.encodeUrl(this.notificationURL));
 			sb.append("&");
 		}
-		if (emailAddress != null) {
-			sb.append(prefix).append("emailAddress=").append(NVPUtil.encodeUrl(emailAddress));
+		if (this.emailAddress != null) {
+			sb.append(prefix).append("emailAddress=").append(NVPUtil.encodeUrl(this.emailAddress));
 			sb.append("&");
 		}
-		if (registrationType != null) {
-			sb.append(prefix).append("registrationType=").append(NVPUtil.encodeUrl(registrationType));
+		if (this.registrationType != null) {
+			sb.append(prefix).append("registrationType=").append(NVPUtil.encodeUrl(this.registrationType));
 			sb.append("&");
 		}
-		if (createAccountWebOptions != null) {
+		if (this.createAccountWebOptions != null) {
 			String newPrefix = prefix + "createAccountWebOptions.";
-			sb.append(createAccountWebOptions.toNVPString(newPrefix));
+			sb.append(this.createAccountWebOptions.toNVPString(newPrefix));
 		}
-		if (suppressWelcomeEmail != null) {
-			sb.append(prefix).append("suppressWelcomeEmail=").append(suppressWelcomeEmail);
+		if (this.suppressWelcomeEmail != null) {
+			sb.append(prefix).append("suppressWelcomeEmail=").append(this.suppressWelcomeEmail);
 			sb.append("&");
 		}
-		if (performExtraVettingOnThisAccount != null) {
-			sb.append(prefix).append("performExtraVettingOnThisAccount=").append(performExtraVettingOnThisAccount);
+		if (this.performExtraVettingOnThisAccount != null) {
+			sb.append(prefix).append("performExtraVettingOnThisAccount=").append(this.performExtraVettingOnThisAccount);
 			sb.append("&");
 		}
-		if (taxId != null) {
-			sb.append(prefix).append("taxId=").append(NVPUtil.encodeUrl(taxId));
+		if (this.taxId != null) {
+			sb.append(prefix).append("taxId=").append(NVPUtil.encodeUrl(this.taxId));
 			sb.append("&");
 		}
-		if (partnerField1 != null) {
-			sb.append(prefix).append("partnerField1=").append(NVPUtil.encodeUrl(partnerField1));
+		if (this.partnerField1 != null) {
+			sb.append(prefix).append("partnerField1=").append(NVPUtil.encodeUrl(this.partnerField1));
 			sb.append("&");
 		}
-		if (partnerField2 != null) {
-			sb.append(prefix).append("partnerField2=").append(NVPUtil.encodeUrl(partnerField2));
+		if (this.partnerField2 != null) {
+			sb.append(prefix).append("partnerField2=").append(NVPUtil.encodeUrl(this.partnerField2));
 			sb.append("&");
 		}
-		if (partnerField3 != null) {
-			sb.append(prefix).append("partnerField3=").append(NVPUtil.encodeUrl(partnerField3));
+		if (this.partnerField3 != null) {
+			sb.append(prefix).append("partnerField3=").append(NVPUtil.encodeUrl(this.partnerField3));
 			sb.append("&");
 		}
-		if (partnerField4 != null) {
-			sb.append(prefix).append("partnerField4=").append(NVPUtil.encodeUrl(partnerField4));
+		if (this.partnerField4 != null) {
+			sb.append(prefix).append("partnerField4=").append(NVPUtil.encodeUrl(this.partnerField4));
 			sb.append("&");
 		}
-		if (partnerField5 != null) {
-			sb.append(prefix).append("partnerField5=").append(NVPUtil.encodeUrl(partnerField5));
+		if (this.partnerField5 != null) {
+			sb.append(prefix).append("partnerField5=").append(NVPUtil.encodeUrl(this.partnerField5));
 			sb.append("&");
 		}
-		if (businessInfo != null) {
+		if (this.businessInfo != null) {
 			String newPrefix = prefix + "businessInfo.";
-			sb.append(businessInfo.toNVPString(newPrefix));
+			sb.append(this.businessInfo.toNVPString(newPrefix));
 		}
 		return sb.toString();
 	}

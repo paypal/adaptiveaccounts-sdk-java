@@ -131,24 +131,24 @@ public class BusinessStakeholderType{
 	
 	public String toNVPString(String prefix) throws UnsupportedEncodingException {
 		StringBuilder sb = new StringBuilder();
-		if (role != null) {
-			sb.append(prefix).append("role=").append(role.getValue());
+		if (this.role != null) {
+			sb.append(prefix).append("role=").append(this.role.getValue());
 			sb.append("&");
 		}
-		if (name != null) {
+		if (this.name != null) {
 			String newPrefix = prefix + "name.";
-			sb.append(name.toNVPString(newPrefix));
+			sb.append(this.name.toNVPString(newPrefix));
 		}
-		if (fullLegalName != null) {
-			sb.append(prefix).append("fullLegalName=").append(NVPUtil.encodeUrl(fullLegalName));
+		if (this.fullLegalName != null) {
+			sb.append(prefix).append("fullLegalName=").append(NVPUtil.encodeUrl(this.fullLegalName));
 			sb.append("&");
 		}
-		if (address != null) {
+		if (this.address != null) {
 			String newPrefix = prefix + "address.";
-			sb.append(address.toNVPString(newPrefix));
+			sb.append(this.address.toNVPString(newPrefix));
 		}
-		if (dateOfBirth != null) {
-			sb.append(prefix).append("dateOfBirth=").append(NVPUtil.encodeUrl(dateOfBirth));
+		if (this.dateOfBirth != null) {
+			sb.append(prefix).append("dateOfBirth=").append(NVPUtil.encodeUrl(this.dateOfBirth));
 			sb.append("&");
 		}
 		return sb.toString();

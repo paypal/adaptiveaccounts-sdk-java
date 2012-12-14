@@ -100,20 +100,20 @@ public class WebOptionsType{
 	
 	public String toNVPString(String prefix) throws UnsupportedEncodingException {
 		StringBuilder sb = new StringBuilder();
-		if (returnUrl != null) {
-			sb.append(prefix).append("returnUrl=").append(NVPUtil.encodeUrl(returnUrl));
+		if (this.returnUrl != null) {
+			sb.append(prefix).append("returnUrl=").append(NVPUtil.encodeUrl(this.returnUrl));
 			sb.append("&");
 		}
-		if (cancelUrl != null) {
-			sb.append(prefix).append("cancelUrl=").append(NVPUtil.encodeUrl(cancelUrl));
+		if (this.cancelUrl != null) {
+			sb.append(prefix).append("cancelUrl=").append(NVPUtil.encodeUrl(this.cancelUrl));
 			sb.append("&");
 		}
-		if (returnUrlDescription != null) {
-			sb.append(prefix).append("returnUrlDescription=").append(NVPUtil.encodeUrl(returnUrlDescription));
+		if (this.returnUrlDescription != null) {
+			sb.append(prefix).append("returnUrlDescription=").append(NVPUtil.encodeUrl(this.returnUrlDescription));
 			sb.append("&");
 		}
-		if (cancelUrlDescription != null) {
-			sb.append(prefix).append("cancelUrlDescription=").append(NVPUtil.encodeUrl(cancelUrlDescription));
+		if (this.cancelUrlDescription != null) {
+			sb.append(prefix).append("cancelUrlDescription=").append(NVPUtil.encodeUrl(this.cancelUrlDescription));
 			sb.append("&");
 		}
 		return sb.toString();

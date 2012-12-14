@@ -72,12 +72,12 @@ public class CardDateType{
 	
 	public String toNVPString(String prefix) throws UnsupportedEncodingException {
 		StringBuilder sb = new StringBuilder();
-		if (month != null) {
-			sb.append(prefix).append("month=").append(month);
+		if (this.month != null) {
+			sb.append(prefix).append("month=").append(this.month);
 			sb.append("&");
 		}
-		if (year != null) {
-			sb.append(prefix).append("year=").append(year);
+		if (this.year != null) {
+			sb.append(prefix).append("year=").append(this.year);
 			sb.append("&");
 		}
 		return sb.toString();

@@ -130,24 +130,24 @@ public class NameType{
 	
 	public String toNVPString(String prefix) throws UnsupportedEncodingException {
 		StringBuilder sb = new StringBuilder();
-		if (salutation != null) {
-			sb.append(prefix).append("salutation=").append(NVPUtil.encodeUrl(salutation));
+		if (this.salutation != null) {
+			sb.append(prefix).append("salutation=").append(NVPUtil.encodeUrl(this.salutation));
 			sb.append("&");
 		}
-		if (firstName != null) {
-			sb.append(prefix).append("firstName=").append(NVPUtil.encodeUrl(firstName));
+		if (this.firstName != null) {
+			sb.append(prefix).append("firstName=").append(NVPUtil.encodeUrl(this.firstName));
 			sb.append("&");
 		}
-		if (middleName != null) {
-			sb.append(prefix).append("middleName=").append(NVPUtil.encodeUrl(middleName));
+		if (this.middleName != null) {
+			sb.append(prefix).append("middleName=").append(NVPUtil.encodeUrl(this.middleName));
 			sb.append("&");
 		}
-		if (lastName != null) {
-			sb.append(prefix).append("lastName=").append(NVPUtil.encodeUrl(lastName));
+		if (this.lastName != null) {
+			sb.append(prefix).append("lastName=").append(NVPUtil.encodeUrl(this.lastName));
 			sb.append("&");
 		}
-		if (suffix != null) {
-			sb.append(prefix).append("suffix=").append(NVPUtil.encodeUrl(suffix));
+		if (this.suffix != null) {
+			sb.append(prefix).append("suffix=").append(NVPUtil.encodeUrl(this.suffix));
 			sb.append("&");
 		}
 		return sb.toString();

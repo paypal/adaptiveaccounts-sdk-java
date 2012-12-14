@@ -117,20 +117,20 @@ public class SetFundingSourceConfirmedRequest{
 	
 	public String toNVPString(String prefix) throws UnsupportedEncodingException {
 		StringBuilder sb = new StringBuilder();
-		if (requestEnvelope != null) {
+		if (this.requestEnvelope != null) {
 			String newPrefix = prefix + "requestEnvelope.";
-			sb.append(requestEnvelope.toNVPString(newPrefix));
+			sb.append(this.requestEnvelope.toNVPString(newPrefix));
 		}
-		if (emailAddress != null) {
-			sb.append(prefix).append("emailAddress=").append(NVPUtil.encodeUrl(emailAddress));
+		if (this.emailAddress != null) {
+			sb.append(prefix).append("emailAddress=").append(NVPUtil.encodeUrl(this.emailAddress));
 			sb.append("&");
 		}
-		if (accountId != null) {
-			sb.append(prefix).append("accountId=").append(NVPUtil.encodeUrl(accountId));
+		if (this.accountId != null) {
+			sb.append(prefix).append("accountId=").append(NVPUtil.encodeUrl(this.accountId));
 			sb.append("&");
 		}
-		if (fundingSourceKey != null) {
-			sb.append(prefix).append("fundingSourceKey=").append(NVPUtil.encodeUrl(fundingSourceKey));
+		if (this.fundingSourceKey != null) {
+			sb.append(prefix).append("fundingSourceKey=").append(NVPUtil.encodeUrl(this.fundingSourceKey));
 			sb.append("&");
 		}
 		return sb.toString();

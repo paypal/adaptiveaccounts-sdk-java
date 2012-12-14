@@ -599,124 +599,124 @@ public class BusinessInfoType{
 	
 	public String toNVPString(String prefix) throws UnsupportedEncodingException {
 		StringBuilder sb = new StringBuilder();
-		if (businessName != null) {
-			sb.append(prefix).append("businessName=").append(NVPUtil.encodeUrl(businessName));
+		if (this.businessName != null) {
+			sb.append(prefix).append("businessName=").append(NVPUtil.encodeUrl(this.businessName));
 			sb.append("&");
 		}
-		if (businessAddress != null) {
+		if (this.businessAddress != null) {
 			String newPrefix = prefix + "businessAddress.";
-			sb.append(businessAddress.toNVPString(newPrefix));
+			sb.append(this.businessAddress.toNVPString(newPrefix));
 		}
-		if (workPhone != null) {
-			sb.append(prefix).append("workPhone=").append(NVPUtil.encodeUrl(workPhone));
+		if (this.workPhone != null) {
+			sb.append(prefix).append("workPhone=").append(NVPUtil.encodeUrl(this.workPhone));
 			sb.append("&");
 		}
-		if (category != null) {
-			sb.append(prefix).append("category=").append(category);
+		if (this.category != null) {
+			sb.append(prefix).append("category=").append(this.category);
 			sb.append("&");
 		}
-		if (subCategory != null) {
-			sb.append(prefix).append("subCategory=").append(subCategory);
+		if (this.subCategory != null) {
+			sb.append(prefix).append("subCategory=").append(this.subCategory);
 			sb.append("&");
 		}
-		if (merchantCategoryCode != null) {
-			sb.append(prefix).append("merchantCategoryCode=").append(merchantCategoryCode);
+		if (this.merchantCategoryCode != null) {
+			sb.append(prefix).append("merchantCategoryCode=").append(this.merchantCategoryCode);
 			sb.append("&");
 		}
-		if (doingBusinessAs != null) {
-			sb.append(prefix).append("doingBusinessAs=").append(NVPUtil.encodeUrl(doingBusinessAs));
+		if (this.doingBusinessAs != null) {
+			sb.append(prefix).append("doingBusinessAs=").append(NVPUtil.encodeUrl(this.doingBusinessAs));
 			sb.append("&");
 		}
-		if (customerServicePhone != null) {
-			sb.append(prefix).append("customerServicePhone=").append(NVPUtil.encodeUrl(customerServicePhone));
+		if (this.customerServicePhone != null) {
+			sb.append(prefix).append("customerServicePhone=").append(NVPUtil.encodeUrl(this.customerServicePhone));
 			sb.append("&");
 		}
-		if (customerServiceEmail != null) {
-			sb.append(prefix).append("customerServiceEmail=").append(NVPUtil.encodeUrl(customerServiceEmail));
+		if (this.customerServiceEmail != null) {
+			sb.append(prefix).append("customerServiceEmail=").append(NVPUtil.encodeUrl(this.customerServiceEmail));
 			sb.append("&");
 		}
-		if (disputeEmail != null) {
-			sb.append(prefix).append("disputeEmail=").append(NVPUtil.encodeUrl(disputeEmail));
+		if (this.disputeEmail != null) {
+			sb.append(prefix).append("disputeEmail=").append(NVPUtil.encodeUrl(this.disputeEmail));
 			sb.append("&");
 		}
-		if (webSite != null) {
-			sb.append(prefix).append("webSite=").append(NVPUtil.encodeUrl(webSite));
+		if (this.webSite != null) {
+			sb.append(prefix).append("webSite=").append(NVPUtil.encodeUrl(this.webSite));
 			sb.append("&");
 		}
-		if (companyId != null) {
-			sb.append(prefix).append("companyId=").append(NVPUtil.encodeUrl(companyId));
+		if (this.companyId != null) {
+			sb.append(prefix).append("companyId=").append(NVPUtil.encodeUrl(this.companyId));
 			sb.append("&");
 		}
-		if (dateOfEstablishment != null) {
-			sb.append(prefix).append("dateOfEstablishment=").append(NVPUtil.encodeUrl(dateOfEstablishment));
+		if (this.dateOfEstablishment != null) {
+			sb.append(prefix).append("dateOfEstablishment=").append(NVPUtil.encodeUrl(this.dateOfEstablishment));
 			sb.append("&");
 		}
-		if (businessType != null) {
-			sb.append(prefix).append("businessType=").append(businessType.getValue());
+		if (this.businessType != null) {
+			sb.append(prefix).append("businessType=").append(this.businessType.getValue());
 			sb.append("&");
 		}
-		if (businessSubtype != null) {
-			sb.append(prefix).append("businessSubtype=").append(businessSubtype.getValue());
+		if (this.businessSubtype != null) {
+			sb.append(prefix).append("businessSubtype=").append(this.businessSubtype.getValue());
 			sb.append("&");
 		}
-		if (incorporationId != null) {
-			sb.append(prefix).append("incorporationId=").append(NVPUtil.encodeUrl(incorporationId));
+		if (this.incorporationId != null) {
+			sb.append(prefix).append("incorporationId=").append(NVPUtil.encodeUrl(this.incorporationId));
 			sb.append("&");
 		}
-		if (averagePrice != null) {
-			sb.append(prefix).append("averagePrice=").append(averagePrice);
+		if (this.averagePrice != null) {
+			sb.append(prefix).append("averagePrice=").append(this.averagePrice);
 			sb.append("&");
 		}
-		if (averageMonthlyVolume != null) {
-			sb.append(prefix).append("averageMonthlyVolume=").append(averageMonthlyVolume);
+		if (this.averageMonthlyVolume != null) {
+			sb.append(prefix).append("averageMonthlyVolume=").append(this.averageMonthlyVolume);
 			sb.append("&");
 		}
-		if (percentageRevenueFromOnline != null) {
-			sb.append(prefix).append("percentageRevenueFromOnline=").append(percentageRevenueFromOnline);
+		if (this.percentageRevenueFromOnline != null) {
+			sb.append(prefix).append("percentageRevenueFromOnline=").append(this.percentageRevenueFromOnline);
 			sb.append("&");
 		}
-		if (salesVenue != null) {
-			for(int i=0; i < salesVenue.size(); i++) {
-				sb.append(prefix).append("salesVenue(").append(i).append(")=").append(salesVenue.get(i).getValue());
+		if (this.salesVenue != null) {
+			for(int i=0; i < this.salesVenue.size(); i++) {
+				sb.append(prefix).append("salesVenue(").append(i).append(")=").append(this.salesVenue.get(i).getValue());
 				sb.append("&");
 			}
 		}
-		if (salesVenueDesc != null) {
-			sb.append(prefix).append("salesVenueDesc=").append(NVPUtil.encodeUrl(salesVenueDesc));
+		if (this.salesVenueDesc != null) {
+			sb.append(prefix).append("salesVenueDesc=").append(NVPUtil.encodeUrl(this.salesVenueDesc));
 			sb.append("&");
 		}
-		if (vatId != null) {
-			sb.append(prefix).append("vatId=").append(NVPUtil.encodeUrl(vatId));
+		if (this.vatId != null) {
+			sb.append(prefix).append("vatId=").append(NVPUtil.encodeUrl(this.vatId));
 			sb.append("&");
 		}
-		if (vatCountryCode != null) {
-			sb.append(prefix).append("vatCountryCode=").append(NVPUtil.encodeUrl(vatCountryCode));
+		if (this.vatCountryCode != null) {
+			sb.append(prefix).append("vatCountryCode=").append(NVPUtil.encodeUrl(this.vatCountryCode));
 			sb.append("&");
 		}
-		if (commercialRegistrationLocation != null) {
-			sb.append(prefix).append("commercialRegistrationLocation=").append(NVPUtil.encodeUrl(commercialRegistrationLocation));
+		if (this.commercialRegistrationLocation != null) {
+			sb.append(prefix).append("commercialRegistrationLocation=").append(NVPUtil.encodeUrl(this.commercialRegistrationLocation));
 			sb.append("&");
 		}
-		if (principalPlaceOfBusinessAddress != null) {
+		if (this.principalPlaceOfBusinessAddress != null) {
 			String newPrefix = prefix + "principalPlaceOfBusinessAddress.";
-			sb.append(principalPlaceOfBusinessAddress.toNVPString(newPrefix));
+			sb.append(this.principalPlaceOfBusinessAddress.toNVPString(newPrefix));
 		}
-		if (registeredOfficeAddress != null) {
+		if (this.registeredOfficeAddress != null) {
 			String newPrefix = prefix + "registeredOfficeAddress.";
-			sb.append(registeredOfficeAddress.toNVPString(newPrefix));
+			sb.append(this.registeredOfficeAddress.toNVPString(newPrefix));
 		}
-		if (establishmentCountryCode != null) {
-			sb.append(prefix).append("establishmentCountryCode=").append(NVPUtil.encodeUrl(establishmentCountryCode));
+		if (this.establishmentCountryCode != null) {
+			sb.append(prefix).append("establishmentCountryCode=").append(NVPUtil.encodeUrl(this.establishmentCountryCode));
 			sb.append("&");
 		}
-		if (establishmentState != null) {
-			sb.append(prefix).append("establishmentState=").append(NVPUtil.encodeUrl(establishmentState));
+		if (this.establishmentState != null) {
+			sb.append(prefix).append("establishmentState=").append(NVPUtil.encodeUrl(this.establishmentState));
 			sb.append("&");
 		}
-		if (businessStakeholder != null) {
-			for(int i=0; i < businessStakeholder.size(); i++) {
+		if (this.businessStakeholder != null) {
+			for(int i=0; i < this.businessStakeholder.size(); i++) {
 				String newPrefix = prefix + "businessStakeholder" + "(" + i + ").";
-				sb.append(businessStakeholder.get(i).toNVPString(newPrefix));
+				sb.append(this.businessStakeholder.get(i).toNVPString(newPrefix));
 			}
 		}
 		return sb.toString();
