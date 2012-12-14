@@ -37,10 +37,10 @@ public class AdaptiveAccountsService extends BaseService {
 	public static final String SERVICE_NAME = "AdaptiveAccounts";
 
 	//SDK Name
-	private static final String SDK_NAME="sdkname";
+	private static final String SDK_NAME="adaptiveaccounts-java-sdk";
 	
 	//SDK Version
-	private static final String SDK_VERSION="sdkversion";
+	private static final String SDK_VERSION="2.1.96";
 
 	
 	public AdaptiveAccountsService(File configFile) throws IOException {
