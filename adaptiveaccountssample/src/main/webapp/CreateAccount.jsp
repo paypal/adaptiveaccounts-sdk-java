@@ -136,7 +136,7 @@
 					<div class="param_name">Registration Type*</div>
 					<div class="param_value">
 						<select name="regType">
-							<option value="">--Select a value--</option>
+							
 							<option value="Web">Web</option>
 							<option value="Mobile">Mobile</option>
 						</select>
