@@ -20,6 +20,7 @@ import com.paypal.exception.MissingCredentialException;
 import com.paypal.exception.SSLConfigurationException;
 import com.paypal.sdk.exceptions.OAuthException;
 import com.paypal.svcs.services.AdaptiveAccountsService;
+import com.paypal.svcs.types.aa.AccountIdentifierType;
 import com.paypal.svcs.types.aa.AddBankAccountRequest;
 import com.paypal.svcs.types.aa.AddBankAccountResponse;
 import com.paypal.svcs.types.aa.AddPaymentCardRequest;
@@ -416,7 +417,8 @@ public class AdaptiveAccountsServlet extends HttpServlet {
 
 					} else {
 						session.setAttribute("Error", resp.getError());
-						response.sendRedirect(this.getServletContext().getContextPath()+"/Error.jsp");
+						response.sendRedirect(this.getServletContext()
+								.getContextPath() + "/Error.jsp");
 					}
 				}
 			} else if (request.getRequestURI().contains("AddPaymentCard")) {
@@ -514,10 +516,12 @@ public class AdaptiveAccountsServlet extends HttpServlet {
 						map.put("Funding Source Key",
 								resp.getFundingSourceKey());
 						session.setAttribute("map", map);
-						response.sendRedirect(this.getServletContext().getContextPath()+"/Response.jsp");
+						response.sendRedirect(this.getServletContext()
+								.getContextPath() + "/Response.jsp");
 					} else {
 						session.setAttribute("Error", resp.getError());
-						response.sendRedirect(this.getServletContext().getContextPath()+"/Error.jsp");
+						response.sendRedirect(this.getServletContext()
+								.getContextPath() + "/Error.jsp");
 					}
 				}
 			} else if (request.getRequestURI().contains("AddBankAccount")) {
@@ -615,10 +619,12 @@ public class AdaptiveAccountsServlet extends HttpServlet {
 						map.put("Funding Source Key",
 								resp.getFundingSourceKey());
 						session.setAttribute("map", map);
-						response.sendRedirect(this.getServletContext().getContextPath()+"/Response.jsp");
+						response.sendRedirect(this.getServletContext()
+								.getContextPath() + "/Response.jsp");
 					} else {
 						session.setAttribute("Error", resp.getError());
-						response.sendRedirect(this.getServletContext().getContextPath()+"/Error.jsp");
+						response.sendRedirect(this.getServletContext()
+								.getContextPath() + "/Error.jsp");
 					}
 				}
 			} else if (request.getRequestURI().contains("GetUserAgreement")) {
@@ -649,10 +655,12 @@ public class AdaptiveAccountsServlet extends HttpServlet {
 								.getTimestamp());
 						map.put("Agreement", resp.getAgreement());
 						session.setAttribute("map", map);
-						response.sendRedirect(this.getServletContext().getContextPath()+"/Response.jsp");
+						response.sendRedirect(this.getServletContext()
+								.getContextPath() + "/Response.jsp");
 					} else {
 						session.setAttribute("Error", resp.getError());
-						response.sendRedirect(this.getServletContext().getContextPath()+"/Error.jsp");
+						response.sendRedirect(this.getServletContext()
+								.getContextPath() + "/Error.jsp");
 					}
 				}
 
@@ -660,13 +668,16 @@ public class AdaptiveAccountsServlet extends HttpServlet {
 				RequestEnvelope requestEnvelope = new RequestEnvelope();
 				requestEnvelope.setErrorLanguage("en_US");
 				GetVerifiedStatusRequest req = new GetVerifiedStatusRequest(
-						requestEnvelope, request.getParameter("emailAddress"),
-						request.getParameter("matchCriteria"));
+						requestEnvelope, request.getParameter("matchCriteria"));
 				if (request.getParameter("firstName") != ""
 						&& request.getParameter("lastName") != "") {
 					req.setFirstName(request.getParameter("firstName"));
 					req.setLastName(request.getParameter("lastName"));
 				}
+				AccountIdentifierType accountIdentifier = new AccountIdentifierType();
+				accountIdentifier.setEmailAddress(request
+						.getParameter("emailAddress"));
+				req.setAccountIdentifier(accountIdentifier);
 				GetVerifiedStatusResponse resp = service.getVerifiedStatus(req);
 				if (resp != null) {
 					session.setAttribute("RESPONSE_OBJECT", resp);
@@ -685,10 +696,12 @@ public class AdaptiveAccountsServlet extends HttpServlet {
 						map.put("Account Type", resp.getUserInfo()
 								.getAccountType());
 						session.setAttribute("map", map);
-						response.sendRedirect(this.getServletContext().getContextPath()+"/Response.jsp");
+						response.sendRedirect(this.getServletContext()
+								.getContextPath() + "/Response.jsp");
 					} else {
 						session.setAttribute("Error", resp.getError());
-						response.sendRedirect(this.getServletContext().getContextPath()+"/Error.jsp");
+						response.sendRedirect(this.getServletContext()
+								.getContextPath() + "/Error.jsp");
 					}
 				}
 
@@ -719,7 +732,8 @@ public class AdaptiveAccountsServlet extends HttpServlet {
 						map.put("TimeStamp", resp.getResponseEnvelope()
 								.getTimestamp());
 						session.setAttribute("map", map);
-						response.sendRedirect(this.getServletContext().getContextPath()+"/Response.jsp");
+						response.sendRedirect(this.getServletContext()
+								.getContextPath() + "/Response.jsp");
 					} else {
 						session.setAttribute("Error", resp.getError());
 						response.sendRedirect(this.getServletContext()
