@@ -25,13 +25,15 @@ import com.paypal.svcs.types.aa.AddPartnerFinancialProductRequest;
 import com.paypal.svcs.types.aa.AddPartnerFinancialProductResponse;
 import com.paypal.svcs.types.aa.ActivateProductRequest;
 import com.paypal.svcs.types.aa.ActivateProductResponse;
+import com.paypal.svcs.types.aa.UpdateComplianceStatusRequest;
+import com.paypal.svcs.types.aa.UpdateComplianceStatusResponse;
 import com.paypal.sdk.exceptions.OAuthException;
 
 public class AdaptiveAccountsService extends BaseService {
 
 
 	// Service Version
-	public static final String SERVICE_VERSION = "1.0.3";
+	public static final String SERVICE_VERSION = "1.1.0";
 
 	// Service Name
 	public static final String SERVICE_NAME = "AdaptiveAccounts";
@@ -40,7 +42,7 @@ public class AdaptiveAccountsService extends BaseService {
 	private static final String SDK_NAME="adaptiveaccounts-java-sdk";
 	
 	//SDK Version
-	private static final String SDK_VERSION="2.1.96";
+	private static final String SDK_VERSION="2.2.98";
 
 	
 	public AdaptiveAccountsService(File configFile) throws IOException {
@@ -1041,6 +1043,79 @@ public class AdaptiveAccountsService extends BaseService {
 		((PlatformAPICallPreHandler) apiCallPreHandler).setPortName(portName);
 	 	String response = call(apiCallPreHandler);
 		return ActivateProductResponse.createInstance(NVPUtil.decode(response), "", -1);
+	}
+	/**	
+	 * 
+	 *   To Update the Compliance Status (CIP, KYC, EDD) called
+	 * from Authorized Third Party Vendor.
+	 * 
+	 * @throws SSLConfigurationException
+	 * @throws InvalidCredentialException
+	 * @throws UnsupportedEncodingException
+	 * @throws IOException
+	 * @throws HttpErrorException
+	 * @throws InvalidResponseDataException
+	 * @throws ClientActionRequiredException
+	 * @throws MissingCredentialException
+	 * @throws InterruptedException
+	 * @throws OAuthException
+	 */
+	 public UpdateComplianceStatusResponse updateComplianceStatus(UpdateComplianceStatusRequest updateComplianceStatusRequest, String apiUsername) throws SSLConfigurationException, InvalidCredentialException, UnsupportedEncodingException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException {
+	 	APICallPreHandler apiCallPreHandler = null;
+	 	String portName = "AdaptiveAccounts";
+		apiCallPreHandler = new PlatformAPICallPreHandler(updateComplianceStatusRequest.toNVPString(), SERVICE_NAME, "UpdateComplianceStatus", apiUsername, getAccessToken(), getTokenSecret());
+	    ((PlatformAPICallPreHandler) apiCallPreHandler).setSdkName(SDK_NAME);
+		((PlatformAPICallPreHandler) apiCallPreHandler).setSdkVersion(SDK_VERSION);
+		((PlatformAPICallPreHandler) apiCallPreHandler).setPortName(portName);
+	 	String response = call(apiCallPreHandler);
+		return UpdateComplianceStatusResponse.createInstance(NVPUtil.decode(response), "", -1);
+	 }
+	 
+	/** 
+	 * 
+	 *   To Update the Compliance Status (CIP, KYC, EDD) called
+	 * from Authorized Third Party Vendor.
+	 * 
+	 * @throws SSLConfigurationException
+	 * @throws InvalidCredentialException
+	 * @throws UnsupportedEncodingException
+	 * @throws IOException
+	 * @throws HttpErrorException
+	 * @throws InvalidResponseDataException
+	 * @throws ClientActionRequiredException
+	 * @throws MissingCredentialException
+	 * @throws InterruptedException
+	 * @throws OAuthException
+	 */
+	 public UpdateComplianceStatusResponse updateComplianceStatus(UpdateComplianceStatusRequest updateComplianceStatusRequest) throws SSLConfigurationException, InvalidCredentialException, UnsupportedEncodingException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException {
+	 	return updateComplianceStatus(updateComplianceStatusRequest, (String) null);
+	 }
+
+	/** 
+	 * 
+	 *   To Update the Compliance Status (CIP, KYC, EDD) called
+	 * from Authorized Third Party Vendor.
+	 * 
+	 * @throws SSLConfigurationException
+	 * @throws InvalidCredentialException
+	 * @throws UnsupportedEncodingException
+	 * @throws IOException
+	 * @throws HttpErrorException
+	 * @throws InvalidResponseDataException
+	 * @throws ClientActionRequiredException
+	 * @throws MissingCredentialException
+	 * @throws InterruptedException
+	 * @throws OAuthException
+	 */
+	 public UpdateComplianceStatusResponse updateComplianceStatus(UpdateComplianceStatusRequest updateComplianceStatusRequest, ICredential credential) throws SSLConfigurationException, InvalidCredentialException, UnsupportedEncodingException, IOException, HttpErrorException, InvalidResponseDataException, ClientActionRequiredException, MissingCredentialException, InterruptedException, OAuthException {
+	 	APICallPreHandler apiCallPreHandler = null;
+	 	String portName = "AdaptiveAccounts";
+		apiCallPreHandler = new PlatformAPICallPreHandler(updateComplianceStatusRequest.toNVPString(), SERVICE_NAME, "UpdateComplianceStatus", credential);
+		((PlatformAPICallPreHandler) apiCallPreHandler).setSdkName(SDK_NAME);
+		((PlatformAPICallPreHandler) apiCallPreHandler).setSdkVersion(SDK_VERSION);
+		((PlatformAPICallPreHandler) apiCallPreHandler).setPortName(portName);
+	 	String response = call(apiCallPreHandler);
+		return UpdateComplianceStatusResponse.createInstance(NVPUtil.decode(response), "", -1);
 	}
 
 }

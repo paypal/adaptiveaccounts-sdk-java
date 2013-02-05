@@ -1,12 +1,11 @@
 package com.paypal.svcs.types.aa;
 import com.paypal.svcs.types.common.RequestEnvelope;
+import com.paypal.svcs.types.aa.AccountIdentifierType;
 import java.io.UnsupportedEncodingException;
 import com.paypal.core.NVPUtil;
 
 /**
- * matchCriteria determines which field(s) in addition to
- * emailAddress is used to locate the account. Currently, we
- * support matchCriteria of 'NAME' and 'NONE'. 
+ * Deprecated, use accountIdentifier.emailAddress instead 
  */
 public class GetVerifiedStatusRequest{
 
@@ -18,10 +17,16 @@ public class GetVerifiedStatusRequest{
 	private RequestEnvelope requestEnvelope;
 
 	/**
-	 * 	  
-	 *@Required	 
+	 * Deprecated, use accountIdentifier.emailAddress instead 	 
 	 */ 
 	private String emailAddress;
+
+	/**
+	 * Identifies a PayPal account to which this request is
+	 * targeted. Caller of this API has to provide ONLY one of
+	 * these inputs: emailAddress, accountId or mobilePhoneNumber. 	 
+	 */ 
+	private AccountIdentifierType accountIdentifier;
 
 	/**
 	 * matchCriteria determines which field(s) in addition to
@@ -48,9 +53,8 @@ public class GetVerifiedStatusRequest{
 	/**
 	 * Constructor with arguments
 	 */
-	public GetVerifiedStatusRequest (RequestEnvelope requestEnvelope, String emailAddress, String matchCriteria){
+	public GetVerifiedStatusRequest (RequestEnvelope requestEnvelope, String matchCriteria){
 		this.requestEnvelope = requestEnvelope;
-		this.emailAddress = emailAddress;
 		this.matchCriteria = matchCriteria;
 	}	
 
@@ -86,6 +90,20 @@ public class GetVerifiedStatusRequest{
 	 */
 	 public void setEmailAddress(String emailAddress) {
 	 	this.emailAddress = emailAddress;
+	 }
+	 
+	/**
+	 * Getter for accountIdentifier
+	 */
+	 public AccountIdentifierType getAccountIdentifier() {
+	 	return accountIdentifier;
+	 }
+	 
+	/**
+	 * Setter for accountIdentifier
+	 */
+	 public void setAccountIdentifier(AccountIdentifierType accountIdentifier) {
+	 	this.accountIdentifier = accountIdentifier;
 	 }
 	 
 	/**
@@ -145,6 +163,10 @@ public class GetVerifiedStatusRequest{
 		if (this.emailAddress != null) {
 			sb.append(prefix).append("emailAddress=").append(NVPUtil.encodeUrl(this.emailAddress));
 			sb.append("&");
+		}
+		if (this.accountIdentifier != null) {
+			String newPrefix = prefix + "accountIdentifier.";
+			sb.append(this.accountIdentifier.toNVPString(newPrefix));
 		}
 		if (this.matchCriteria != null) {
 			sb.append(prefix).append("matchCriteria=").append(NVPUtil.encodeUrl(this.matchCriteria));

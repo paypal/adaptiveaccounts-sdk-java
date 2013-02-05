@@ -20,7 +20,7 @@ public class AccountIdentifierType{
 	 * Identifies the PayPal account based on the phoneNumber. 	  
 	 *@Required	 
 	 */ 
-	private String phoneNumber;
+	private String mobilePhoneNumber;
 
 	/**
 	 * Identifies the PayPal account based on the accountId. 	  
@@ -33,9 +33,9 @@ public class AccountIdentifierType{
 	/**
 	 * Constructor with arguments
 	 */
-	public AccountIdentifierType (String emailAddress, String phoneNumber, String accountId){
+	public AccountIdentifierType (String emailAddress, String mobilePhoneNumber, String accountId){
 		this.emailAddress = emailAddress;
-		this.phoneNumber = phoneNumber;
+		this.mobilePhoneNumber = mobilePhoneNumber;
 		this.accountId = accountId;
 	}	
 
@@ -60,17 +60,17 @@ public class AccountIdentifierType{
 	 }
 	 
 	/**
-	 * Getter for phoneNumber
+	 * Getter for mobilePhoneNumber
 	 */
-	 public String getPhoneNumber() {
-	 	return phoneNumber;
+	 public String getMobilePhoneNumber() {
+	 	return mobilePhoneNumber;
 	 }
 	 
 	/**
-	 * Setter for phoneNumber
+	 * Setter for mobilePhoneNumber
 	 */
-	 public void setPhoneNumber(String phoneNumber) {
-	 	this.phoneNumber = phoneNumber;
+	 public void setMobilePhoneNumber(String mobilePhoneNumber) {
+	 	this.mobilePhoneNumber = mobilePhoneNumber;
 	 }
 	 
 	/**
@@ -99,8 +99,8 @@ public class AccountIdentifierType{
 			sb.append(prefix).append("emailAddress=").append(NVPUtil.encodeUrl(this.emailAddress));
 			sb.append("&");
 		}
-		if (this.phoneNumber != null) {
-			sb.append(prefix).append("phoneNumber=").append(NVPUtil.encodeUrl(this.phoneNumber));
+		if (this.mobilePhoneNumber != null) {
+			sb.append(prefix).append("mobilePhoneNumber=").append(NVPUtil.encodeUrl(this.mobilePhoneNumber));
 			sb.append("&");
 		}
 		if (this.accountId != null) {
