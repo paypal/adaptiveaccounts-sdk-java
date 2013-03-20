@@ -27,21 +27,23 @@ To make an API call:
 --------------------		
 *	Import AdaptiveAccountsService.java into your code.
 		
-*	Copy the configuration file 'sdk_config.properties' in 'adaptiveaccountssample/src/main/resources' folder to your application 'src/main/resources'. And load it using,  
-		  
-    ```java
-    new AdaptiveAccountsService(this.getClass().getResourceAsStream("/sdk_config.properties"));
-    ```
+*	Copy the configuration file 'sdk_config.properties' in 'adaptiveaccountssample/src/main/resources' folder to your application 'src/main/resources'. Use the default constructor to run in default configuration		  
+ 
+	new AdaptiveAccountsService();
 	
-*	Or load the configuration file from any location using absolute path with the below method calls as required.
+*	For Dynamic configuration(configuration is valid for the lifetime of the service object)		
 
-    ```java
-    new AdaptiveAccountsService(new File(" .../sdk_config.properties"));
-                         Or
-    new AdaptiveAccountsService(new InputStream(new File(" .../sdk_config.properties")));
-                         Or
-    new AdaptiveAccountsService(" .../sdk_config.properties");
-    ```
+	new AdaptiveAccountsService(new File("/pathto/custom.properties"));				
+                             Or		
+    	new AdaptiveAccountsService(new InputStream(new File("/pathto/custom.properties")));		
+                         Or		
+    	new AdaptiveAccountsService("/pathto/custom.properties");		
+    			 Or		
+	new AdaptiveAccountsService(Map<String, String> customConfigurationMap);		
+			 Or		
+	new AdaptiveAccountsService(Properties customProperties);		
+
+*	The SDK assumes defaults for certain parameters(refer sdk_config.properties for defaults). Either 'mode' or 'service.Endpoint' is a mandatory configuration. Account credentials are treated as mandatory parameters.
   
 *	Create a service wrapper object.
 
@@ -94,9 +96,11 @@ The SDK uses .properties format configuration file. Sample of this file is at
  
 'adaptiveaccountssample/src/main/resources/'. You can use the 'sdk_config.properties' configuration file to configure
 
-*	(Multiple) API account credentials.
+*	Mode is specified using the parameter name 'mode' with values 'sandbox' or 'live', if specified 'service.EndPoint' parameter is not required and the SDK choses the sandbox or live endpoints automatically.
 
-*	HTTP connection parameters.
+*	(Multiple) API account credentials, by appending a '.' (dot) character and the service name to 'service.EndPoint' parameter.
+
+*	HTTP connection parameters, if certain connection parameters are not specified, the SDK will assume defaults for them.
 
 *	Service configuration.
 
