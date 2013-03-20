@@ -29,15 +29,19 @@ To make an API call:
 		
 *	Copy the configuration file 'sdk_config.properties' in 'adaptiveaccountssample/src/main/resources' folder to your application 'src/main/resources'. And load it using,  
 		  
-		new AdaptiveAccountsService(this.getClass().getResourceAsStream("/sdk_config.properties"));
+    ```java
+    new AdaptiveAccountsService(this.getClass().getResourceAsStream("/sdk_config.properties"));
+    ```
 	
 *	Or load the configuration file from any location using absolute path with the below method calls as required.
 
-          new AdaptiveAccountsService(new File(" .../sdk_config.properties"));
-                                 Or
-		  new AdaptiveAccountsService(new InputStream(new File(" .../sdk_config.properties")));
-                                 Or
-          new AdaptiveAccountsService(" .../sdk_config.properties");
+    ```java
+    new AdaptiveAccountsService(new File(" .../sdk_config.properties"));
+                         Or
+    new AdaptiveAccountsService(new InputStream(new File(" .../sdk_config.properties")));
+                         Or
+    new AdaptiveAccountsService(" .../sdk_config.properties");
+    ```
   
 *	Create a service wrapper object.
 
@@ -45,39 +49,39 @@ To make an API call:
 
 *	Invoke the appropriate method on the service wrapper object.
 
-For example,
+    For example,
 
           
-	  import com.paypal.svcs.services.AdaptiveAccountsService;
-	  import com.paypal.svcs.types.common.RequestEnvelope;
-	  import com.paypal.svcs.types.aa.AddressType;
-	  import com.paypal.svcs.types.aa.CreateAccountRequest;
-	  import com.paypal.svcs.types.aa.CreateAccountResponse;
-	  import com.paypal.svcs.types.aa.NameType;
-	  ...
-	  
-          
-          
-		  RequestEnvelope env = new RequestEnvelope();
-	      env.setErrorLanguage("en_US");
-          ...
-          
-		  NameType name = new NameType("John", "Lui");
-          ...
-          
-          AddressType address = new AddressType("Main St", "US");
-	      ...
-	  
-		  String preferredLanguageCode ="en_US";
-		  ...
-		  
-	      CreateAccountRequest createAccountRequest = new CreateAccountRequest(requestEnvelope, name, address, preferredLanguageCode);
-          ...
+    ```java
+    import com.paypal.svcs.services.AdaptiveAccountsService;
+    import com.paypal.svcs.types.common.RequestEnvelope;
+    import com.paypal.svcs.types.aa.*;
+    ...
 
-   		  AdaptiveAccountsService adaptiveAccountsService = new AdaptiveAccountsService(this.getClass().getResourceAsStream("/sdk_config.properties"));
-		  //userName is optional
-		  CreateAccountResponse createAccountResponse = adaptiveAccountsService.createAccount(createAccountRequest,userName);
-		  
+
+
+    RequestEnvelope env = new RequestEnvelope();
+    env.setErrorLanguage("en_US");
+    ...
+
+    NameType name = new NameType("John", "Lui");
+    ...
+
+    AddressType address = new AddressType("Main St", "US");
+    ...
+
+    String preferredLanguageCode ="en_US";
+    ...
+
+    CreateAccountRequest createAccountRequest = new CreateAccountRequest(requestEnvelope, 
+                                                            name, address, preferredLanguageCode);
+    ...
+
+    AdaptiveAccountsService adaptiveAccountsService = new AdaptiveAccountsService(
+                                                        this.getClass().getResourceAsStream("/sdk_config.properties"));
+    //userName is optional
+    CreateAccountResponse createAccountResponse = adaptiveAccountsService.createAccount(createAccountRequest,userName);
+    ```
 
 SDK Logging:
 ------------
