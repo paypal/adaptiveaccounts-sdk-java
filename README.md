@@ -27,15 +27,15 @@ To make an API call:
 --------------------		
 *	Import AdaptiveAccountsService.java into your code.
 		
-*	Copy the configuration file 'sdk_config.properties' in 'adaptiveaccountssample/src/main/resources' folder to your application 'src/main/resources'. Use the default constructor to run in default configuration		  
- 
+*	Copy the configuration file 'sdk_config.properties' in 'adaptiveaccountssample/src/main/resources' folder to your application 'src/main/resources'. Use the default constructor to run in default configuration.
+	```java
 	new AdaptiveAccountsService();
-	
+	```
 *	For Dynamic configuration(configuration is valid for the lifetime of the service object)		
 	```java
 	new AdaptiveAccountsService(new File("/pathto/custom.properties"));
 			 Or
-	new AdaptiveAccountsService(new InputStream(new File("/pathto/custom.properties")));
+	new AdaptiveAccountsService(new FileInputStream(new File("/pathto/custom.properties")));
 			 Or
 	new AdaptiveAccountsService("/pathto/custom.properties");
 			 Or
@@ -79,8 +79,7 @@ To make an API call:
                                                             name, address, preferredLanguageCode);
     ...
 
-    AdaptiveAccountsService adaptiveAccountsService = new AdaptiveAccountsService(
-                                                        this.getClass().getResourceAsStream("/sdk_config.properties"));
+    AdaptiveAccountsService adaptiveAccountsService = new AdaptiveAccountsService();
     //userName is optional
     CreateAccountResponse createAccountResponse = adaptiveAccountsService.createAccount(createAccountRequest,userName);
     ```
@@ -96,7 +95,7 @@ The SDK uses .properties format configuration file. Sample of this file is at
  
 'adaptiveaccountssample/src/main/resources/'. You can use the 'sdk_config.properties' configuration file to configure
 
-*	Mode is specified using the parameter name 'mode' with values 'sandbox' or 'live', if specified 'service.EndPoint' parameter is not required and the SDK choses the sandbox or live endpoints automatically.
+*	Mode is specified using the parameter name 'mode' with values 'sandbox' or 'live', if specified 'service.EndPoint' parameter is not required and the SDK chooses the sandbox or live endpoints automatically.
 
 *	(Multiple) API account credentials, by appending a '.' (dot) character and the service name to 'service.EndPoint' parameter.
 
