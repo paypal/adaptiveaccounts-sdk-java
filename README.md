@@ -32,17 +32,17 @@ To make an API call:
 	new AdaptiveAccountsService();
 	
 *	For Dynamic configuration(configuration is valid for the lifetime of the service object)		
-
-	new AdaptiveAccountsService(new File("/pathto/custom.properties"));				
-                             Or		
-    	new AdaptiveAccountsService(new InputStream(new File("/pathto/custom.properties")));		
-                         Or		
-    	new AdaptiveAccountsService("/pathto/custom.properties");		
-    			 Or		
-	new AdaptiveAccountsService(Map<String, String> customConfigurationMap);		
-			 Or		
-	new AdaptiveAccountsService(Properties customProperties);		
-
+	```java
+	new AdaptiveAccountsService(new File("/pathto/custom.properties"));
+			 Or
+	new AdaptiveAccountsService(new InputStream(new File("/pathto/custom.properties")));
+			 Or
+	new AdaptiveAccountsService("/pathto/custom.properties");
+			 Or
+	new AdaptiveAccountsService(Map<String, String> customConfigurationMap);
+			 Or
+	new AdaptiveAccountsService(Properties customProperties);
+	```
 *	The SDK assumes defaults for certain parameters(refer sdk_config.properties for defaults). Either 'mode' or 'service.Endpoint' is a mandatory configuration. Account credentials are treated as mandatory parameters.
   
 *	Create a service wrapper object.
