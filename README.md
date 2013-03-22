@@ -29,7 +29,7 @@ To make an API call:
 --------------------		
 *	Import AdaptiveAccountsService.java into your code.
 		
-*	Copy the configuration file 'sdk_config.properties' in 'adaptiveaccountssample/src/main/resources' folder to your application 'src/main/resources'. Use the default constructor to run in default configuration.
+*	Copy the configuration file 'sdk_config.properties' in 'adaptiveaccountssample/src/main/resources' folder to your application 'src/main/resources'. Use the default constructor to run in default configuration(configuration used from sdk_config.properties found in classpath).
 	```java
 	new AdaptiveAccountsService();
 	```
@@ -45,7 +45,7 @@ To make an API call:
 			 Or
 	new AdaptiveAccountsService(Properties customProperties);
 	```
-*	The SDK assumes defaults for certain parameters(refer sdk_config.properties for defaults). Account Credentials and erither of 'mode' or 'service.Endpoint' are mandatory parameters.
+*	The SDK takes defaults for certain parameters(refer sdk_config.properties for defaults). Account Credentials and either of 'mode' or 'service.Endpoint' are mandatory parameters.
   
 *	Create a service wrapper object.
 
@@ -74,6 +74,11 @@ To make an API call:
                                                             name, address, preferredLanguageCode);
     ...
     AdaptiveAccountsService adaptiveAccountsService = new AdaptiveAccountsService();
+			Or
+    Map<String, String> customConfigurationMap = new HashMap<String, String>();
+    customConfigurationMap.put("mode", "sandbox"); // Load the map with all mandatory parameters
+    ...
+    AdaptiveAccountsService adaptiveAccountsService = new AdaptiveAccountsService(Map<String, String> customConfigurationMap);
     CreateAccountResponse createAccountResponse = adaptiveAccountsService.createAccount(createAccountRequest,userName);
     ```
 
@@ -96,7 +101,7 @@ The SDK uses .properties format configuration file. Sample of this file is at
 
 *	Service configuration.
 
-Multiple End-points Support
+Multiple SDK usage (Multiple End-points Support)
 ---------------------------
 Multiple end-points configuration can be done by specifying mulitple end-points identified by specific property keys. 
 When using multiple SDKs in combination, like Merchant and Permissions etc..configure the endpoints as shown below 
