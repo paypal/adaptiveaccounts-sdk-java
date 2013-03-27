@@ -7,148 +7,148 @@ import java.io.UnsupportedEncodingException;
 import com.paypal.core.NVPUtil;
 
 /**
- * Identifying the PayPal account to which this request is
- * targetted to. Caller of this API has to either provided an
- * emailAddress or an accountId. 
+ *  Identifying the PayPal account to which this request is
+ *  targetted to. Caller of this API has to either provided an
+ *  emailAddress or an accountId. 
  */
 public class AddBankAccountRequest{
 
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private RequestEnvelope requestEnvelope;
 
 	/**
-	 * Identifying the PayPal account to which this request is
-	 * targetted to. Caller of this API has to either provided an
-	 * emailAddress or an accountId. 	 
+	*  Identifying the PayPal account to which this request is
+	*  targetted to. Caller of this API has to either provided an
+	*  emailAddress or an accountId. 	 
 	 */ 
 	private String emailAddress;
 
 	/**
-	 * Identifying the PayPal account to which this request is
-	 * targetted to. Caller of this API has to either provided an
-	 * emailAddress or an accountId. 	 
+	*  Identifying the PayPal account to which this request is
+	*  targetted to. Caller of this API has to either provided an
+	*  emailAddress or an accountId. 	 
 	 */ 
 	private String accountId;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String createAccountKey;
 
 	/**
-	 * Country code for the bank 	  
+	*  Country code for the bank 	  
 	 *@Required	 
 	 */ 
 	private String bankCountryCode;
 
 	/**
-	 * The defualt value is UNKNOWN. 	 
+	*  The defualt value is UNKNOWN. 	 
 	 */ 
 	private String bankName;
 
 	/**
-	 * Bank routing or transit number 	 
+	*  Bank routing or transit number 	 
 	 */ 
 	private String routingNumber;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private BankAccountType bankAccountType;
 
 	/**
-	 * Basic Bank Account Number (BBAN) 	 
+	*  Basic Bank Account Number (BBAN) 	 
 	 */ 
 	private String bankAccountNumber;
 
 	/**
-	 * International Bank Account Number (IBAN) 	 
+	*  International Bank Account Number (IBAN) 	 
 	 */ 
 	private String iban;
 
 	/**
-	 * CLABE represents the bank information for countries like
-	 * Mexico 	 
+	*  CLABE represents the bank information for countries like
+	*  Mexico 	 
 	 */ 
 	private String clabe;
 
 	/**
-	 * Bank/State/Branch number 	 
+	*  Bank/State/Branch number 	 
 	 */ 
 	private String bsbNumber;
 
 	/**
-	 * Branch location 	 
+	*  Branch location 	 
 	 */ 
 	private String branchLocation;
 
 	/**
-	 * Branch sort code. 	 
+	*  Branch sort code. 	 
 	 */ 
 	private String sortCode;
 
 	/**
-	 * Bank transit number 	 
+	*  Bank transit number 	 
 	 */ 
 	private String bankTransitNumber;
 
 	/**
-	 * Institution number 	 
+	*  Institution number 	 
 	 */ 
 	private String institutionNumber;
 
 	/**
-	 * Branch code 	 
+	*  Branch code 	 
 	 */ 
 	private String branchCode;
 
 	/**
-	 * For Brazil Agency Number 	 
+	*  For Brazil Agency Number 	 
 	 */ 
 	private String agencyNumber;
 
 	/**
-	 * Bank code 	 
+	*  Bank code 	 
 	 */ 
 	private String bankCode;
 
 	/**
-	 * RIB key 	 
+	*  RIB key 	 
 	 */ 
 	private String ribKey;
 
 	/**
-	 * control digits 	 
+	*  control digits 	 
 	 */ 
 	private String controlDigit;
 
 	/**
-	 * Tax id type of CNPJ or CPF, only supported for Brazil. 	 
+	*  Tax id type of CNPJ or CPF, only supported for Brazil. 	 
 	 */ 
 	private String taxIdType;
 
 	/**
-	 * Tax id number for Brazil. 	 
+	*  Tax id number for Brazil. 	 
 	 */ 
 	private String taxIdNumber;
 
 	/**
-	 * Date of birth of the account holder 	 
+	*  Date of birth of the account holder 	 
 	 */ 
 	private String accountHolderDateOfBirth;
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private ConfirmationType confirmationType;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private WebOptionsType webOptions;
 

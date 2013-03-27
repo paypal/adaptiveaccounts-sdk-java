@@ -1,11 +1,10 @@
 package com.paypal.svcs.types.aa;
 
 /**
- * 
  *  Bank account type should be CHECKING,
- *  SAVINGS,BUSINESS_CHECKING,
- *  BUSINESS_SAVINGS,NORMAL, or UNKNOWN.
- * 
+ *   SAVINGS,BUSINESS_CHECKING,
+ *   BUSINESS_SAVINGS,NORMAL, or UNKNOWN.
+ *   
  */
 public enum  BankAccountType {
 

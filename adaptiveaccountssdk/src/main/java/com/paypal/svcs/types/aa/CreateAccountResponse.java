@@ -6,41 +6,41 @@ import com.paypal.svcs.types.common.ErrorData;
 import java.util.Map;
 
 /**
- * Valid values are: COMPLETED 
+ *  Valid values are: COMPLETED 
  */
 public class CreateAccountResponse{
 
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private ResponseEnvelope responseEnvelope;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String createAccountKey;
 
 	/**
-	 * Valid values are: COMPLETED 	  
+	*  Valid values are: COMPLETED 	  
 	 *@Required	 
 	 */ 
 	private String execStatus;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String redirectURL;
 
 	/**
-	 * Identifies a PayPal account. Only premier and business
-	 * accounts have an accountId 	 
+	*  Identifies a PayPal account. Only premier and business
+	*  accounts have an accountId 	 
 	 */ 
 	private String accountId;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private List<ErrorData> error = new ArrayList<ErrorData>();
 

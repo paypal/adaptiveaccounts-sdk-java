@@ -7,30 +7,30 @@ import com.paypal.svcs.types.common.ErrorData;
 import java.util.Map;
 
 /**
- * Valid values are: SUCCESS, FAILED 
+ *  Valid values are: SUCCESS, FAILED 
  */
 public class ActivateProductResponse{
 
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private ResponseEnvelope responseEnvelope;
 
 	/**
-	 * Valid values are: SUCCESS, FAILED 	  
+	*  Valid values are: SUCCESS, FAILED 	  
 	 *@Required	 
 	 */ 
 	private String execStatus;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private List<ProductActivationErrors> productActivationErrors = new ArrayList<ProductActivationErrors>();
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private List<ErrorData> error = new ArrayList<ErrorData>();
 

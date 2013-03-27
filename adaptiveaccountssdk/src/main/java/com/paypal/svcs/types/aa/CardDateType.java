@@ -3,19 +3,19 @@ import java.io.UnsupportedEncodingException;
 import com.paypal.core.NVPUtil;
 
 /**
- * Month in integer format, between 1 and 12 
+ *  Month in integer format, between 1 and 12 
  */
 public class CardDateType{
 
 
 	/**
-	 * Month in integer format, between 1 and 12 	  
+	*  Month in integer format, between 1 and 12 	  
 	 *@Required	 
 	 */ 
 	private Integer month;
 
 	/**
-	 * Year in four digit format- YYYY 	  
+	*  Year in four digit format- YYYY 	  
 	 *@Required	 
 	 */ 
 	private Integer year;

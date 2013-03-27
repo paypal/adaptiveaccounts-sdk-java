@@ -6,25 +6,25 @@ import com.paypal.svcs.types.common.ErrorData;
 import java.util.Map;
 
 /**
- * 
+ *  
  */
 public class GetUserAgreementResponse{
 
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private ResponseEnvelope responseEnvelope;
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private String agreement;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private List<ErrorData> error = new ArrayList<ErrorData>();
 

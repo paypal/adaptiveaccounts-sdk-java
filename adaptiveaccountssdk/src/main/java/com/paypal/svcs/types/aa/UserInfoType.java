@@ -3,36 +3,36 @@ import com.paypal.svcs.types.aa.NameType;
 import java.util.Map;
 
 /**
- * Info about PayPal user such as emailAddress, accountId,
- * firstName, lastName etc. 
+ *  Info about PayPal user such as emailAddress, accountId,
+ *  firstName, lastName etc. 
  */
 public class UserInfoType{
 
 
 	/**
-	 * Returns emailAddress belonging to PayPal account. 	 
+	*  Returns emailAddress belonging to PayPal account. 	 
 	 */ 
 	private String emailAddress;
 
 	/**
-	 * Valid values are: Personal, Premier, and Business (not
-	 * case-sensitive). 	 
+	*  Valid values are: Personal, Premier, and Business (not
+	*  case-sensitive). 	 
 	 */ 
 	private String accountType;
 
 	/**
-	 * Identifies a PayPal account. Only premier and business
-	 * accounts have an accountId 	 
+	*  Identifies a PayPal account. Only premier and business
+	*  accounts have an accountId 	 
 	 */ 
 	private String accountId;
 
 	/**
-	 * Identifies a PayPal user, like firstName, lastName. 	 
+	*  Identifies a PayPal user, like firstName, lastName. 	 
 	 */ 
 	private NameType name;
 
 	/**
-	 * Business Name of the PayPal account holder. 	 
+	*  Business Name of the PayPal account holder. 	 
 	 */ 
 	private String businessName;
 

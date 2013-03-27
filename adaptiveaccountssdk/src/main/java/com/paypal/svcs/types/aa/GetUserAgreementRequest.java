@@ -4,29 +4,29 @@ import java.io.UnsupportedEncodingException;
 import com.paypal.core.NVPUtil;
 
 /**
- * 
+ *  
  */
 public class GetUserAgreementRequest{
 
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private RequestEnvelope requestEnvelope;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String createAccountKey;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String countryCode;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String languageCode;
 

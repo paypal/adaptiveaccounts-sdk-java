@@ -6,25 +6,25 @@ import com.paypal.svcs.types.common.ErrorData;
 import java.util.Map;
 
 /**
- * Valid values are: CARD_ADDED 
+ *  Valid values are: CARD_ADDED 
  */
 public class AddPartnerFinancialProductResponse{
 
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private ResponseEnvelope responseEnvelope;
 
 	/**
-	 * Valid values are: CARD_ADDED 	  
+	*  Valid values are: CARD_ADDED 	  
 	 *@Required	 
 	 */ 
 	private String execStatus;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private List<ErrorData> error = new ArrayList<ErrorData>();
 

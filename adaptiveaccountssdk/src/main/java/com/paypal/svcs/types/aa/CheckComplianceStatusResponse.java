@@ -6,32 +6,32 @@ import com.paypal.svcs.types.common.ErrorData;
 import java.util.Map;
 
 /**
- * Returned values are: ALLOW|DENY 
+ *  Returned values are: ALLOW|DENY 
  */
 public class CheckComplianceStatusResponse{
 
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private ResponseEnvelope responseEnvelope;
 
 	/**
-	 * Returned values are: ALLOW|DENY 	  
+	*  Returned values are: ALLOW|DENY 	  
 	 *@Required	 
 	 */ 
 	private String execStatus;
 
 	/**
-	 * Returned values are: CLIENT_NOT_SUPPORTED,
-	 * COUNTRY_NOT_SUPPORTED, VERIFICATION_NOT_COMPLETED,
-	 * DOCUMENTS_UNDER_REVIEW, DENIED 	 
+	*  Returned values are: CLIENT_NOT_SUPPORTED,
+	*  COUNTRY_NOT_SUPPORTED, VERIFICATION_NOT_COMPLETED,
+	*  DOCUMENTS_UNDER_REVIEW, DENIED 	 
 	 */ 
 	private String denialReason;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private List<ErrorData> error = new ArrayList<ErrorData>();
 

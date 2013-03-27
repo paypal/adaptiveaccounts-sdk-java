@@ -1,14 +1,13 @@
 package com.paypal.svcs.types.common;
 
 /**
- * 
  *  AckCodeType This code identifies the
- *  acknowledgement code types that could be used to
- *  communicate the status of processing a (request)
- *  message to an application. This code would be
- *  used as part of a response message that contains
- *  an application level acknowledgement element.
- * 
+ *   acknowledgement code types that could be used to
+ *   communicate the status of processing a (request)
+ *   message to an application. This code would be
+ *   used as part of a response message that contains
+ *   an application level acknowledgement element.
+ *   
  */
 public enum  AckCode {
 

@@ -3,31 +3,31 @@ import java.io.UnsupportedEncodingException;
 import com.paypal.core.NVPUtil;
 
 /**
- * 
+ *  
  */
 public class AuditDetailsType{
 
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private String status;
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private String level;
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private String method;
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private String reason;

@@ -10,96 +10,96 @@ import java.io.UnsupportedEncodingException;
 import com.paypal.core.NVPUtil;
 
 /**
- * Identifying the PayPal account to which this request is
- * targetted to. Caller of this API has to either provided an
- * emailAddress or an accountId. 
+ *  Identifying the PayPal account to which this request is
+ *  targetted to. Caller of this API has to either provided an
+ *  emailAddress or an accountId. 
  */
 public class AddPaymentCardRequest{
 
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private RequestEnvelope requestEnvelope;
 
 	/**
-	 * Identifying the PayPal account to which this request is
-	 * targetted to. Caller of this API has to either provided an
-	 * emailAddress or an accountId. 	 
+	*  Identifying the PayPal account to which this request is
+	*  targetted to. Caller of this API has to either provided an
+	*  emailAddress or an accountId. 	 
 	 */ 
 	private String emailAddress;
 
 	/**
-	 * Identifying the PayPal account to which this request is
-	 * targetted to. Caller of this API has to either provided an
-	 * emailAddress or an accountId. 	 
+	*  Identifying the PayPal account to which this request is
+	*  targetted to. Caller of this API has to either provided an
+	*  emailAddress or an accountId. 	 
 	 */ 
 	private String accountId;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String createAccountKey;
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private NameType nameOnCard;
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private AddressType billingAddress;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String cardOwnerDateOfBirth;
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private String cardNumber;
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private CardTypeType cardType;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private CardDateType expirationDate;
 
 	/**
-	 * CVV2: Proivde only for requests where confirmationType is
-	 * None (Direct request) 	 
+	*  CVV2: Proivde only for requests where confirmationType is
+	*  None (Direct request) 	 
 	 */ 
 	private String cardVerificationNumber;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private CardDateType startDate;
 
 	/**
-	 * Up to 2 digit for Switch/Maestro cards. 	 
+	*  Up to 2 digit for Switch/Maestro cards. 	 
 	 */ 
 	private String issueNumber;
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private ConfirmationType confirmationType;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private WebOptionsType webOptions;
 

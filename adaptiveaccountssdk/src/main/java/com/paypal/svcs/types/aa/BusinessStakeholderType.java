@@ -6,35 +6,35 @@ import java.io.UnsupportedEncodingException;
 import com.paypal.core.NVPUtil;
 
 /**
- * Info about Stakeholders such as partner, beneficial, owner,
- * director etc. 
+ *  Info about Stakeholders such as partner, beneficial, owner,
+ *  director etc. 
  */
 public class BusinessStakeholderType{
 
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private StakeholderRoleType role;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private NameType name;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String fullLegalName;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private AddressType address;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String dateOfBirth;
 

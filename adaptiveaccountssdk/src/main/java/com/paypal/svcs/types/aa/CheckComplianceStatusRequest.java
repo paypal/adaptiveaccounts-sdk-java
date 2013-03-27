@@ -5,23 +5,23 @@ import java.io.UnsupportedEncodingException;
 import com.paypal.core.NVPUtil;
 
 /**
- * Identifies a PayPal account to which this request is
- * targeted. Caller of this API has to provide ONLY one of
- * these inputs: emailAddress, accountId or phoneNumber. 
+ *  Identifies a PayPal account to which this request is
+ *  targeted. Caller of this API has to provide ONLY one of
+ *  these inputs: emailAddress, accountId or phoneNumber. 
  */
 public class CheckComplianceStatusRequest{
 
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private RequestEnvelope requestEnvelope;
 
 	/**
-	 * Identifies a PayPal account to which this request is
-	 * targeted. Caller of this API has to provide ONLY one of
-	 * these inputs: emailAddress, accountId or phoneNumber. 	  
+	*  Identifies a PayPal account to which this request is
+	*  targeted. Caller of this API has to provide ONLY one of
+	*  these inputs: emailAddress, accountId or phoneNumber. 	  
 	 *@Required	 
 	 */ 
 	private AccountIdentifierType accountIdentifier;

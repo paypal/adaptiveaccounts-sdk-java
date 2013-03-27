@@ -7,30 +7,30 @@ import java.io.UnsupportedEncodingException;
 import com.paypal.core.NVPUtil;
 
 /**
- * 
+ *  
  */
 public class UpdateComplianceStatusRequest{
 
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private RequestEnvelope requestEnvelope;
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private AuditeeInfoType auditeeInfo;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private AuditorList auditorList;
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private AuditDetailsType auditDetails;

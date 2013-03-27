@@ -4,35 +4,35 @@ import java.io.UnsupportedEncodingException;
 import com.paypal.core.NVPUtil;
 
 /**
- * Identifying the PayPal account to which this request is
- * targetted to. Caller of this API has to either provided an
- * emailAddress or an accountId. 
+ *  Identifying the PayPal account to which this request is
+ *  targetted to. Caller of this API has to either provided an
+ *  emailAddress or an accountId. 
  */
 public class SetFundingSourceConfirmedRequest{
 
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private RequestEnvelope requestEnvelope;
 
 	/**
-	 * Identifying the PayPal account to which this request is
-	 * targetted to. Caller of this API has to either provided an
-	 * emailAddress or an accountId. 	 
+	*  Identifying the PayPal account to which this request is
+	*  targetted to. Caller of this API has to either provided an
+	*  emailAddress or an accountId. 	 
 	 */ 
 	private String emailAddress;
 
 	/**
-	 * Identifying the PayPal account to which this request is
-	 * targetted to. Caller of this API has to either provided an
-	 * emailAddress or an accountId. 	 
+	*  Identifying the PayPal account to which this request is
+	*  targetted to. Caller of this API has to either provided an
+	*  emailAddress or an accountId. 	 
 	 */ 
 	private String accountId;
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private String fundingSourceKey;

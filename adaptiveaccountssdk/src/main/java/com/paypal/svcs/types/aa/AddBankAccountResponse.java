@@ -6,37 +6,37 @@ import com.paypal.svcs.types.common.ErrorData;
 import java.util.Map;
 
 /**
- * Valid values are: FUNDING_SOURCE_ADDED,
- * WEB_URL_VERIFICATION_NEEDED 
+ *  Valid values are: FUNDING_SOURCE_ADDED,
+ *  WEB_URL_VERIFICATION_NEEDED 
  */
 public class AddBankAccountResponse{
 
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private ResponseEnvelope responseEnvelope;
 
 	/**
-	 * Valid values are: FUNDING_SOURCE_ADDED,
-	 * WEB_URL_VERIFICATION_NEEDED 	  
+	*  Valid values are: FUNDING_SOURCE_ADDED,
+	*  WEB_URL_VERIFICATION_NEEDED 	  
 	 *@Required	 
 	 */ 
 	private String execStatus;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String redirectURL;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String fundingSourceKey;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private List<ErrorData> error = new ArrayList<ErrorData>();
 
