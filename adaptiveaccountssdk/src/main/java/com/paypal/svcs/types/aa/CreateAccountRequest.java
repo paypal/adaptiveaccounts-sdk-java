@@ -9,147 +9,147 @@ import java.io.UnsupportedEncodingException;
 import com.paypal.core.NVPUtil;
 
 /**
- * Valid values are: Personal, Premier, and Business. Flag="2"
- * corresponds to java.util.regex.Pattern.CASE_INSENSITIVE,
- * meaning the strings are not case-sensitive 
+ *  Valid values are: Personal, Premier, and Business. Flag="2"
+ *  corresponds to java.util.regex.Pattern.CASE_INSENSITIVE,
+ *  meaning the strings are not case-sensitive 
  */
 public class CreateAccountRequest{
 
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private RequestEnvelope requestEnvelope;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private ClientDetailsType clientDetails;
 
 	/**
-	 * Valid values are: Personal, Premier, and Business. Flag="2"
-	 * corresponds to java.util.regex.Pattern.CASE_INSENSITIVE,
-	 * meaning the strings are not case-sensitive 	 
+	*  Valid values are: Personal, Premier, and Business. Flag="2"
+	*  corresponds to java.util.regex.Pattern.CASE_INSENSITIVE,
+	*  meaning the strings are not case-sensitive 	 
 	 */ 
 	private String accountType;
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private NameType name;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String dateOfBirth;
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private AddressType address;
 
 	/**
-	 * Must provide at least one of contactPhoneNumber,
-	 * homePhoneNumber, or mobilePhoneNumber 	 
+	*  Must provide at least one of contactPhoneNumber,
+	*  homePhoneNumber, or mobilePhoneNumber 	 
 	 */ 
 	private String contactPhoneNumber;
 
 	/**
-	 * Must provide at least one of contactPhoneNumber,
-	 * homePhoneNumber, or mobilePhoneNumber 	 
+	*  Must provide at least one of contactPhoneNumber,
+	*  homePhoneNumber, or mobilePhoneNumber 	 
 	 */ 
 	private String homePhoneNumber;
 
 	/**
-	 * Must provide at least one of contactPhoneNumber,
-	 * homePhoneNumber, or mobilePhoneNumber 	 
+	*  Must provide at least one of contactPhoneNumber,
+	*  homePhoneNumber, or mobilePhoneNumber 	 
 	 */ 
 	private String mobilePhoneNumber;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String currencyCode;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String citizenshipCountryCode;
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private String preferredLanguageCode;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String notificationURL;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String emailAddress;
 
 	/**
-	 * Valid values are: Mobile and Web. Mobile: Returns a key to
-	 * complete the registration. Web: Returns a URL to complete
-	 * the registration. 	 
+	*  Valid values are: Mobile and Web. Mobile: Returns a key to
+	*  complete the registration. Web: Returns a URL to complete
+	*  the registration. 	 
 	 */ 
 	private String registrationType;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private CreateAccountWebOptionsType createAccountWebOptions;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private Boolean suppressWelcomeEmail;
 
 	/**
-	 * Set to true if you want this account to undergo extra
-	 * vetting by PayPal before becoming usable. 	 
+	*  Set to true if you want this account to undergo extra
+	*  vetting by PayPal before becoming usable. 	 
 	 */ 
 	private Boolean performExtraVettingOnThisAccount;
 
 	/**
-	 * tax id, ssn, itin, pan, cpf, acn, abn, etc. 	 
+	*  tax id, ssn, itin, pan, cpf, acn, abn, etc. 	 
 	 */ 
 	private String taxId;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String partnerField1;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String partnerField2;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String partnerField3;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String partnerField4;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String partnerField5;
 
 	/**
-	 * Required for business account creation 	 
+	*  Required for business account creation 	 
 	 */ 
 	private BusinessInfoType businessInfo;
 

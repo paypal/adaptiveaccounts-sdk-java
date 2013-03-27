@@ -3,27 +3,27 @@ import java.io.UnsupportedEncodingException;
 import com.paypal.core.NVPUtil;
 
 /**
- * Identifies a PayPal account to which this request is
- * targeted. Caller of this API has to provide ONLY one of
- * these inputs: emailAddress, accountId or phoneNumber. 
+ *  Identifies a PayPal account to which this request is
+ *  targeted. Caller of this API has to provide ONLY one of
+ *  these inputs: emailAddress, accountId or phoneNumber. 
  */
 public class AccountIdentifierType{
 
 
 	/**
-	 * Identifies the PayPal account based on the emailAddress. 	  
+	*  Identifies the PayPal account based on the emailAddress. 	  
 	 *@Required	 
 	 */ 
 	private String emailAddress;
 
 	/**
-	 * Identifies the PayPal account based on the phoneNumber. 	  
+	*  Identifies the PayPal account based on the phoneNumber. 	  
 	 *@Required	 
 	 */ 
 	private String mobilePhoneNumber;
 
 	/**
-	 * Identifies the PayPal account based on the accountId. 	  
+	*  Identifies the PayPal account based on the accountId. 	  
 	 *@Required	 
 	 */ 
 	private String accountId;

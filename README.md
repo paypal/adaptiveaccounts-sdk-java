@@ -17,27 +17,35 @@ SDK Integration:
 
 *	Add dependency to sdk in your application's pom.xml as below.
 		
-		<dependency>
-			<groupId>com.paypal.sdk</groupId>
-			<artifactId>adaptiveaccountssdk</artifactId>
-			<version>2.2.98</version>
-		</dependency>
-	
+    ```xml
+    <dependency>
+        <groupId>com.paypal.sdk</groupId>
+        <artifactId>adaptiveaccountssdk</artifactId>
+        <version>2.3.100</version>
+    </dependency>
+    ```
+
 To make an API call:
 --------------------		
 *	Import AdaptiveAccountsService.java into your code.
 		
-*	Copy the configuration file 'sdk_config.properties' in 'adaptiveaccountssample/src/main/resources' folder to your application 'src/main/resources'. And load it using,  
-		  
-		new AdaptiveAccountsService(this.getClass().getResourceAsStream("/sdk_config.properties"));
-	
-*	Or load the configuration file from any location using absolute path with the below method calls as required.
-
-          new AdaptiveAccountsService(new File(" .../sdk_config.properties"));
-                                 Or
-		  new AdaptiveAccountsService(new InputStream(new File(" .../sdk_config.properties")));
-                                 Or
-          new AdaptiveAccountsService(" .../sdk_config.properties");
+*	Copy the configuration file 'sdk_config.properties' in 'adaptiveaccountssample/src/main/resources' folder to your application 'src/main/resources'. Use the default constructor to run in default configuration(configuration used from sdk_config.properties found in classpath).
+	```java
+	new AdaptiveAccountsService();
+	```
+*	For Dynamic configuration(configuration is tied to the lifetime of the service object)		
+	```java
+	new AdaptiveAccountsService(new File("/pathto/custom.properties"));
+			 Or
+	new AdaptiveAccountsService(new FileInputStream(new File("/pathto/custom.properties")));
+			 Or
+	new AdaptiveAccountsService("/pathto/custom.properties");
+			 Or
+	new AdaptiveAccountsService(Map<String, String> customConfigurationMap);
+			 Or
+	new AdaptiveAccountsService(Properties customProperties);
+	```
+*	The SDK takes defaults for certain parameters(refer sdk_config.properties for defaults). Account Credentials and either of 'mode' or 'service.Endpoint' are mandatory parameters.
   
 *	Create a service wrapper object.
 
@@ -45,39 +53,34 @@ To make an API call:
 
 *	Invoke the appropriate method on the service wrapper object.
 
-For example,
+    For example,
 
           
-	  import com.paypal.svcs.services.AdaptiveAccountsService;
-	  import com.paypal.svcs.types.common.RequestEnvelope;
-	  import com.paypal.svcs.types.aa.AddressType;
-	  import com.paypal.svcs.types.aa.CreateAccountRequest;
-	  import com.paypal.svcs.types.aa.CreateAccountResponse;
-	  import com.paypal.svcs.types.aa.NameType;
-	  ...
-	  
-          
-          
-		  RequestEnvelope env = new RequestEnvelope();
-	      env.setErrorLanguage("en_US");
-          ...
-          
-		  NameType name = new NameType("John", "Lui");
-          ...
-          
-          AddressType address = new AddressType("Main St", "US");
-	      ...
-	  
-		  String preferredLanguageCode ="en_US";
-		  ...
-		  
-	      CreateAccountRequest createAccountRequest = new CreateAccountRequest(requestEnvelope, name, address, preferredLanguageCode);
-          ...
-
-   		  AdaptiveAccountsService adaptiveAccountsService = new AdaptiveAccountsService(this.getClass().getResourceAsStream("/sdk_config.properties"));
-		  //userName is optional
-		  CreateAccountResponse createAccountResponse = adaptiveAccountsService.createAccount(createAccountRequest,userName);
-		  
+    ```java
+    import com.paypal.svcs.services.AdaptiveAccountsService;
+    import com.paypal.svcs.types.common.RequestEnvelope;
+    import com.paypal.svcs.types.aa.*;
+    ...
+    RequestEnvelope env = new RequestEnvelope();
+    env.setErrorLanguage("en_US");
+    ...
+    NameType name = new NameType("John", "Lui");
+    ...
+    AddressType address = new AddressType("Main St", "US");
+    ...
+    String preferredLanguageCode ="en_US";
+    ...
+    CreateAccountRequest createAccountRequest = new CreateAccountRequest(requestEnvelope, 
+                                                            name, address, preferredLanguageCode);
+    ...
+    AdaptiveAccountsService adaptiveAccountsService = new AdaptiveAccountsService();
+			Or
+    Map<String, String> customConfigurationMap = new HashMap<String, String>();
+    customConfigurationMap.put("mode", "sandbox"); // Load the map with all mandatory parameters
+    ...
+    AdaptiveAccountsService adaptiveAccountsService = new AdaptiveAccountsService(Map<String, String> customConfigurationMap);
+    CreateAccountResponse createAccountResponse = adaptiveAccountsService.createAccount(createAccountRequest,userName);
+    ```
 
 SDK Logging:
 ------------
@@ -90,13 +93,15 @@ The SDK uses .properties format configuration file. Sample of this file is at
  
 'adaptiveaccountssample/src/main/resources/'. You can use the 'sdk_config.properties' configuration file to configure
 
-*	(Multiple) API account credentials.
+*	Mode is specified using the parameter name 'mode' with values 'sandbox' or 'live', if specified 'service.EndPoint' parameter is not required and the SDK chooses the sandbox or live endpoints automatically.
 
-*	HTTP connection parameters.
+*	(Multiple) API account credentials, by appending a '.' (dot) character and the service name to 'service.EndPoint' parameter.
+
+*	HTTP connection parameters, if certain connection parameters are not specified, the SDK will assume defaults for them.
 
 *	Service configuration.
 
-Multiple End-points Support
+Multiple SDK usage (Multiple End-points Support)
 ---------------------------
 Multiple end-points configuration can be done by specifying mulitple end-points identified by specific property keys. 
 When using multiple SDKs in combination, like Merchant and Permissions etc..configure the endpoints as shown below 
@@ -104,53 +109,76 @@ one for each service used, The existing service.EndPoint property is still suppo
 a single SDK). The list below specifies endpoints for different services, in SANDBOX and PRODUCTION, with their 
 property keys and end-point as property values.
 
-------------------------------SANDBOX------------------------------  
-* Merchant/Button Manager Service (3 Token)  
-service.EndPoint.PayPalAPI=https://api-3t.sandbox.paypal.com/2.0  
-service.EndPoint.PayPalAPIAA=https://api-3t.sandbox.paypal.com/2.0  
+Sandbox EndPoints
+------------------------------  
+*   Merchant/Button Manager Service (3 Token)  
+    ```properties
+    service.EndPoint.PayPalAPI=https://api-3t.sandbox.paypal.com/2.0  
+    service.EndPoint.PayPalAPIAA=https://api-3t.sandbox.paypal.com/2.0  
+    ```
 
-* Merchant/Button Manager Service (Certificate)  
-service.EndPoint.PayPalAPI=https://api.sandbox.paypal.com/2.0  
-service.EndPoint.PayPalAPIAA=https://api.sandbox.paypal.com/2.0  
+*   Merchant/Button Manager Service (Certificate)  
+    ```properties
+    service.EndPoint.PayPalAPI=https://api.sandbox.paypal.com/2.0  
+    service.EndPoint.PayPalAPIAA=https://api.sandbox.paypal.com/2.0  
+    ```
 
-* AdaptiveAccounts Platform Service  
-service.EndPoint.AdaptiveAccounts=https://svcs.sandbox.paypal.com/  
+*   AdaptiveAccounts Platform Service  
+    ```properties
+    service.EndPoint.AdaptiveAccounts=https://svcs.sandbox.paypal.com/  
+    ```
 
-* AdaptivePayments Platform Service  
-service.EndPoint.AdaptivePayments=https://svcs.sandbox.paypal.com/  
+*   AdaptivePayments Platform Service  
+    ```properties
+    service.EndPoint.AdaptivePayments=https://svcs.sandbox.paypal.com/  
+    ```
 
-* Invoice Platform Service  
-service.EndPoint.Invoice=https://svcs.sandbox.paypal.com/  
+*   Invoice Platform Service  
+    ```properties
+    service.EndPoint.Invoice=https://svcs.sandbox.paypal.com/  
+    ```
 
-* Permissions Platform Service  
-service.EndPoint.Permissions=https://svcs.sandbox.paypal.com/  
+*   Permissions Platform Service  
+    ```properties
+    service.EndPoint.Permissions=https://svcs.sandbox.paypal.com/  
+    ```
 
-------------------------------PRODUCTION------------------------------  
-* Merchant/Button Manager Service (3 Token)  
-service.EndPoint.PayPalAPI=https://api-3t.paypal.com/2.0  
-service.EndPoint.PayPalAPIAA=https://api-3t.paypal.com/2.0  
+Production EndPoints
+------------------------------  
+*   Merchant/Button Manager Service (3 Token)  
+    ```properties
+    service.EndPoint.PayPalAPI=https://api-3t.paypal.com/2.0  
+    service.EndPoint.PayPalAPIAA=https://api-3t.paypal.com/2.0
+    ```
 
-* Merchant/Button Manager Service (Certificate)  
-service.EndPoint.PayPalAPI=https://api.paypal.com/2.0  
-service.EndPoint.PayPalAPIAA=https://api.paypal.com/2.0  
+*   Merchant/Button Manager Service (Certificate)  
+    ```properties
+    service.EndPoint.PayPalAPI=https://api.paypal.com/2.0  
+    service.EndPoint.PayPalAPIAA=https://api.paypal.com/2.0  
+    ```
 
-* AdaptiveAccounts Platform Service  
-service.EndPoint.AdaptiveAccounts=https://svcs.paypal.com/  
+*   AdaptiveAccounts Platform Service  
+    ```properties
+    service.EndPoint.AdaptiveAccounts=https://svcs.paypal.com/  
+    ```
 
-* AdaptivePayments Platform Service  
-service.EndPoint.AdaptivePayments=https://svcs.paypal.com/  
+*   AdaptivePayments Platform Service  
+    ```properties
+    service.EndPoint.AdaptivePayments=https://svcs.paypal.com/  
+    ```
 
-* Invoice Platform Service  
-service.EndPoint.Invoice=https://svcs.paypal.com/  
+*   Invoice Platform Service  
+    ```properties
+    service.EndPoint.Invoice=https://svcs.paypal.com/  
+    ```
 
-* Permissions Platform Service  
-service.EndPoint.Permissions=https://svcs.paypal.com/  
+*   Permissions Platform Service  
+    ```properties
+    service.EndPoint.Permissions=https://svcs.paypal.com/  
+    ```
 
 For additional information on Adaptive Accounts API, please refer to https://www.x.com/developers/paypal/documentation-tools/api
 
 Instant Payment Notification(IPN) 
 ---------------------------------
 * Please refer readme at 'adaptiveaccountssample/IPN-README.md'
-
-
-

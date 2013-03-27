@@ -8,24 +8,24 @@ import java.io.UnsupportedEncodingException;
 import com.paypal.core.NVPUtil;
 
 /**
- * 
+ *  
  */
 public class AuditeeInfoType{
 
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private AccountIdentifierType accountIdentifier;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private List<DocumentType> document = new ArrayList<DocumentType>();
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private List<TupleType> data = new ArrayList<TupleType>();
 

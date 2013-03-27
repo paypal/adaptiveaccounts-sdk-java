@@ -3,28 +3,28 @@ import java.io.UnsupportedEncodingException;
 import com.paypal.core.NVPUtil;
 
 /**
- * 
+ *  
  */
 public class WebOptionsType{
 
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String returnUrl;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String cancelUrl;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String returnUrlDescription;
 
 	/**
-	 * 	 
+	*  	 
 	 */ 
 	private String cancelUrlDescription;
 

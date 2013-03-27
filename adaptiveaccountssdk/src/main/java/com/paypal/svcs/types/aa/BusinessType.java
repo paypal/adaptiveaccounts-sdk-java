@@ -1,9 +1,8 @@
 package com.paypal.svcs.types.aa;
 
 /**
- * 
  *  Business Types
- * 
+ *   
  */
 public enum  BusinessType {
 

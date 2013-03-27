@@ -5,46 +5,46 @@ import java.io.UnsupportedEncodingException;
 import com.paypal.core.NVPUtil;
 
 /**
- * Deprecated, use accountIdentifier.emailAddress instead 
+ *  Deprecated, use accountIdentifier.emailAddress instead 
  */
 public class GetVerifiedStatusRequest{
 
 
 	/**
-	 * 	  
+	*  	  
 	 *@Required	 
 	 */ 
 	private RequestEnvelope requestEnvelope;
 
 	/**
-	 * Deprecated, use accountIdentifier.emailAddress instead 	 
+	*  Deprecated, use accountIdentifier.emailAddress instead 	 
 	 */ 
 	private String emailAddress;
 
 	/**
-	 * Identifies a PayPal account to which this request is
-	 * targeted. Caller of this API has to provide ONLY one of
-	 * these inputs: emailAddress, accountId or mobilePhoneNumber. 	 
+	*  Identifies a PayPal account to which this request is
+	*  targeted. Caller of this API has to provide ONLY one of
+	*  these inputs: emailAddress, accountId or mobilePhoneNumber. 	 
 	 */ 
 	private AccountIdentifierType accountIdentifier;
 
 	/**
-	 * matchCriteria determines which field(s) in addition to
-	 * emailAddress is used to locate the account. Currently, we
-	 * support matchCriteria of 'NAME' and 'NONE'. 	  
+	*  matchCriteria determines which field(s) in addition to
+	*  emailAddress is used to locate the account. Currently, we
+	*  support matchCriteria of 'NAME' and 'NONE'. 	  
 	 *@Required	 
 	 */ 
 	private String matchCriteria;
 
 	/**
-	 * Required if matchCriteria is NAME Optional if matchCriteria
-	 * is NONE 	 
+	*  Required if matchCriteria is NAME Optional if matchCriteria
+	*  is NONE 	 
 	 */ 
 	private String firstName;
 
 	/**
-	 * Required if matchCriteria is NAME Optional if matchCriteria
-	 * is NONE 	 
+	*  Required if matchCriteria is NAME Optional if matchCriteria
+	*  is NONE 	 
 	 */ 
 	private String lastName;
 

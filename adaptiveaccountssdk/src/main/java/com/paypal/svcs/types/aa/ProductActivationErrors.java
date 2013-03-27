@@ -1,7 +1,7 @@
 package com.paypal.svcs.types.aa;
 
 /**
- * 
+ *  
  */
 public enum  ProductActivationErrors {
 
