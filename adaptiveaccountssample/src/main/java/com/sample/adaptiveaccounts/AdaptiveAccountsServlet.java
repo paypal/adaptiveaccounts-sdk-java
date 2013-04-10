@@ -726,7 +726,9 @@ public class AdaptiveAccountsServlet extends HttpServlet {
 								.getContextPath() + "/Error.jsp");
 					}
 				}
-			} else if (request.getRequestURI().contains("AddPaymentCard")) { 		// AddPaymentCard Request
+			} 
+			// The AddPaymentCard API operation lets your application set up payment cards as funding sources for PayPal accounts.
+			else if (request.getRequestURI().contains("AddPaymentCard")) { 		// AddPaymentCard Request
 				RequestEnvelope requestEnvelope = new RequestEnvelope();
 				requestEnvelope.setErrorLanguage("en_US");
 				NameType nameOnCard = null;
@@ -850,6 +852,7 @@ public class AdaptiveAccountsServlet extends HttpServlet {
 				if (request.getParameter("issueNumber") != "")
 					req.setIssueNumber(request.getParameter("issueNumber"));
 
+				// (Optional) Start date of the payment card. 
 				if (request.getParameter("startMonth") != "") {
 					CardDateType startDate = new CardDateType(
 							Integer.parseInt(request.getParameter("startMonth")),
@@ -857,6 +860,7 @@ public class AdaptiveAccountsServlet extends HttpServlet {
 					req.setStartDate(startDate);
 				}
 
+				// (Optional) Expiration date of the payment card. 
 				if (request.getParameter("expirationMonth") != "") {
 					CardDateType expirationDate = new CardDateType(
 							Integer.parseInt(request
@@ -895,7 +899,9 @@ public class AdaptiveAccountsServlet extends HttpServlet {
 								.getContextPath() + "/Error.jsp");
 					}
 				}
-			} else if (request.getRequestURI().contains("AddBankAccount")) { 		// AddBankAccount Request
+			} 
+			// The AddBankAccount API operation lets your application set up bank accounts as funding sources for PayPal accounts.
+			else if (request.getRequestURI().contains("AddBankAccount")) { 		// AddBankAccount Request
 				RequestEnvelope requestEnvelope = new RequestEnvelope();
 				requestEnvelope.setErrorLanguage("en_US");
 				AddBankAccountRequest req = new AddBankAccountRequest(
@@ -1072,7 +1078,9 @@ public class AdaptiveAccountsServlet extends HttpServlet {
 								.getContextPath() + "/Error.jsp");
 					}
 				}
-			} else if (request.getRequestURI().contains("GetUserAgreement")) { 		// GetUserAgreement Request
+			}
+			// The GetUserAgreement API operation lets you retrieve the user agreement for the customer to approve the new PayPal account.
+			else if (request.getRequestURI().contains("GetUserAgreement")) { 		// GetUserAgreement Request
 				RequestEnvelope requestEnvelope = new RequestEnvelope();
 				requestEnvelope.setErrorLanguage("en_US");
 				GetUserAgreementRequest req = new GetUserAgreementRequest(
@@ -1123,7 +1131,9 @@ public class AdaptiveAccountsServlet extends HttpServlet {
 					}
 				}
 
-			} else if (request.getRequestURI().contains("GetVerifiedStatus")) {  	// GetVerifiedStatus Request
+			} 
+			// The GetVerifiedStatus API operation lets you determine whether the specified PayPal account's status is verified or unverified.
+			else if (request.getRequestURI().contains("GetVerifiedStatus")) {  	// GetVerifiedStatus Request
 				RequestEnvelope requestEnvelope = new RequestEnvelope();
 				requestEnvelope.setErrorLanguage("en_US");
 
@@ -1186,7 +1196,9 @@ public class AdaptiveAccountsServlet extends HttpServlet {
 					}
 				}
 
-			} else if (request.getRequestURI().contains(
+			}
+			// The SetFundingSourceConfirmed API operation lets your application set up bank accounts as funding sources for PayPal accounts.
+			else if (request.getRequestURI().contains(
 					"SetFundingSourceConfirmed")) { 		// SetFundingSourceConfirmed Request
 				
 				RequestEnvelope requestEnvelope = new RequestEnvelope();
