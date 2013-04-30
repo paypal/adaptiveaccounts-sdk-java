@@ -5,6 +5,10 @@ import com.paypal.svcs.types.aa.NameType;
 import com.paypal.svcs.types.aa.AddressType;
 import com.paypal.svcs.types.aa.CreateAccountWebOptionsType;
 import com.paypal.svcs.types.aa.BusinessInfoType;
+import java.util.List;
+import java.util.ArrayList;
+import com.paypal.svcs.types.aa.GovernmentIDPair;
+import com.paypal.svcs.types.aa.LegalAgreementType;
 import java.io.UnsupportedEncodingException;
 import com.paypal.core.NVPUtil;
 
@@ -152,6 +156,56 @@ public class CreateAccountRequest{
 	*  Required for business account creation 	 
 	 */ 
 	private BusinessInfoType businessInfo;
+
+	/**
+	*  An ID representing a unique value, such as SSN, TIN, SIN,
+	*  TaxID, etc. generally issued by a Government. Currently
+	*  supports only SIN for Canada. 	 
+	 */ 
+	private List<GovernmentIDPair> governmentId = new ArrayList<GovernmentIDPair>();
+
+	/**
+	*  Account Holder's profession, values such as: Accountant,
+	*  Actuary, Advocate, Architect, Business Owner, Doctor,
+	*  Dentist, Engineer, Financial Analyst, Lawyer, Librarian,
+	*  Nurse, Pilot, Pharmacist, Physician, Physicial Therapist,
+	*  Professor, Psychologist, Scientist, Teacher, Webmaster,
+	*  Writer, Student, Other 	 
+	 */ 
+	private String profession;
+
+	/**
+	*  Account Holder's occupation. For business accounts only.
+	*  Values: Executive, President, Vice President, Director,
+	*  Manager, Staff, Other. 	 
+	 */ 
+	private String occupation;
+
+	/**
+	*  Account Holder's functional area. For business accounts
+	*  only. Values: Finance, Operations, Technology, Sales,
+	*  Marketing, Other 	 
+	 */ 
+	private String functionalArea;
+
+	/**
+	*  Boolean value, indicates whether user has agreed for a
+	*  particular agreement or not. 	 
+	 */ 
+	private LegalAgreementType legalAgreement;
+
+	/**
+	*  Expected Value: 0|1|2|3|4|5 according to the description
+	*  below: 0 - "Send payments for goods and/or services to
+	*  domestic merchants" 1 - "Send payments for goods and/or
+	*  services to cross-border merchants" 2 - "Send payments for
+	*  goods and/or services to domestic and cross-border
+	*  merchants" 3 - "Receive payments for goods and/or services
+	*  from domestic buyers" 4 - "Receive payments for goods and/or
+	*  services from cross-border buyers" 5 - "Receive payments for
+	*  goods and/or service from domestic/cross-border buyers" 	 
+	 */ 
+	private String purposeOfAccount;
 
 	
 
@@ -521,6 +575,90 @@ public class CreateAccountRequest{
 	 	this.businessInfo = businessInfo;
 	 }
 	 
+	/**
+	 * Getter for governmentId
+	 */
+	 public List<GovernmentIDPair> getGovernmentId() {
+	 	return governmentId;
+	 }
+	 
+	/**
+	 * Setter for governmentId
+	 */
+	 public void setGovernmentId(List<GovernmentIDPair> governmentId) {
+	 	this.governmentId = governmentId;
+	 }
+	 
+	/**
+	 * Getter for profession
+	 */
+	 public String getProfession() {
+	 	return profession;
+	 }
+	 
+	/**
+	 * Setter for profession
+	 */
+	 public void setProfession(String profession) {
+	 	this.profession = profession;
+	 }
+	 
+	/**
+	 * Getter for occupation
+	 */
+	 public String getOccupation() {
+	 	return occupation;
+	 }
+	 
+	/**
+	 * Setter for occupation
+	 */
+	 public void setOccupation(String occupation) {
+	 	this.occupation = occupation;
+	 }
+	 
+	/**
+	 * Getter for functionalArea
+	 */
+	 public String getFunctionalArea() {
+	 	return functionalArea;
+	 }
+	 
+	/**
+	 * Setter for functionalArea
+	 */
+	 public void setFunctionalArea(String functionalArea) {
+	 	this.functionalArea = functionalArea;
+	 }
+	 
+	/**
+	 * Getter for legalAgreement
+	 */
+	 public LegalAgreementType getLegalAgreement() {
+	 	return legalAgreement;
+	 }
+	 
+	/**
+	 * Setter for legalAgreement
+	 */
+	 public void setLegalAgreement(LegalAgreementType legalAgreement) {
+	 	this.legalAgreement = legalAgreement;
+	 }
+	 
+	/**
+	 * Getter for purposeOfAccount
+	 */
+	 public String getPurposeOfAccount() {
+	 	return purposeOfAccount;
+	 }
+	 
+	/**
+	 * Setter for purposeOfAccount
+	 */
+	 public void setPurposeOfAccount(String purposeOfAccount) {
+	 	this.purposeOfAccount = purposeOfAccount;
+	 }
+	 
 
 
 	public String toNVPString() throws UnsupportedEncodingException {
@@ -628,6 +766,32 @@ public class CreateAccountRequest{
 		if (this.businessInfo != null) {
 			String newPrefix = prefix + "businessInfo.";
 			sb.append(this.businessInfo.toNVPString(newPrefix));
+		}
+		if (this.governmentId != null) {
+			for(int i=0; i < this.governmentId.size(); i++) {
+				String newPrefix = prefix + "governmentId" + "(" + i + ").";
+				sb.append(this.governmentId.get(i).toNVPString(newPrefix));
+			}
+		}
+		if (this.profession != null) {
+			sb.append(prefix).append("profession=").append(NVPUtil.encodeUrl(this.profession));
+			sb.append("&");
+		}
+		if (this.occupation != null) {
+			sb.append(prefix).append("occupation=").append(NVPUtil.encodeUrl(this.occupation));
+			sb.append("&");
+		}
+		if (this.functionalArea != null) {
+			sb.append(prefix).append("functionalArea=").append(NVPUtil.encodeUrl(this.functionalArea));
+			sb.append("&");
+		}
+		if (this.legalAgreement != null) {
+			String newPrefix = prefix + "legalAgreement.";
+			sb.append(this.legalAgreement.toNVPString(newPrefix));
+		}
+		if (this.purposeOfAccount != null) {
+			sb.append(prefix).append("purposeOfAccount=").append(NVPUtil.encodeUrl(this.purposeOfAccount));
+			sb.append("&");
 		}
 		return sb.toString();
 	}

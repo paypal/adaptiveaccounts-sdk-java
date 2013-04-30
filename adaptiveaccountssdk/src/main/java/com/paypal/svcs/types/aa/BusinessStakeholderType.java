@@ -38,6 +38,16 @@ public class BusinessStakeholderType{
 	 */ 
 	private String dateOfBirth;
 
+	/**
+	*  Occupation of the business stakeholder. Values such as:
+	*  Accountant, Actuary, Advocate, Architect, Business Owner,
+	*  Doctor, Dentist, Engineer, Financial Analyst, Lawyer,
+	*  Librarian, Nurse, Pilot, Pharmacist, Physician, Physicial
+	*  Therapist, Professor, Psychologist, Scientist, Teacher,
+	*  Webmaster, Writer, Student, Other 	 
+	 */ 
+	private String occupation;
+
 	
 
 	/**
@@ -123,6 +133,20 @@ public class BusinessStakeholderType{
 	 	this.dateOfBirth = dateOfBirth;
 	 }
 	 
+	/**
+	 * Getter for occupation
+	 */
+	 public String getOccupation() {
+	 	return occupation;
+	 }
+	 
+	/**
+	 * Setter for occupation
+	 */
+	 public void setOccupation(String occupation) {
+	 	this.occupation = occupation;
+	 }
+	 
 
 
 	public String toNVPString() throws UnsupportedEncodingException {
@@ -149,6 +173,10 @@ public class BusinessStakeholderType{
 		}
 		if (this.dateOfBirth != null) {
 			sb.append(prefix).append("dateOfBirth=").append(NVPUtil.encodeUrl(this.dateOfBirth));
+			sb.append("&");
+		}
+		if (this.occupation != null) {
+			sb.append(prefix).append("occupation=").append(NVPUtil.encodeUrl(this.occupation));
 			sb.append("&");
 		}
 		return sb.toString();

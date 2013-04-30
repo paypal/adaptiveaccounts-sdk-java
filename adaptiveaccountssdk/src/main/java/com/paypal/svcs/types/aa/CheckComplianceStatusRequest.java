@@ -7,7 +7,7 @@ import com.paypal.core.NVPUtil;
 /**
  *  Identifies a PayPal account to which this request is
  *  targeted. Caller of this API has to provide ONLY one of
- *  these inputs: emailAddress, accountId or phoneNumber. 
+ *  these inputs: emailAddress, accountId or mobilePhoneNumber. 
  */
 public class CheckComplianceStatusRequest{
 
@@ -21,7 +21,7 @@ public class CheckComplianceStatusRequest{
 	/**
 	*  Identifies a PayPal account to which this request is
 	*  targeted. Caller of this API has to provide ONLY one of
-	*  these inputs: emailAddress, accountId or phoneNumber. 	  
+	*  these inputs: emailAddress, accountId or mobilePhoneNumber. 	  
 	 *@Required	 
 	 */ 
 	private AccountIdentifierType accountIdentifier;

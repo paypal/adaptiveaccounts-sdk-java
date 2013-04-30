@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.ArrayList;
 import com.paypal.svcs.types.aa.SalesVenueType;
 import com.paypal.svcs.types.aa.BusinessStakeholderType;
+import com.paypal.svcs.types.aa.BusinessEntityForThirdPartyType;
+import com.paypal.svcs.types.aa.YesNoType;
 import java.io.UnsupportedEncodingException;
 import com.paypal.core.NVPUtil;
 
@@ -167,6 +169,26 @@ public class BusinessInfoType{
 	*  All the stakeholders of the company. 	 
 	 */ 
 	private List<BusinessStakeholderType> businessStakeholder = new ArrayList<BusinessStakeholderType>();
+
+	/**
+	*  Business entity acting on behalf of Third Party. 	 
+	 */ 
+	private BusinessEntityForThirdPartyType businessEntityForThirdParty;
+
+	/**
+	*  Values: Yes or No 	 
+	 */ 
+	private YesNoType hasDirectors;
+
+	/**
+	*  Values: Yes or No 	 
+	 */ 
+	private YesNoType hasBeneficialOwners;
+
+	/**
+	*  Values: Yes or No 	 
+	 */ 
+	private YesNoType hasThirdPartyAssociates;
 
 	
 
@@ -591,6 +613,62 @@ public class BusinessInfoType{
 	 	this.businessStakeholder = businessStakeholder;
 	 }
 	 
+	/**
+	 * Getter for businessEntityForThirdParty
+	 */
+	 public BusinessEntityForThirdPartyType getBusinessEntityForThirdParty() {
+	 	return businessEntityForThirdParty;
+	 }
+	 
+	/**
+	 * Setter for businessEntityForThirdParty
+	 */
+	 public void setBusinessEntityForThirdParty(BusinessEntityForThirdPartyType businessEntityForThirdParty) {
+	 	this.businessEntityForThirdParty = businessEntityForThirdParty;
+	 }
+	 
+	/**
+	 * Getter for hasDirectors
+	 */
+	 public YesNoType getHasDirectors() {
+	 	return hasDirectors;
+	 }
+	 
+	/**
+	 * Setter for hasDirectors
+	 */
+	 public void setHasDirectors(YesNoType hasDirectors) {
+	 	this.hasDirectors = hasDirectors;
+	 }
+	 
+	/**
+	 * Getter for hasBeneficialOwners
+	 */
+	 public YesNoType getHasBeneficialOwners() {
+	 	return hasBeneficialOwners;
+	 }
+	 
+	/**
+	 * Setter for hasBeneficialOwners
+	 */
+	 public void setHasBeneficialOwners(YesNoType hasBeneficialOwners) {
+	 	this.hasBeneficialOwners = hasBeneficialOwners;
+	 }
+	 
+	/**
+	 * Getter for hasThirdPartyAssociates
+	 */
+	 public YesNoType getHasThirdPartyAssociates() {
+	 	return hasThirdPartyAssociates;
+	 }
+	 
+	/**
+	 * Setter for hasThirdPartyAssociates
+	 */
+	 public void setHasThirdPartyAssociates(YesNoType hasThirdPartyAssociates) {
+	 	this.hasThirdPartyAssociates = hasThirdPartyAssociates;
+	 }
+	 
 
 
 	public String toNVPString() throws UnsupportedEncodingException {
@@ -718,6 +796,22 @@ public class BusinessInfoType{
 				String newPrefix = prefix + "businessStakeholder" + "(" + i + ").";
 				sb.append(this.businessStakeholder.get(i).toNVPString(newPrefix));
 			}
+		}
+		if (this.businessEntityForThirdParty != null) {
+			String newPrefix = prefix + "businessEntityForThirdParty.";
+			sb.append(this.businessEntityForThirdParty.toNVPString(newPrefix));
+		}
+		if (this.hasDirectors != null) {
+			sb.append(prefix).append("hasDirectors=").append(this.hasDirectors.getValue());
+			sb.append("&");
+		}
+		if (this.hasBeneficialOwners != null) {
+			sb.append(prefix).append("hasBeneficialOwners=").append(this.hasBeneficialOwners.getValue());
+			sb.append("&");
+		}
+		if (this.hasThirdPartyAssociates != null) {
+			sb.append(prefix).append("hasThirdPartyAssociates=").append(this.hasThirdPartyAssociates.getValue());
+			sb.append("&");
 		}
 		return sb.toString();
 	}

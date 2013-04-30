@@ -1,4 +1,7 @@
 package com.paypal.svcs.types.aa;
+import java.util.List;
+import java.util.ArrayList;
+import com.paypal.svcs.types.aa.TupleType;
 import java.io.UnsupportedEncodingException;
 import com.paypal.core.NVPUtil;
 
@@ -31,6 +34,16 @@ public class AuditDetailsType{
 	 *@Required	 
 	 */ 
 	private String reason;
+
+	/**
+	*  	 
+	 */ 
+	private List<TupleType> data = new ArrayList<TupleType>();
+
+	/**
+	*  	 
+	 */ 
+	private String policyVersion;
 
 	
 
@@ -106,6 +119,34 @@ public class AuditDetailsType{
 	 	this.reason = reason;
 	 }
 	 
+	/**
+	 * Getter for data
+	 */
+	 public List<TupleType> getData() {
+	 	return data;
+	 }
+	 
+	/**
+	 * Setter for data
+	 */
+	 public void setData(List<TupleType> data) {
+	 	this.data = data;
+	 }
+	 
+	/**
+	 * Getter for policyVersion
+	 */
+	 public String getPolicyVersion() {
+	 	return policyVersion;
+	 }
+	 
+	/**
+	 * Setter for policyVersion
+	 */
+	 public void setPolicyVersion(String policyVersion) {
+	 	this.policyVersion = policyVersion;
+	 }
+	 
 
 
 	public String toNVPString() throws UnsupportedEncodingException {
@@ -128,6 +169,16 @@ public class AuditDetailsType{
 		}
 		if (this.reason != null) {
 			sb.append(prefix).append("reason=").append(NVPUtil.encodeUrl(this.reason));
+			sb.append("&");
+		}
+		if (this.data != null) {
+			for(int i=0; i < this.data.size(); i++) {
+				String newPrefix = prefix + "data" + "(" + i + ").";
+				sb.append(this.data.get(i).toNVPString(newPrefix));
+			}
+		}
+		if (this.policyVersion != null) {
+			sb.append(prefix).append("policyVersion=").append(NVPUtil.encodeUrl(this.policyVersion));
 			sb.append("&");
 		}
 		return sb.toString();
