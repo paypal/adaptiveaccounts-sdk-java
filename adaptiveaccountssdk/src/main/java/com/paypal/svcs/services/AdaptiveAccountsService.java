@@ -43,7 +43,7 @@ public class AdaptiveAccountsService extends BaseService {
 	private static final String SDK_NAME = "adaptiveaccounts-java-sdk";
 	
 	//SDK Version
-	private static final String SDK_VERSION = "2.3.101";
+	private static final String SDK_VERSION = "2.3.102";
 
 
 	/**
@@ -137,37 +137,37 @@ public class AdaptiveAccountsService extends BaseService {
 
 
 	/** 
-	*  Coutries Supported:
-	*  AU - Australia
-	*  CA - Canada
-	*  CY - Cyprus
-	*  CZ - Czech Republic
-	*  DK - Denmark
-	*  EE - Estonia
-	*  FI - Finland
-	*  FR - France
-	*  DE - Germany
-	*  GR - Greece
-	*  HU - Hungary
-	*  IT - Italy
-	*  LV - Latvia
-	*  LT - Lithuania
-	*  LU - Luxembourg
-	*  MT - Malta
-	*  NL - Netherlands
-	*  PL - Poland
-	*  PT - Portugal
-	*  SK - Slovak Republic
-	*  SI - Slovenia
-	*  ES - Spain
-	*  SE - Sweden
-	*  UK - United Kingdom
-	*  US - United States
-	*  
-	*  
-	*  
-	*  
-	*  
+	 * Coutries Supported:
+	 * AU - Australia
+	 * CA - Canada
+	 * CY - Cyprus
+	 * CZ - Czech Republic
+	 * DK - Denmark
+	 * EE - Estonia
+	 * FI - Finland
+	 * FR - France
+	 * DE - Germany
+	 * GR - Greece
+	 * HU - Hungary
+	 * IT - Italy
+	 * LV - Latvia
+	 * LT - Lithuania
+	 * LU - Luxembourg
+	 * MT - Malta
+	 * NL - Netherlands
+	 * PL - Poland
+	 * PT - Portugal
+	 * SK - Slovak Republic
+	 * SI - Slovenia
+	 * ES - Spain
+	 * SE - Sweden
+	 * UK - United Kingdom
+	 * US - United States
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -184,37 +184,37 @@ public class AdaptiveAccountsService extends BaseService {
 	 }
 
 	/** 
-	*  Coutries Supported:
-	*  AU - Australia
-	*  CA - Canada
-	*  CY - Cyprus
-	*  CZ - Czech Republic
-	*  DK - Denmark
-	*  EE - Estonia
-	*  FI - Finland
-	*  FR - France
-	*  DE - Germany
-	*  GR - Greece
-	*  HU - Hungary
-	*  IT - Italy
-	*  LV - Latvia
-	*  LT - Lithuania
-	*  LU - Luxembourg
-	*  MT - Malta
-	*  NL - Netherlands
-	*  PL - Poland
-	*  PT - Portugal
-	*  SK - Slovak Republic
-	*  SI - Slovenia
-	*  ES - Spain
-	*  SE - Sweden
-	*  UK - United Kingdom
-	*  US - United States
-	*  
-	*  
-	*  
-	*  
-	*  
+	 * Coutries Supported:
+	 * AU - Australia
+	 * CA - Canada
+	 * CY - Cyprus
+	 * CZ - Czech Republic
+	 * DK - Denmark
+	 * EE - Estonia
+	 * FI - Finland
+	 * FR - France
+	 * DE - Germany
+	 * GR - Greece
+	 * HU - Hungary
+	 * IT - Italy
+	 * LV - Latvia
+	 * LT - Lithuania
+	 * LU - Luxembourg
+	 * MT - Malta
+	 * NL - Netherlands
+	 * PL - Poland
+	 * PT - Portugal
+	 * SK - Slovak Republic
+	 * SI - Slovenia
+	 * ES - Spain
+	 * SE - Sweden
+	 * UK - United Kingdom
+	 * US - United States
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -233,37 +233,37 @@ public class AdaptiveAccountsService extends BaseService {
 	}
 	
 	/**	
-	*  Coutries Supported:
-	*  AU - Australia
-	*  CA - Canada
-	*  CY - Cyprus
-	*  CZ - Czech Republic
-	*  DK - Denmark
-	*  EE - Estonia
-	*  FI - Finland
-	*  FR - France
-	*  DE - Germany
-	*  GR - Greece
-	*  HU - Hungary
-	*  IT - Italy
-	*  LV - Latvia
-	*  LT - Lithuania
-	*  LU - Luxembourg
-	*  MT - Malta
-	*  NL - Netherlands
-	*  PL - Poland
-	*  PT - Portugal
-	*  SK - Slovak Republic
-	*  SI - Slovenia
-	*  ES - Spain
-	*  SE - Sweden
-	*  UK - United Kingdom
-	*  US - United States
-	*  
-	*  
-	*  
-	*  
-	*  
+	 * Coutries Supported:
+	 * AU - Australia
+	 * CA - Canada
+	 * CY - Cyprus
+	 * CZ - Czech Republic
+	 * DK - Denmark
+	 * EE - Estonia
+	 * FI - Finland
+	 * FR - France
+	 * DE - Germany
+	 * GR - Greece
+	 * HU - Hungary
+	 * IT - Italy
+	 * LV - Latvia
+	 * LT - Lithuania
+	 * LU - Luxembourg
+	 * MT - Malta
+	 * NL - Netherlands
+	 * PL - Poland
+	 * PT - Portugal
+	 * SK - Slovak Republic
+	 * SI - Slovenia
+	 * ES - Spain
+	 * SE - Sweden
+	 * UK - United Kingdom
+	 * US - United States
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -282,36 +282,36 @@ public class AdaptiveAccountsService extends BaseService {
 	 }
 
 	/** 
-	*  Countries Supported:
-	*  AU - Australia
-	*  AT - Austria  
-	*  CA - Canada
-	*  CZ - Czech Republic
-	*  EU - European Union *
-	*  FR - France
-	*  DE - Germany
-	*  GB - Great Britain
-	*  GR - Greece
-	*  IE - Ireland
-	*  IL - Israel
-	*  IT - Italy
-	*  JP - Japan
-	*  NL - Netherlands
-	*  NZ - New Zealand (Aotearoa)
-	*  PL - Poland
-	*  PT - Portugal
-	*  RU - Russian Federation
-	*  SG - Singapore
-	*  ZA - South Africa
-	*  ES - Spain
-	*  CH - Switzerland  
-	*  US - United States
-	*  * technically a group of countries
-	*  
-	*  
-	*  
-	*  
-	*  
+	 * Countries Supported:
+	 * AU - Australia
+	 * AT - Austria  
+	 * CA - Canada
+	 * CZ - Czech Republic
+	 * EU - European Union *
+	 * FR - France
+	 * DE - Germany
+	 * GB - Great Britain
+	 * GR - Greece
+	 * IE - Ireland
+	 * IL - Israel
+	 * IT - Italy
+	 * JP - Japan
+	 * NL - Netherlands
+	 * NZ - New Zealand (Aotearoa)
+	 * PL - Poland
+	 * PT - Portugal
+	 * RU - Russian Federation
+	 * SG - Singapore
+	 * ZA - South Africa
+	 * ES - Spain
+	 * CH - Switzerland  
+	 * US - United States
+	 * * technically a group of countries
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -328,36 +328,36 @@ public class AdaptiveAccountsService extends BaseService {
 	 }
 
 	/** 
-	*  Countries Supported:
-	*  AU - Australia
-	*  AT - Austria  
-	*  CA - Canada
-	*  CZ - Czech Republic
-	*  EU - European Union *
-	*  FR - France
-	*  DE - Germany
-	*  GB - Great Britain
-	*  GR - Greece
-	*  IE - Ireland
-	*  IL - Israel
-	*  IT - Italy
-	*  JP - Japan
-	*  NL - Netherlands
-	*  NZ - New Zealand (Aotearoa)
-	*  PL - Poland
-	*  PT - Portugal
-	*  RU - Russian Federation
-	*  SG - Singapore
-	*  ZA - South Africa
-	*  ES - Spain
-	*  CH - Switzerland  
-	*  US - United States
-	*  * technically a group of countries
-	*  
-	*  
-	*  
-	*  
-	*  
+	 * Countries Supported:
+	 * AU - Australia
+	 * AT - Austria  
+	 * CA - Canada
+	 * CZ - Czech Republic
+	 * EU - European Union *
+	 * FR - France
+	 * DE - Germany
+	 * GB - Great Britain
+	 * GR - Greece
+	 * IE - Ireland
+	 * IL - Israel
+	 * IT - Italy
+	 * JP - Japan
+	 * NL - Netherlands
+	 * NZ - New Zealand (Aotearoa)
+	 * PL - Poland
+	 * PT - Portugal
+	 * RU - Russian Federation
+	 * SG - Singapore
+	 * ZA - South Africa
+	 * ES - Spain
+	 * CH - Switzerland  
+	 * US - United States
+	 * * technically a group of countries
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -376,36 +376,36 @@ public class AdaptiveAccountsService extends BaseService {
 	}
 	
 	/**	
-	*  Countries Supported:
-	*  AU - Australia
-	*  AT - Austria  
-	*  CA - Canada
-	*  CZ - Czech Republic
-	*  EU - European Union *
-	*  FR - France
-	*  DE - Germany
-	*  GB - Great Britain
-	*  GR - Greece
-	*  IE - Ireland
-	*  IL - Israel
-	*  IT - Italy
-	*  JP - Japan
-	*  NL - Netherlands
-	*  NZ - New Zealand (Aotearoa)
-	*  PL - Poland
-	*  PT - Portugal
-	*  RU - Russian Federation
-	*  SG - Singapore
-	*  ZA - South Africa
-	*  ES - Spain
-	*  CH - Switzerland  
-	*  US - United States
-	*  * technically a group of countries
-	*  
-	*  
-	*  
-	*  
-	*  
+	 * Countries Supported:
+	 * AU - Australia
+	 * AT - Austria  
+	 * CA - Canada
+	 * CZ - Czech Republic
+	 * EU - European Union *
+	 * FR - France
+	 * DE - Germany
+	 * GB - Great Britain
+	 * GR - Greece
+	 * IE - Ireland
+	 * IL - Israel
+	 * IT - Italy
+	 * JP - Japan
+	 * NL - Netherlands
+	 * NZ - New Zealand (Aotearoa)
+	 * PL - Poland
+	 * PT - Portugal
+	 * RU - Russian Federation
+	 * SG - Singapore
+	 * ZA - South Africa
+	 * ES - Spain
+	 * CH - Switzerland  
+	 * US - United States
+	 * * technically a group of countries
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -424,12 +424,12 @@ public class AdaptiveAccountsService extends BaseService {
 	 }
 
 	/** 
-	*  All countries are supported.
-	*  
-	*  
-	*  
-	*  
-	*  
+	 * All countries are supported.
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -446,12 +446,12 @@ public class AdaptiveAccountsService extends BaseService {
 	 }
 
 	/** 
-	*  All countries are supported.
-	*  
-	*  
-	*  
-	*  
-	*  
+	 * All countries are supported.
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -470,12 +470,12 @@ public class AdaptiveAccountsService extends BaseService {
 	}
 	
 	/**	
-	*  All countries are supported.
-	*  
-	*  
-	*  
-	*  
-	*  
+	 * All countries are supported.
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -494,21 +494,21 @@ public class AdaptiveAccountsService extends BaseService {
 	 }
 
 	/** 
-	*  Countries Supported:
-	*  AU - Australia
-	*  CA - Canada
-	*  FR - France
-	*  DE - Germany
-	*  IL - Israel
-	*  IT - Italy
-	*  NL - Netherlands
-	*  UK - United Kingdom
-	*  US - United States
-	*  
-	*  
-	*  
-	*  
-	*  
+	 * Countries Supported:
+	 * AU - Australia
+	 * CA - Canada
+	 * FR - France
+	 * DE - Germany
+	 * IL - Israel
+	 * IT - Italy
+	 * NL - Netherlands
+	 * UK - United Kingdom
+	 * US - United States
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -525,21 +525,21 @@ public class AdaptiveAccountsService extends BaseService {
 	 }
 
 	/** 
-	*  Countries Supported:
-	*  AU - Australia
-	*  CA - Canada
-	*  FR - France
-	*  DE - Germany
-	*  IL - Israel
-	*  IT - Italy
-	*  NL - Netherlands
-	*  UK - United Kingdom
-	*  US - United States
-	*  
-	*  
-	*  
-	*  
-	*  
+	 * Countries Supported:
+	 * AU - Australia
+	 * CA - Canada
+	 * FR - France
+	 * DE - Germany
+	 * IL - Israel
+	 * IT - Italy
+	 * NL - Netherlands
+	 * UK - United Kingdom
+	 * US - United States
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -558,21 +558,21 @@ public class AdaptiveAccountsService extends BaseService {
 	}
 	
 	/**	
-	*  Countries Supported:
-	*  AU - Australia
-	*  CA - Canada
-	*  FR - France
-	*  DE - Germany
-	*  IL - Israel
-	*  IT - Italy
-	*  NL - Netherlands
-	*  UK - United Kingdom
-	*  US - United States
-	*  
-	*  
-	*  
-	*  
-	*  
+	 * Countries Supported:
+	 * AU - Australia
+	 * CA - Canada
+	 * FR - France
+	 * DE - Germany
+	 * IL - Israel
+	 * IT - Italy
+	 * NL - Netherlands
+	 * UK - United Kingdom
+	 * US - United States
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -591,38 +591,38 @@ public class AdaptiveAccountsService extends BaseService {
 	 }
 
 	/** 
-	*  Countries Supported:
-	*  AU - Australia
-	*  AT - Austria  
-	*  BE - Belgium
-	*  BR - Brazil
-	*  CA - Canada
-	*  CZ - Czech Republic
-	*  FR - France
-	*  DE - Germany
-	*  GR - Greece
-	*  HK - Hong Kong
-	*  IE - Ireland
-	*  IT - Italy
-	*  JP - Japan
-	*  LU - Luxembourg
-	*  MX - Mexico
-	*  NL - Netherlands
-	*  NZ - New Zealand (Aotearoa)
-	*  PL - Poland
-	*  PT - Portugal
-	*  RU - Russian Federation
-	*  SG - Singapore
-	*  ZA - South Africa
-	*  ES - Spain
-	*  CH - Switzerland  
-	*  UK - United Kingdom
-	*  US - United States
-	*  
-	*  
-	*  
-	*  
-	*  
+	 * Countries Supported:
+	 * AU - Australia
+	 * AT - Austria  
+	 * BE - Belgium
+	 * BR - Brazil
+	 * CA - Canada
+	 * CZ - Czech Republic
+	 * FR - France
+	 * DE - Germany
+	 * GR - Greece
+	 * HK - Hong Kong
+	 * IE - Ireland
+	 * IT - Italy
+	 * JP - Japan
+	 * LU - Luxembourg
+	 * MX - Mexico
+	 * NL - Netherlands
+	 * NZ - New Zealand (Aotearoa)
+	 * PL - Poland
+	 * PT - Portugal
+	 * RU - Russian Federation
+	 * SG - Singapore
+	 * ZA - South Africa
+	 * ES - Spain
+	 * CH - Switzerland  
+	 * UK - United Kingdom
+	 * US - United States
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -639,38 +639,38 @@ public class AdaptiveAccountsService extends BaseService {
 	 }
 
 	/** 
-	*  Countries Supported:
-	*  AU - Australia
-	*  AT - Austria  
-	*  BE - Belgium
-	*  BR - Brazil
-	*  CA - Canada
-	*  CZ - Czech Republic
-	*  FR - France
-	*  DE - Germany
-	*  GR - Greece
-	*  HK - Hong Kong
-	*  IE - Ireland
-	*  IT - Italy
-	*  JP - Japan
-	*  LU - Luxembourg
-	*  MX - Mexico
-	*  NL - Netherlands
-	*  NZ - New Zealand (Aotearoa)
-	*  PL - Poland
-	*  PT - Portugal
-	*  RU - Russian Federation
-	*  SG - Singapore
-	*  ZA - South Africa
-	*  ES - Spain
-	*  CH - Switzerland  
-	*  UK - United Kingdom
-	*  US - United States
-	*  
-	*  
-	*  
-	*  
-	*  
+	 * Countries Supported:
+	 * AU - Australia
+	 * AT - Austria  
+	 * BE - Belgium
+	 * BR - Brazil
+	 * CA - Canada
+	 * CZ - Czech Republic
+	 * FR - France
+	 * DE - Germany
+	 * GR - Greece
+	 * HK - Hong Kong
+	 * IE - Ireland
+	 * IT - Italy
+	 * JP - Japan
+	 * LU - Luxembourg
+	 * MX - Mexico
+	 * NL - Netherlands
+	 * NZ - New Zealand (Aotearoa)
+	 * PL - Poland
+	 * PT - Portugal
+	 * RU - Russian Federation
+	 * SG - Singapore
+	 * ZA - South Africa
+	 * ES - Spain
+	 * CH - Switzerland  
+	 * UK - United Kingdom
+	 * US - United States
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -689,38 +689,38 @@ public class AdaptiveAccountsService extends BaseService {
 	}
 	
 	/**	
-	*  Countries Supported:
-	*  AU - Australia
-	*  AT - Austria  
-	*  BE - Belgium
-	*  BR - Brazil
-	*  CA - Canada
-	*  CZ - Czech Republic
-	*  FR - France
-	*  DE - Germany
-	*  GR - Greece
-	*  HK - Hong Kong
-	*  IE - Ireland
-	*  IT - Italy
-	*  JP - Japan
-	*  LU - Luxembourg
-	*  MX - Mexico
-	*  NL - Netherlands
-	*  NZ - New Zealand (Aotearoa)
-	*  PL - Poland
-	*  PT - Portugal
-	*  RU - Russian Federation
-	*  SG - Singapore
-	*  ZA - South Africa
-	*  ES - Spain
-	*  CH - Switzerland  
-	*  UK - United Kingdom
-	*  US - United States
-	*  
-	*  
-	*  
-	*  
-	*  
+	 * Countries Supported:
+	 * AU - Australia
+	 * AT - Austria  
+	 * BE - Belgium
+	 * BR - Brazil
+	 * CA - Canada
+	 * CZ - Czech Republic
+	 * FR - France
+	 * DE - Germany
+	 * GR - Greece
+	 * HK - Hong Kong
+	 * IE - Ireland
+	 * IT - Italy
+	 * JP - Japan
+	 * LU - Luxembourg
+	 * MX - Mexico
+	 * NL - Netherlands
+	 * NZ - New Zealand (Aotearoa)
+	 * PL - Poland
+	 * PT - Portugal
+	 * RU - Russian Federation
+	 * SG - Singapore
+	 * ZA - South Africa
+	 * ES - Spain
+	 * CH - Switzerland  
+	 * UK - United Kingdom
+	 * US - United States
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -739,39 +739,39 @@ public class AdaptiveAccountsService extends BaseService {
 	 }
 
 	/** 
-	*  To be updated.
-	*  Countries Supported:
-	*  AU - Australia
-	*  AT - Austria  
-	*  BE - Belgium
-	*  BR - Brazil
-	*  CA - Canada
-	*  CZ - Czech Republic
-	*  FR - France
-	*  DE - Germany
-	*  GR - Greece
-	*  HK - Hong Kong
-	*  IE - Ireland
-	*  IT - Italy
-	*  JP - Japan
-	*  LU - Luxembourg
-	*  MX - Mexico
-	*  NL - Netherlands
-	*  NZ - New Zealand (Aotearoa)
-	*  PL - Poland
-	*  PT - Portugal
-	*  RU - Russian Federation
-	*  SG - Singapore
-	*  ZA - South Africa
-	*  ES - Spain
-	*  CH - Switzerland  
-	*  UK - United Kingdom
-	*  US - United States
-	*  
-	*  
-	*  
-	*  
-	*  
+	 * To be updated.
+	 * Countries Supported:
+	 * AU - Australia
+	 * AT - Austria  
+	 * BE - Belgium
+	 * BR - Brazil
+	 * CA - Canada
+	 * CZ - Czech Republic
+	 * FR - France
+	 * DE - Germany
+	 * GR - Greece
+	 * HK - Hong Kong
+	 * IE - Ireland
+	 * IT - Italy
+	 * JP - Japan
+	 * LU - Luxembourg
+	 * MX - Mexico
+	 * NL - Netherlands
+	 * NZ - New Zealand (Aotearoa)
+	 * PL - Poland
+	 * PT - Portugal
+	 * RU - Russian Federation
+	 * SG - Singapore
+	 * ZA - South Africa
+	 * ES - Spain
+	 * CH - Switzerland  
+	 * UK - United Kingdom
+	 * US - United States
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -788,39 +788,39 @@ public class AdaptiveAccountsService extends BaseService {
 	 }
 
 	/** 
-	*  To be updated.
-	*  Countries Supported:
-	*  AU - Australia
-	*  AT - Austria  
-	*  BE - Belgium
-	*  BR - Brazil
-	*  CA - Canada
-	*  CZ - Czech Republic
-	*  FR - France
-	*  DE - Germany
-	*  GR - Greece
-	*  HK - Hong Kong
-	*  IE - Ireland
-	*  IT - Italy
-	*  JP - Japan
-	*  LU - Luxembourg
-	*  MX - Mexico
-	*  NL - Netherlands
-	*  NZ - New Zealand (Aotearoa)
-	*  PL - Poland
-	*  PT - Portugal
-	*  RU - Russian Federation
-	*  SG - Singapore
-	*  ZA - South Africa
-	*  ES - Spain
-	*  CH - Switzerland  
-	*  UK - United Kingdom
-	*  US - United States
-	*  
-	*  
-	*  
-	*  
-	*  
+	 * To be updated.
+	 * Countries Supported:
+	 * AU - Australia
+	 * AT - Austria  
+	 * BE - Belgium
+	 * BR - Brazil
+	 * CA - Canada
+	 * CZ - Czech Republic
+	 * FR - France
+	 * DE - Germany
+	 * GR - Greece
+	 * HK - Hong Kong
+	 * IE - Ireland
+	 * IT - Italy
+	 * JP - Japan
+	 * LU - Luxembourg
+	 * MX - Mexico
+	 * NL - Netherlands
+	 * NZ - New Zealand (Aotearoa)
+	 * PL - Poland
+	 * PT - Portugal
+	 * RU - Russian Federation
+	 * SG - Singapore
+	 * ZA - South Africa
+	 * ES - Spain
+	 * CH - Switzerland  
+	 * UK - United Kingdom
+	 * US - United States
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -839,39 +839,39 @@ public class AdaptiveAccountsService extends BaseService {
 	}
 	
 	/**	
-	*  To be updated.
-	*  Countries Supported:
-	*  AU - Australia
-	*  AT - Austria  
-	*  BE - Belgium
-	*  BR - Brazil
-	*  CA - Canada
-	*  CZ - Czech Republic
-	*  FR - France
-	*  DE - Germany
-	*  GR - Greece
-	*  HK - Hong Kong
-	*  IE - Ireland
-	*  IT - Italy
-	*  JP - Japan
-	*  LU - Luxembourg
-	*  MX - Mexico
-	*  NL - Netherlands
-	*  NZ - New Zealand (Aotearoa)
-	*  PL - Poland
-	*  PT - Portugal
-	*  RU - Russian Federation
-	*  SG - Singapore
-	*  ZA - South Africa
-	*  ES - Spain
-	*  CH - Switzerland  
-	*  UK - United Kingdom
-	*  US - United States
-	*  
-	*  
-	*  
-	*  
-	*  
+	 * To be updated.
+	 * Countries Supported:
+	 * AU - Australia
+	 * AT - Austria  
+	 * BE - Belgium
+	 * BR - Brazil
+	 * CA - Canada
+	 * CZ - Czech Republic
+	 * FR - France
+	 * DE - Germany
+	 * GR - Greece
+	 * HK - Hong Kong
+	 * IE - Ireland
+	 * IT - Italy
+	 * JP - Japan
+	 * LU - Luxembourg
+	 * MX - Mexico
+	 * NL - Netherlands
+	 * NZ - New Zealand (Aotearoa)
+	 * PL - Poland
+	 * PT - Portugal
+	 * RU - Russian Federation
+	 * SG - Singapore
+	 * ZA - South Africa
+	 * ES - Spain
+	 * CH - Switzerland  
+	 * UK - United Kingdom
+	 * US - United States
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -890,14 +890,14 @@ public class AdaptiveAccountsService extends BaseService {
 	 }
 
 	/** 
-	*  To be updated.
-	*  Countries Supported:
-	*  US - United States
-	*  
-	*  
-	*  
-	*  
-	*  
+	 * To be updated.
+	 * Countries Supported:
+	 * US - United States
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -914,14 +914,14 @@ public class AdaptiveAccountsService extends BaseService {
 	 }
 
 	/** 
-	*  To be updated.
-	*  Countries Supported:
-	*  US - United States
-	*  
-	*  
-	*  
-	*  
-	*  
+	 * To be updated.
+	 * Countries Supported:
+	 * US - United States
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -940,14 +940,14 @@ public class AdaptiveAccountsService extends BaseService {
 	}
 	
 	/**	
-	*  To be updated.
-	*  Countries Supported:
-	*  US - United States
-	*  
-	*  
-	*  
-	*  
-	*  
+	 * To be updated.
+	 * Countries Supported:
+	 * US - United States
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -966,16 +966,16 @@ public class AdaptiveAccountsService extends BaseService {
 	 }
 
 	/** 
-	*  To be updated.
-	*  Countries Supported:
-	*  US - United States
-	*  Supported FinancialProduct: PayPal netSpend Master Prepaid
-	*  Card
-	*  
-	*  
-	*  
-	*  
-	*  
+	 * To be updated.
+	 * Countries Supported:
+	 * US - United States
+	 * Supported FinancialProduct: PayPal netSpend Master Prepaid
+	 * Card
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -992,16 +992,16 @@ public class AdaptiveAccountsService extends BaseService {
 	 }
 
 	/** 
-	*  To be updated.
-	*  Countries Supported:
-	*  US - United States
-	*  Supported FinancialProduct: PayPal netSpend Master Prepaid
-	*  Card
-	*  
-	*  
-	*  
-	*  
-	*  
+	 * To be updated.
+	 * Countries Supported:
+	 * US - United States
+	 * Supported FinancialProduct: PayPal netSpend Master Prepaid
+	 * Card
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -1020,16 +1020,16 @@ public class AdaptiveAccountsService extends BaseService {
 	}
 	
 	/**	
-	*  To be updated.
-	*  Countries Supported:
-	*  US - United States
-	*  Supported FinancialProduct: PayPal netSpend Master Prepaid
-	*  Card
-	*  
-	*  
-	*  
-	*  
-	*  
+	 * To be updated.
+	 * Countries Supported:
+	 * US - United States
+	 * Supported FinancialProduct: PayPal netSpend Master Prepaid
+	 * Card
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -1048,12 +1048,12 @@ public class AdaptiveAccountsService extends BaseService {
 	 }
 
 	/** 
-	*  To Activate POS - For a POC - Internal Purposes
-	*  
-	*  
-	*  
-	*  
-	*  
+	 * To Activate POS - For a POC - Internal Purposes
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -1070,12 +1070,12 @@ public class AdaptiveAccountsService extends BaseService {
 	 }
 
 	/** 
-	*  To Activate POS - For a POC - Internal Purposes
-	*  
-	*  
-	*  
-	*  
-	*  
+	 * To Activate POS - For a POC - Internal Purposes
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -1094,12 +1094,12 @@ public class AdaptiveAccountsService extends BaseService {
 	}
 	
 	/**	
-	*  To Activate POS - For a POC - Internal Purposes
-	*  
-	*  
-	*  
-	*  
-	*  
+	 * To Activate POS - For a POC - Internal Purposes
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -1118,13 +1118,13 @@ public class AdaptiveAccountsService extends BaseService {
 	 }
 
 	/** 
-	*  To Update the Compliance Status (CIP, KYC, EDD) called from
-	*  Authorized Third Party Vendor.
-	*  
-	*  
-	*  
-	*  
-	*  
+	 * To Update the Compliance Status (CIP, KYC, EDD) called from
+	 * Authorized Third Party Vendor.
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -1141,13 +1141,13 @@ public class AdaptiveAccountsService extends BaseService {
 	 }
 
 	/** 
-	*  To Update the Compliance Status (CIP, KYC, EDD) called from
-	*  Authorized Third Party Vendor.
-	*  
-	*  
-	*  
-	*  
-	*  
+	 * To Update the Compliance Status (CIP, KYC, EDD) called from
+	 * Authorized Third Party Vendor.
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException
@@ -1166,13 +1166,13 @@ public class AdaptiveAccountsService extends BaseService {
 	}
 	
 	/**	
-	*  To Update the Compliance Status (CIP, KYC, EDD) called from
-	*  Authorized Third Party Vendor.
-	*  
-	*  
-	*  
-	*  
-	*  
+	 * To Update the Compliance Status (CIP, KYC, EDD) called from
+	 * Authorized Third Party Vendor.
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
 	 * @throws SSLConfigurationException
 	 * @throws InvalidCredentialException
 	 * @throws UnsupportedEncodingException

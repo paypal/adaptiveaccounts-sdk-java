@@ -6,13 +6,13 @@ import java.io.UnsupportedEncodingException;
 import com.paypal.core.NVPUtil;
 
 /**
- *  
+ * 
  */
 public class AuditorList{
 
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private List<Auditor> auditor = new ArrayList<Auditor>();

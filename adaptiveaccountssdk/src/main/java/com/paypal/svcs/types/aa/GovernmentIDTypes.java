@@ -1,8 +1,8 @@
 package com.paypal.svcs.types.aa;
 
 /**
- *  Government ID Types 
- *   
+ * Government ID Types 
+ *  
  */
 public enum  GovernmentIDTypes {
 

@@ -4,18 +4,18 @@ import java.io.UnsupportedEncodingException;
 import com.paypal.core.NVPUtil;
 
 /**
- *  
+ * 
  */
 public class LegalAgreementType{
 
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String accepted;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private LegalAgreementTypes type;
 

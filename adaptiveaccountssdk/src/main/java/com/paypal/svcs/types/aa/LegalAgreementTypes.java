@@ -1,8 +1,8 @@
 package com.paypal.svcs.types.aa;
 
 /**
- *  Legal Agreement Types 
- *   
+ * Legal Agreement Types 
+ *  
  */
 public enum  LegalAgreementTypes {
 

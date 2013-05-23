@@ -1,8 +1,8 @@
 package com.paypal.svcs.types.aa;
 
 /**
- *  Stake holder role 
- *   
+ * Stake holder role 
+ *  
  */
 public enum  StakeholderRoleType {
 

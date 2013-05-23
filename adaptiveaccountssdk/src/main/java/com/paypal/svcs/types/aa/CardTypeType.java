@@ -1,8 +1,8 @@
 package com.paypal.svcs.types.aa;
 
 /**
- *  SwitchMaestro, deprecated card type, use UKMaestro instead
- *               
+ * SwitchMaestro, deprecated card type, use UKMaestro instead
+ *              
  */
 public enum  CardTypeType {
 

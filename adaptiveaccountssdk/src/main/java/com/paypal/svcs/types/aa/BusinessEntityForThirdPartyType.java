@@ -1,74 +1,81 @@
 package com.paypal.svcs.types.aa;
+import com.paypal.svcs.types.aa.NameType;
 import com.paypal.svcs.types.aa.AddressType;
 import java.io.UnsupportedEncodingException;
 import com.paypal.core.NVPUtil;
 
 /**
- *  Third party type: Individual or Business. 
+ * Third party type: Individual or Business. 
  */
 public class BusinessEntityForThirdPartyType{
 
 
 	/**
-	*  Third party type: Individual or Business. 	 
+	 * Third party type: Individual or Business. 	 
 	 */ 
 	private String thirdPartyType;
 
 	/**
-	*  If third party is individual, name of the individual. 	 
+	 * If third party is individual, name of the individual. 	 
 	 */ 
-	private String name;
+	private NameType name;
 
 	/**
-	*  If third party is individual, date of birth of the
-	*  individual. 	 
+	 * If third party is individual, date of birth of the
+	 * individual. 	 
 	 */ 
 	private String dateOfBirth;
 
 	/**
-	*  Address of third party collecting the data. 	 
+	 * Address of third party collecting the data. 	 
 	 */ 
 	private AddressType address;
 
 	/**
-	*  If third party is individual, profession of the individual
-	*  representing third party. 	 
+	 * If third party is individual, profession of the individual
+	 * representing third party. 	 
 	 */ 
 	private String profession;
 
 	/**
-	*  Relationship with third party, of the individual or the
-	*  business. 	 
+	 * Relationship with third party, of the individual or the
+	 * business. 	 
 	 */ 
 	private String relationshipWithThirdParty;
 
 	/**
-	*  Nature of Business, if third party is a business. 	 
+	 * Nature of Business, if third party is a business. 	 
 	 */ 
 	private String natureOfBusiness;
 
 	/**
-	*  Name of Business, if third party is a business. 	 
+	 * Name of Business, if third party is a business. 	 
 	 */ 
 	private String nameOfBusiness;
 
 	/**
-	*  If third party is a business, collect the businessType.
-	*  Values: Corporation, Private Company, Public Company,
-	*  Partnership, Government Entity, Non-Profit Organization 	 
+	 * If third party is a business, collect the businessType.
+	 * Values: Corporation, Private Company, Public Company,
+	 * Partnership, Government Entity, Non-Profit Organization 	 
 	 */ 
 	private String businessType;
 
 	/**
-	*  If third party is a business, collect Incorporation ID. 	 
+	 * If third party is a business, collect Incorporation ID. 	 
 	 */ 
 	private String incorporationId;
 
 	/**
-	*  If third party is business, collect place of issue of
-	*  Incorporation. 	 
+	 * If third party is business, collect place of issue of
+	 * Incorporation. 	 
 	 */ 
-	private String incorporationPlaceOfIssue;
+	private String incorporationCountry;
+
+	/**
+	 * If third party is business, collect place of issue of
+	 * Incorporation. 	 
+	 */ 
+	private String incorporationState;
 
 	
 
@@ -95,14 +102,14 @@ public class BusinessEntityForThirdPartyType{
 	/**
 	 * Getter for name
 	 */
-	 public String getName() {
+	 public NameType getName() {
 	 	return name;
 	 }
 	 
 	/**
 	 * Setter for name
 	 */
-	 public void setName(String name) {
+	 public void setName(NameType name) {
 	 	this.name = name;
 	 }
 	 
@@ -219,17 +226,31 @@ public class BusinessEntityForThirdPartyType{
 	 }
 	 
 	/**
-	 * Getter for incorporationPlaceOfIssue
+	 * Getter for incorporationCountry
 	 */
-	 public String getIncorporationPlaceOfIssue() {
-	 	return incorporationPlaceOfIssue;
+	 public String getIncorporationCountry() {
+	 	return incorporationCountry;
 	 }
 	 
 	/**
-	 * Setter for incorporationPlaceOfIssue
+	 * Setter for incorporationCountry
 	 */
-	 public void setIncorporationPlaceOfIssue(String incorporationPlaceOfIssue) {
-	 	this.incorporationPlaceOfIssue = incorporationPlaceOfIssue;
+	 public void setIncorporationCountry(String incorporationCountry) {
+	 	this.incorporationCountry = incorporationCountry;
+	 }
+	 
+	/**
+	 * Getter for incorporationState
+	 */
+	 public String getIncorporationState() {
+	 	return incorporationState;
+	 }
+	 
+	/**
+	 * Setter for incorporationState
+	 */
+	 public void setIncorporationState(String incorporationState) {
+	 	this.incorporationState = incorporationState;
 	 }
 	 
 
@@ -245,8 +266,8 @@ public class BusinessEntityForThirdPartyType{
 			sb.append("&");
 		}
 		if (this.name != null) {
-			sb.append(prefix).append("name=").append(NVPUtil.encodeUrl(this.name));
-			sb.append("&");
+			String newPrefix = prefix + "name.";
+			sb.append(this.name.toNVPString(newPrefix));
 		}
 		if (this.dateOfBirth != null) {
 			sb.append(prefix).append("dateOfBirth=").append(NVPUtil.encodeUrl(this.dateOfBirth));
@@ -280,8 +301,12 @@ public class BusinessEntityForThirdPartyType{
 			sb.append(prefix).append("incorporationId=").append(NVPUtil.encodeUrl(this.incorporationId));
 			sb.append("&");
 		}
-		if (this.incorporationPlaceOfIssue != null) {
-			sb.append(prefix).append("incorporationPlaceOfIssue=").append(NVPUtil.encodeUrl(this.incorporationPlaceOfIssue));
+		if (this.incorporationCountry != null) {
+			sb.append(prefix).append("incorporationCountry=").append(NVPUtil.encodeUrl(this.incorporationCountry));
+			sb.append("&");
+		}
+		if (this.incorporationState != null) {
+			sb.append(prefix).append("incorporationState=").append(NVPUtil.encodeUrl(this.incorporationState));
 			sb.append("&");
 		}
 		return sb.toString();
