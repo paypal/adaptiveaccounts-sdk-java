@@ -6,45 +6,45 @@ import java.io.UnsupportedEncodingException;
 import com.paypal.core.NVPUtil;
 
 /**
- *  Info about Stakeholders such as partner, beneficial, owner,
- *  director etc. 
+ * Info about Stakeholders such as partner, beneficial, owner,
+ * director etc. 
  */
 public class BusinessStakeholderType{
 
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private StakeholderRoleType role;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private NameType name;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String fullLegalName;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private AddressType address;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String dateOfBirth;
 
 	/**
-	*  Occupation of the business stakeholder. Values such as:
-	*  Accountant, Actuary, Advocate, Architect, Business Owner,
-	*  Doctor, Dentist, Engineer, Financial Analyst, Lawyer,
-	*  Librarian, Nurse, Pilot, Pharmacist, Physician, Physicial
-	*  Therapist, Professor, Psychologist, Scientist, Teacher,
-	*  Webmaster, Writer, Student, Other 	 
+	 * Occupation of the business stakeholder. Values such as:
+	 * Accountant, Actuary, Advocate, Architect, Business Owner,
+	 * Doctor, Dentist, Engineer, Financial Analyst, Lawyer,
+	 * Librarian, Nurse, Pilot, Pharmacist, Physician, Physicial
+	 * Therapist, Professor, Psychologist, Scientist, Teacher,
+	 * Webmaster, Writer, Student, Other 	 
 	 */ 
 	private String occupation;
 

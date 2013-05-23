@@ -1,8 +1,8 @@
 package com.paypal.svcs.types.aa;
 
 /**
- *  Generic Yes or No input validation type.
- *   
+ * Generic Yes or No input validation type.
+ *  
  */
 public enum  YesNoType {
 

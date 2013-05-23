@@ -7,36 +7,36 @@ import com.paypal.svcs.types.common.ErrorData;
 import java.util.Map;
 
 /**
- *  Returned values are: VERIFIED|UNVERIFIED. 
+ * Returned values are: VERIFIED|UNVERIFIED. 
  */
 public class GetVerifiedStatusResponse{
 
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private ResponseEnvelope responseEnvelope;
 
 	/**
-	*  Returned values are: VERIFIED|UNVERIFIED. 	  
+	 * Returned values are: VERIFIED|UNVERIFIED. 	  
 	 *@Required	 
 	 */ 
 	private String accountStatus;
 
 	/**
-	*  Returns countryCode belonging to PayPal account. 	 
+	 * Returns countryCode belonging to PayPal account. 	 
 	 */ 
 	private String countryCode;
 
 	/**
-	*  Info about PayPal user such as emailAddress, accountId,
-	*  firstName, lastName etc. 	 
+	 * Info about PayPal user such as emailAddress, accountId,
+	 * firstName, lastName etc. 	 
 	 */ 
 	private UserInfoType userInfo;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private List<ErrorData> error = new ArrayList<ErrorData>();
 

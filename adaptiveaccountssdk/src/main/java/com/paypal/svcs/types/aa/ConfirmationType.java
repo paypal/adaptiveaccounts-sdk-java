@@ -1,11 +1,11 @@
 package com.paypal.svcs.types.aa;
 
 /**
- *  API confirmation type currently
- *   Valid values are: NONE, MOBILE and
- *   WEB. WEB: Returns a URL to complete the
- *   registration.
- *   
+ * API confirmation type currently
+ *  Valid values are: NONE, MOBILE and
+ *  WEB. WEB: Returns a URL to complete the
+ *  registration.
+ *  
  */
 public enum  ConfirmationType {
 

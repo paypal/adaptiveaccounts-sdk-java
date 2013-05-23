@@ -1,8 +1,8 @@
 package com.paypal.svcs.types.aa;
 
 /**
- *  Sales venue / store front type
- *   
+ * Sales venue / store front type
+ *  
  */
 public enum  SalesVenueType {
 

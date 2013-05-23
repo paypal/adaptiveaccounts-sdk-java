@@ -12,181 +12,181 @@ import java.io.UnsupportedEncodingException;
 import com.paypal.core.NVPUtil;
 
 /**
- *  PayPal Business Category. i.e., baby - 1004 
+ * PayPal Business Category. i.e., baby - 1004 
  */
 public class BusinessInfoType{
 
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String businessName;
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private AddressType businessAddress;
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String workPhone;
 
 	/**
-	*  PayPal Business Category. i.e., baby - 1004 	 
+	 * PayPal Business Category. i.e., baby - 1004 	 
 	 */ 
 	private Integer category;
 
 	/**
-	*  Paypal Business subcategory. i.e., baby-clothing - 2027 	 
+	 * Paypal Business subcategory. i.e., baby-clothing - 2027 	 
 	 */ 
 	private Integer subCategory;
 
 	/**
-	*  If Category and Subcategory is specified, then this is
-	*  optional. PayPal uses the industry standard Merchant
-	*  Category Codes. Please refer to your Association Merchant
-	*  Category Code documentation for a list of codes 	 
+	 * If Category and Subcategory is specified, then this is
+	 * optional. PayPal uses the industry standard Merchant
+	 * Category Codes. Please refer to your Association Merchant
+	 * Category Code documentation for a list of codes 	 
 	 */ 
 	private Integer merchantCategoryCode;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String doingBusinessAs;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String customerServicePhone;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String customerServiceEmail;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String disputeEmail;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String webSite;
 
 	/**
-	*  Company Id: tax id, acn, abn, etc. 	 
+	 * Company Id: tax id, acn, abn, etc. 	 
 	 */ 
 	private String companyId;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String dateOfEstablishment;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private BusinessType businessType;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private BusinessSubtypeType businessSubtype;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String incorporationId;
 
 	/**
-	*  Average transaction value. 	 
+	 * Average transaction value. 	 
 	 */ 
 	private Double averagePrice;
 
 	/**
-	*  Average monthly transaction value. 	 
+	 * Average monthly transaction value. 	 
 	 */ 
 	private Double averageMonthlyVolume;
 
 	/**
-	*  Percentage of the revenue that is from online sales
-	*  (0%-100%). 	 
+	 * Percentage of the revenue that is from online sales
+	 * (0%-100%). 	 
 	 */ 
 	private Integer percentageRevenueFromOnline;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private List<SalesVenueType> salesVenue = new ArrayList<SalesVenueType>();
 
 	/**
-	*  Description of store front or place for sales. Only required
-	*  when "OTHER" is specified for salesVenue. 	 
+	 * Description of store front or place for sales. Only required
+	 * when "OTHER" is specified for salesVenue. 	 
 	 */ 
 	private String salesVenueDesc;
 
 	/**
-	*  Value Added Tax (VAT) ID number 	 
+	 * Value Added Tax (VAT) ID number 	 
 	 */ 
 	private String vatId;
 
 	/**
-	*  Country code for country on the vat id. 	 
+	 * Country code for country on the vat id. 	 
 	 */ 
 	private String vatCountryCode;
 
 	/**
-	*  Official commercial registration location. 	 
+	 * Official commercial registration location. 	 
 	 */ 
 	private String commercialRegistrationLocation;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private AddressType principalPlaceOfBusinessAddress;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private AddressType registeredOfficeAddress;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String establishmentCountryCode;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String establishmentState;
 
 	/**
-	*  All the stakeholders of the company. 	 
+	 * All the stakeholders of the company. 	 
 	 */ 
 	private List<BusinessStakeholderType> businessStakeholder = new ArrayList<BusinessStakeholderType>();
 
 	/**
-	*  Business entity acting on behalf of Third Party. 	 
+	 * Business entity acting on behalf of Third Party. 	 
 	 */ 
 	private BusinessEntityForThirdPartyType businessEntityForThirdParty;
 
 	/**
-	*  Values: Yes or No 	 
+	 * Values: Yes or No 	 
 	 */ 
 	private YesNoType hasDirectors;
 
 	/**
-	*  Values: Yes or No 	 
+	 * Values: Yes or No 	 
 	 */ 
 	private YesNoType hasBeneficialOwners;
 
 	/**
-	*  Values: Yes or No 	 
+	 * Values: Yes or No 	 
 	 */ 
 	private YesNoType hasThirdPartyAssociates;
 
