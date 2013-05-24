@@ -5,22 +5,22 @@ import java.io.UnsupportedEncodingException;
 import com.paypal.core.NVPUtil;
 
 /**
- *  This operation is for internal purposes developed for a POC.
- *  
+ * This operation is for internal purposes developed for a POC.
+ * 
  */
 public class ActivateProductRequest{
 
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private RequestEnvelope requestEnvelope;
 
 	/**
-	*  Identifies a PayPal account to which this request is
-	*  targeted. Caller of this API has to provide ONLY one of
-	*  these inputs: emailAddress or accountId. 	  
+	 * Identifies a PayPal account to which this request is
+	 * targeted. Caller of this API has to provide ONLY one of
+	 * these inputs: emailAddress or accountId. 	  
 	 *@Required	 
 	 */ 
 	private AccountIdentifierType accountIdentifier;

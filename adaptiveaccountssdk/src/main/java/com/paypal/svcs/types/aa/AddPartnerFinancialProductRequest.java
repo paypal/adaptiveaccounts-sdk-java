@@ -8,76 +8,76 @@ import java.io.UnsupportedEncodingException;
 import com.paypal.core.NVPUtil;
 
 /**
- *  This not considered when
- *  financialProductCategory=PRE_PAID_CARD 
+ * This not considered when
+ * financialProductCategory=PRE_PAID_CARD 
  */
 public class AddPartnerFinancialProductRequest{
 
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private RequestEnvelope requestEnvelope;
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private AccountIdentifierType accountIdentifier;
 
 	/**
-	*  This not considered when
-	*  financialProductCategory=PRE_PAID_CARD 	 
+	 * This not considered when
+	 * financialProductCategory=PRE_PAID_CARD 	 
 	 */ 
 	private NameType nameOnCard;
 
 	/**
-	*  This not considered when
-	*  financialProductCategory=PRE_PAID_CARD 	 
+	 * This not considered when
+	 * financialProductCategory=PRE_PAID_CARD 	 
 	 */ 
 	private AddressType billingAddress;
 
 	/**
-	*  This not considered when
-	*  financialProductCategory=PRE_PAID_CARD 	 
+	 * This not considered when
+	 * financialProductCategory=PRE_PAID_CARD 	 
 	 */ 
 	private String cardOwnerDateOfBirth;
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String cardNumber;
 
 	/**
-	*  Identify the kind of PayPal financial product. Possible
-	*  value is : PRE_PAID_CARD 	  
+	 * Identify the kind of PayPal financial product. Possible
+	 * value is : PRE_PAID_CARD 	  
 	 *@Required	 
 	 */ 
 	private String financialProductCategory;
 
 	/**
-	*  expirationDate is mandatory when financialProductCategoy =
-	*  PRE_PAID_CARD 	  
+	 * expirationDate is mandatory when financialProductCategoy =
+	 * PRE_PAID_CARD 	  
 	 *@Required	 
 	 */ 
 	private CardDateType expirationDate;
 
 	/**
-	*  This not considered when
-	*  financialProductCategory=PRE_PAID_CARD 	 
+	 * This not considered when
+	 * financialProductCategory=PRE_PAID_CARD 	 
 	 */ 
 	private String cardVerificationNumber;
 
 	/**
-	*  This not considered when
-	*  financialProductCategory=PRE_PAID_CARD 	 
+	 * This not considered when
+	 * financialProductCategory=PRE_PAID_CARD 	 
 	 */ 
 	private CardDateType startDate;
 
 	/**
-	*  Up to 2 digit for Switch/Maestro cards. 	 
+	 * Up to 2 digit for Switch/Maestro cards. 	 
 	 */ 
 	private String issueNumber;
 

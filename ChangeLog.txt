@@ -1,3 +1,10 @@
+Version 2.3.102 - May 23, 2013
+ 
+ 	- Updated core sdk version.
+ 	- Updated stubs for 102 release.
+	
+You can see source code of this release in github under https://github.com/paypal/adaptiveaccounts-sdk-java/tree/v2.3.102.
+--------------------------------------------------------------------------------------------------
 Version 2.3.101 - April 30, 2013
  
  	- Updated core sdk version.

@@ -4,18 +4,18 @@ import java.io.UnsupportedEncodingException;
 import com.paypal.core.NVPUtil;
 
 /**
- *  
+ * 
  */
 public class GovernmentIDPair{
 
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String value;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private GovernmentIDTypes type;
 

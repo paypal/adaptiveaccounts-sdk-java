@@ -4,35 +4,35 @@ import com.paypal.core.NVPUtil;
 import java.util.Map;
 
 /**
- *  
+ * 
  */
 public class NameType{
 
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String salutation;
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String firstName;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String middleName;
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String lastName;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String suffix;
 

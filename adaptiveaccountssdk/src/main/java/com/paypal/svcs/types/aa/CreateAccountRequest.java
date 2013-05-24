@@ -13,197 +13,197 @@ import java.io.UnsupportedEncodingException;
 import com.paypal.core.NVPUtil;
 
 /**
- *  Valid values are: Personal, Premier, and Business. Flag="2"
- *  corresponds to java.util.regex.Pattern.CASE_INSENSITIVE,
- *  meaning the strings are not case-sensitive 
+ * Valid values are: Personal, Premier, and Business. Flag="2"
+ * corresponds to java.util.regex.Pattern.CASE_INSENSITIVE,
+ * meaning the strings are not case-sensitive 
  */
 public class CreateAccountRequest{
 
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private RequestEnvelope requestEnvelope;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private ClientDetailsType clientDetails;
 
 	/**
-	*  Valid values are: Personal, Premier, and Business. Flag="2"
-	*  corresponds to java.util.regex.Pattern.CASE_INSENSITIVE,
-	*  meaning the strings are not case-sensitive 	 
+	 * Valid values are: Personal, Premier, and Business. Flag="2"
+	 * corresponds to java.util.regex.Pattern.CASE_INSENSITIVE,
+	 * meaning the strings are not case-sensitive 	 
 	 */ 
 	private String accountType;
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private NameType name;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String dateOfBirth;
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private AddressType address;
 
 	/**
-	*  Must provide at least one of contactPhoneNumber,
-	*  homePhoneNumber, or mobilePhoneNumber 	 
+	 * Must provide at least one of contactPhoneNumber,
+	 * homePhoneNumber, or mobilePhoneNumber 	 
 	 */ 
 	private String contactPhoneNumber;
 
 	/**
-	*  Must provide at least one of contactPhoneNumber,
-	*  homePhoneNumber, or mobilePhoneNumber 	 
+	 * Must provide at least one of contactPhoneNumber,
+	 * homePhoneNumber, or mobilePhoneNumber 	 
 	 */ 
 	private String homePhoneNumber;
 
 	/**
-	*  Must provide at least one of contactPhoneNumber,
-	*  homePhoneNumber, or mobilePhoneNumber 	 
+	 * Must provide at least one of contactPhoneNumber,
+	 * homePhoneNumber, or mobilePhoneNumber 	 
 	 */ 
 	private String mobilePhoneNumber;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String currencyCode;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String citizenshipCountryCode;
 
 	/**
-	*  	  
+	 * 	  
 	 *@Required	 
 	 */ 
 	private String preferredLanguageCode;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String notificationURL;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String emailAddress;
 
 	/**
-	*  Valid values are: Mobile and Web. Mobile: Returns a key to
-	*  complete the registration. Web: Returns a URL to complete
-	*  the registration. 	 
+	 * Valid values are: Mobile and Web. Mobile: Returns a key to
+	 * complete the registration. Web: Returns a URL to complete
+	 * the registration. 	 
 	 */ 
 	private String registrationType;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private CreateAccountWebOptionsType createAccountWebOptions;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private Boolean suppressWelcomeEmail;
 
 	/**
-	*  Set to true if you want this account to undergo extra
-	*  vetting by PayPal before becoming usable. 	 
+	 * Set to true if you want this account to undergo extra
+	 * vetting by PayPal before becoming usable. 	 
 	 */ 
 	private Boolean performExtraVettingOnThisAccount;
 
 	/**
-	*  tax id, ssn, itin, pan, cpf, acn, abn, etc. 	 
+	 * tax id, ssn, itin, pan, cpf, acn, abn, etc. 	 
 	 */ 
 	private String taxId;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String partnerField1;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String partnerField2;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String partnerField3;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String partnerField4;
 
 	/**
-	*  	 
+	 * 	 
 	 */ 
 	private String partnerField5;
 
 	/**
-	*  Required for business account creation 	 
+	 * Required for business account creation 	 
 	 */ 
 	private BusinessInfoType businessInfo;
 
 	/**
-	*  An ID representing a unique value, such as SSN, TIN, SIN,
-	*  TaxID, etc. generally issued by a Government. Currently
-	*  supports only SIN for Canada. 	 
+	 * An ID representing a unique value, such as SSN, TIN, SIN,
+	 * TaxID, etc. generally issued by a Government. Currently
+	 * supports only SIN for Canada. 	 
 	 */ 
 	private List<GovernmentIDPair> governmentId = new ArrayList<GovernmentIDPair>();
 
 	/**
-	*  Account Holder's profession, values such as: Accountant,
-	*  Actuary, Advocate, Architect, Business Owner, Doctor,
-	*  Dentist, Engineer, Financial Analyst, Lawyer, Librarian,
-	*  Nurse, Pilot, Pharmacist, Physician, Physicial Therapist,
-	*  Professor, Psychologist, Scientist, Teacher, Webmaster,
-	*  Writer, Student, Other 	 
+	 * Account Holder's profession, values such as: Accountant,
+	 * Actuary, Advocate, Architect, Business Owner, Doctor,
+	 * Dentist, Engineer, Financial Analyst, Lawyer, Librarian,
+	 * Nurse, Pilot, Pharmacist, Physician, Physicial Therapist,
+	 * Professor, Psychologist, Scientist, Teacher, Webmaster,
+	 * Writer, Student, Other 	 
 	 */ 
 	private String profession;
 
 	/**
-	*  Account Holder's occupation. For business accounts only.
-	*  Values: Executive, President, Vice President, Director,
-	*  Manager, Staff, Other. 	 
+	 * Account Holder's occupation. For business accounts only.
+	 * Values: Executive, President, Vice President, Director,
+	 * Manager, Staff, Other. 	 
 	 */ 
 	private String occupation;
 
 	/**
-	*  Account Holder's functional area. For business accounts
-	*  only. Values: Finance, Operations, Technology, Sales,
-	*  Marketing, Other 	 
+	 * Account Holder's functional area. For business accounts
+	 * only. Values: Finance, Operations, Technology, Sales,
+	 * Marketing, Other 	 
 	 */ 
 	private String functionalArea;
 
 	/**
-	*  Boolean value, indicates whether user has agreed for a
-	*  particular agreement or not. 	 
+	 * Boolean value, indicates whether user has agreed for a
+	 * particular agreement or not. 	 
 	 */ 
-	private LegalAgreementType legalAgreement;
+	private List<LegalAgreementType> legalAgreement = new ArrayList<LegalAgreementType>();
 
 	/**
-	*  Expected Value: 0|1|2|3|4|5 according to the description
-	*  below: 0 - "Send payments for goods and/or services to
-	*  domestic merchants" 1 - "Send payments for goods and/or
-	*  services to cross-border merchants" 2 - "Send payments for
-	*  goods and/or services to domestic and cross-border
-	*  merchants" 3 - "Receive payments for goods and/or services
-	*  from domestic buyers" 4 - "Receive payments for goods and/or
-	*  services from cross-border buyers" 5 - "Receive payments for
-	*  goods and/or service from domestic/cross-border buyers" 	 
+	 * Expected Value: 0|1|2|3|4|5 according to the description
+	 * below: 0 - "Send payments for goods and/or services to
+	 * domestic merchants" 1 - "Send payments for goods and/or
+	 * services to cross-border merchants" 2 - "Send payments for
+	 * goods and/or services to domestic and cross-border
+	 * merchants" 3 - "Receive payments for goods and/or services
+	 * from domestic buyers" 4 - "Receive payments for goods and/or
+	 * services from cross-border buyers" 5 - "Receive payments for
+	 * goods and/or service from domestic/cross-border buyers" 	 
 	 */ 
 	private String purposeOfAccount;
 
@@ -634,14 +634,14 @@ public class CreateAccountRequest{
 	/**
 	 * Getter for legalAgreement
 	 */
-	 public LegalAgreementType getLegalAgreement() {
+	 public List<LegalAgreementType> getLegalAgreement() {
 	 	return legalAgreement;
 	 }
 	 
 	/**
 	 * Setter for legalAgreement
 	 */
-	 public void setLegalAgreement(LegalAgreementType legalAgreement) {
+	 public void setLegalAgreement(List<LegalAgreementType> legalAgreement) {
 	 	this.legalAgreement = legalAgreement;
 	 }
 	 
@@ -786,8 +786,10 @@ public class CreateAccountRequest{
 			sb.append("&");
 		}
 		if (this.legalAgreement != null) {
-			String newPrefix = prefix + "legalAgreement.";
-			sb.append(this.legalAgreement.toNVPString(newPrefix));
+			for(int i=0; i < this.legalAgreement.size(); i++) {
+				String newPrefix = prefix + "legalAgreement" + "(" + i + ").";
+				sb.append(this.legalAgreement.get(i).toNVPString(newPrefix));
+			}
 		}
 		if (this.purposeOfAccount != null) {
 			sb.append(prefix).append("purposeOfAccount=").append(NVPUtil.encodeUrl(this.purposeOfAccount));
