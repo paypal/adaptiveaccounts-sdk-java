@@ -111,8 +111,7 @@ public class AdaptiveAccountsServlet extends HttpServlet {
 			// ## Creating service wrapper object
 			// Creating service wrapper object to make an API call and loading
 			// configuration file for your credentials and endpoint
-			AdaptiveAccountsService service = new AdaptiveAccountsService(this
-					.getClass().getResourceAsStream("/sdk_config.properties"));
+			AdaptiveAccountsService service = new AdaptiveAccountsService(Utility.getSignatureConfig());
 
 			if (request.getRequestURI().contains("CreateAccount")) { 			// CreateAccount Request
 				RequestEnvelope requestEnvelope = new RequestEnvelope();
