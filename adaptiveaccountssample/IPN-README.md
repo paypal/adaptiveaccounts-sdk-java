@@ -9,9 +9,8 @@ a response string "VERIFIED" or "INVALID".
 
 IPN configuration :
 -----------------
-* Initialize IPNMessage constructor with a configuration map containing, mode (sandbox/live) and connection parameters as shown below.
-* IPNMessage is provided in 'sdk-core-java' repository for ipn message validation. IPN Listener can use this class for message validation.
-    ```java
+* Initialize IPNMessage constructor with a configuration map containing, mode (sandbox or live) and connection parameters as shown below.
+   ```java
 		Map<String,String> configMap = new HashMap<String,String>();
 		
 		// Endpoints are varied depending on whether sandbox OR live is chosen for mode
@@ -24,7 +23,9 @@ IPN configuration :
 		configMap.put("http.MaxConnection", "100");
 			
 		IPNMessage ipnlistener = new IPNMessage(request,configMap);
-    ```		
+    ```
+* IPNMessage is provided in 'sdk-core-java' repository. IPN Listener can use this class for message validation.
+   		
      
 
 IPN How to run?
