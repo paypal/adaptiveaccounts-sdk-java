@@ -29,7 +29,7 @@ To make an API call:
 --------------------		
 *	Import AdaptiveAccountsService.java into your code.
 		
-*	Create a configuration file 'sdk_config.properties' (make sure, it is in class path). Use the default constructor to run with configuration used from 'sdk_config.properties' found in classpath.
+*	Create a configuration file 'sdk_config.properties' with parameters specified in configuration section (make sure the file is in class path). Use the default constructor to run with configuration used from 'sdk_config.properties' found in classpath.
 	```java
 	new AdaptiveAccountsService();
 	```
@@ -45,7 +45,7 @@ To make an API call:
 			 Or
 	new AdaptiveAccountsService(Properties customProperties);
 	```
-*	The SDK takes defaults for certain parameters(refer sdk_config.properties for defaults). Account Credentials and either of 'mode' or 'service.Endpoint' are mandatory parameters.
+*	The SDK takes defaults for certain parameters (eg: Account Credentials and either of 'mode' or 'service.Endpoint' are mandatory parameters).
   
 *	Create a service wrapper object.
 
