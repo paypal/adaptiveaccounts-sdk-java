@@ -29,7 +29,7 @@ To make an API call:
 --------------------		
 *	Import AdaptiveAccountsService.java into your code.
 		
-*	Copy the configuration file 'sdk_config.properties' in 'adaptiveaccountssample/src/main/resources' folder to your application 'src/main/resources'. Use the default constructor to run in default configuration(configuration used from sdk_config.properties found in classpath).
+*	Create a configuration file '*.properties' in your application 'src/main/resources' with configuration parameters specified in SDK configuration section. Use the default constructor to run configuration used from '*.properties' found in classpath.
 	```java
 	new AdaptiveAccountsService();
 	```
@@ -89,9 +89,7 @@ SDK Logging:
 		  
 SDK Configuration:
 ------------------
-The SDK uses .properties format configuration file. Sample of this file is at 
- 
-'adaptiveaccountssample/src/main/resources/'. You can use the 'sdk_config.properties' configuration file to configure
+The SDK uses dynamic configuration map or '*.properties' format configuration file as shown in code snippet above, to configure
 
 *	Mode is specified using the parameter name 'mode' with values 'sandbox' or 'live', if specified 'service.EndPoint' parameter is not required and the SDK chooses the sandbox or live endpoints automatically.
 
@@ -101,6 +99,7 @@ The SDK uses .properties format configuration file. Sample of this file is at
 
 *	Service configuration.
 
+*   You can refer full list of configuration parameters at [https://github.com/paypal/adaptiveaccounts-sdk-java/wiki/SDK-Configuration-Parameters]
 Multiple SDK usage (Multiple End-points Support)
 ---------------------------
 Multiple end-points configuration can be done by specifying mulitple end-points identified by specific property keys. 
