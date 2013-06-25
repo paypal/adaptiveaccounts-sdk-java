@@ -3,7 +3,7 @@ package com.sample.adaptiveaccounts;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Utility {
+public class Configuration {
 	
 	
 	public static final Map<String,String> getSignatureConfig(){
@@ -20,23 +20,6 @@ public class Utility {
 		
 		// Sandbox Email Address
 		configMap.put("sandbox.EmailAddress", "pp.devtools@gmail.com");
-		
-		//Connection Information
-		configMap.put("http.ConnectionTimeOut", "5000");
-		configMap.put("http.Retry", "2");
-		configMap.put("http.ReadTimeOut", "30000");
-		configMap.put("http.MaxConnection", "100");
-		configMap.put("http.IPAddress", "127.0.0.1");
-		
-		//Set this property to true if you are using the PayPal SDK within a Google App Engine java app
-		configMap.put("http.GoogleAppEngine", "false");
-		
-		// If you are using proxy set http.UseProxy to true and replace the following values with your proxy parameters
-		//configMap.put("http.UseProxy", "false");
-		//configMap.put("http.ProxyPort", "8080");
-		//configMap.put("http.ProxyHost", "127.0.0.1");
-		//configMap.put("http.ProxyUserName", null);
-		//configMap.put("http.ProxyPassword",null);
 		
 		return configMap;
 	}
@@ -57,23 +40,19 @@ public class Utility {
 		// Sandbox Email Address
 		configMap.put("sandbox.EmailAddress", "pp.devtools@gmail.com");
 		
+		return configMap;
+	}
+	
+	public static final Map<String,String> getIpnConfig(){
+		Map<String,String> configMap = new HashMap<String,String>();
 		//Connection Information
 		configMap.put("http.ConnectionTimeOut", "5000");
 		configMap.put("http.Retry", "2");
 		configMap.put("http.ReadTimeOut", "30000");
 		configMap.put("http.MaxConnection", "100");
-		configMap.put("http.IPAddress", "127.0.0.1");
 		
-		//Set this property to true if you are using the PayPal SDK within a Google App Engine java app
-		configMap.put("http.GoogleAppEngine", "false");
-		
-		// If you are using proxy set http.UseProxy to true and replace the following values with your proxy parameters
-		//configMap.put("http.UseProxy", "false");
-		//configMap.put("http.ProxyPort", "8080");
-		//configMap.put("http.ProxyHost", "127.0.0.1");
-		//configMap.put("http.ProxyUserName", null);
-		//configMap.put("http.ProxyPassword",null);
-		
+		// Endpoints are varied depending on whether sandbox OR live is chosen for mode
+		configMap.put("mode", "sandbox");
 		return configMap;
 	}
 }
