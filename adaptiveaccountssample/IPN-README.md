@@ -9,7 +9,7 @@ a response string "VERIFIED" or "INVALID".
 
 IPN configuration :
 -----------------
-* Initialize IPNMessage constructor with a configuration map containing mode (sandbox/live) and connection parameters as shown below.
+* Initialize IPNMessage constructor with a configuration map containing, mode (sandbox/live) and connection parameters as shown below.
 * IPNMessage is provided in 'sdk-core-java' repository for ipn message validation. IPN Listener can use this class for message validation.
     ```java
 		Map<String,String> configMap = new HashMap<String,String>();

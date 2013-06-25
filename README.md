@@ -29,7 +29,7 @@ To make an API call:
 --------------------		
 *	Import AdaptiveAccountsService.java into your code.
 		
-*	Create a configuration file '*.properties' in your application 'src/main/resources' with configuration parameters specified in SDK configuration section. Use the default constructor to run configuration used from '*.properties' found in classpath.
+*	Create a configuration file '*.properties' in your application folder 'src/main/resources' with configuration parameters specified in configuration section. Use the default constructor to run configuration used from '*.properties' found in classpath.
 	```java
 	new AdaptiveAccountsService();
 	```
@@ -100,8 +100,9 @@ The SDK uses dynamic configuration map or '*.properties' format configuration fi
 *	Service configuration.
 
 *   You can refer full list of configuration parameters at [https://github.com/paypal/adaptiveaccounts-sdk-java/wiki/SDK-Configuration-Parameters]
+
 Multiple SDK usage (Multiple End-points Support)
----------------------------
+------------------------------------------------
 Multiple end-points configuration can be done by specifying mulitple end-points identified by specific property keys. 
 When using multiple SDKs in combination, like Merchant and Permissions etc..configure the endpoints as shown below 
 one for each service used, The existing service.EndPoint property is still supported for backward compatibility (using 
@@ -109,7 +110,7 @@ a single SDK). The list below specifies endpoints for different services, in SAN
 property keys and end-point as property values.
 
 Sandbox EndPoints
-------------------------------  
+----------------- 
 *   Merchant/Button Manager Service (3 Token)  
     ```properties
     service.EndPoint.PayPalAPI=https://api-3t.sandbox.paypal.com/2.0  
