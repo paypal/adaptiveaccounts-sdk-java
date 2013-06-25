@@ -29,7 +29,7 @@ To make an API call:
 --------------------		
 *	Import AdaptiveAccountsService.java into your code.
 		
-*	Create a configuration file '*.properties' in your application folder 'src/main/resources' with configuration parameters specified in configuration section. Use the default constructor to run configuration used from '*.properties' found in classpath.
+*	Create a configuration file 'sdk_config.properties' (make sure, it is in class path). Use the default constructor to run with configuration used from 'sdk_config.properties' found in classpath.
 	```java
 	new AdaptiveAccountsService();
 	```
