@@ -8,6 +8,7 @@
 <title>Response Page</title>
 </head>
 <body>
+	<img src="https://devtools-paypal.com/image/bdg_payments_by_pp_2line.png" alt="PAYMENTS BY PayPal" />
 	<h2>Response Page</h2>
 	<%
 		Map<String, String> originalMap = (Map) session
