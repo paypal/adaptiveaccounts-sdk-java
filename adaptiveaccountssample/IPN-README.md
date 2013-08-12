@@ -11,12 +11,18 @@ IPN configuration :
 -----------------
 * Initialize IPNMessage constructor with a configuration map containing, mode (sandbox or live) and connection parameters as shown below.
    ```java
-		Map<String,String> mode = new HashMap<String,String>();
+		Map<String,String> configMap = new HashMap<String,String>();
 		
 		// Endpoints are varied depending on whether sandbox OR live is chosen for mode
-		mode.put("mode", "sandbox");
-					
-		IPNMessage ipnlistener = new IPNMessage(request,mode);
+		configMap.put("mode", "sandbox");
+		
+		// Connection Information. These values are defaulted in SDK. If you want to override default values, uncomment it and add your value.
+		// configMap.put("http.ConnectionTimeOut", "5000");
+		// configMap.put("http.Retry", "2");
+		// configMap.put("http.ReadTimeOut", "30000");
+		// configMap.put("http.MaxConnection", "100");
+			
+		IPNMessage ipnlistener = new IPNMessage(request,configMap);
     ```
 * IPNMessage is provided in 'sdk-core-java' repository. IPN Listener can use this class for message validation.
    		
