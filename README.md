@@ -29,7 +29,7 @@ To make an API call:
 --------------------		
 *	Import AdaptiveAccountsService.java into your code.
 		
-*	Copy the configuration file 'sdk_config.properties' in 'adaptiveaccountssample/src/main/resources' folder to your application 'src/main/resources'. Use the default constructor to run in default configuration(configuration used from sdk_config.properties found in classpath).
+*	Create a configuration file 'sdk_config.properties' with parameters specified in configuration section (make sure the file is in class path). Use the default constructor to run with configuration used from 'sdk_config.properties' found in classpath.
 	```java
 	new AdaptiveAccountsService();
 	```
@@ -45,7 +45,7 @@ To make an API call:
 			 Or
 	new AdaptiveAccountsService(Properties customProperties);
 	```
-*	The SDK takes defaults for certain parameters(refer sdk_config.properties for defaults). Account Credentials and either of 'mode' or 'service.Endpoint' are mandatory parameters.
+*	The SDK takes defaults for certain parameters (eg: Account Credentials and either of 'mode' or 'service.Endpoint' are mandatory parameters).
   
 *	Create a service wrapper object.
 
@@ -89,9 +89,7 @@ SDK Logging:
 		  
 SDK Configuration:
 ------------------
-The SDK uses .properties format configuration file. Sample of this file is at 
- 
-'adaptiveaccountssample/src/main/resources/'. You can use the 'sdk_config.properties' configuration file to configure
+The SDK uses dynamic configuration map or '*.properties' format configuration file as shown in code snippet above, to configure
 
 *	Mode is specified using the parameter name 'mode' with values 'sandbox' or 'live', if specified 'service.EndPoint' parameter is not required and the SDK chooses the sandbox or live endpoints automatically.
 
@@ -101,8 +99,10 @@ The SDK uses .properties format configuration file. Sample of this file is at
 
 *	Service configuration.
 
+*   You can refer full list of configuration parameters at [https://github.com/paypal/adaptiveaccounts-sdk-java/wiki/SDK-Configuration-Parameters]
+
 Multiple SDK usage (Multiple End-points Support)
----------------------------
+------------------------------------------------
 Multiple end-points configuration can be done by specifying mulitple end-points identified by specific property keys. 
 When using multiple SDKs in combination, like Merchant and Permissions etc..configure the endpoints as shown below 
 one for each service used, The existing service.EndPoint property is still supported for backward compatibility (using 
@@ -110,7 +110,7 @@ a single SDK). The list below specifies endpoints for different services, in SAN
 property keys and end-point as property values.
 
 Sandbox EndPoints
-------------------------------  
+----------------- 
 *   Merchant/Button Manager Service (3 Token)  
     ```properties
     service.EndPoint.PayPalAPI=https://api-3t.sandbox.paypal.com/2.0  

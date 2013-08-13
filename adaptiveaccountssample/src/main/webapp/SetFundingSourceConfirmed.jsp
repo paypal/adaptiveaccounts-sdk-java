@@ -7,6 +7,7 @@
 <title>AdaptiveAccounts - SetFundingSourceConfirmed</title>
 </head>
 <body>
+	<img src="https://devtools-paypal.com/image/bdg_payments_by_pp_2line.png" alt="PAYMENTS BY PayPal" />
 	<div id="wrapper">
 		<div id="header">
 			<h3>SetFundingSourceConfirmed</h3>
