@@ -5,7 +5,7 @@ import java.util.Map;
 
 
 /**
- *  For a full list of configuration parameters refer at [https://github.com/paypal/adaptiveaccounts-sdk-java/wiki/SDK-Configuration-Parameters] 
+ *  For a full list of configuration parameters refer in wiki page(https://github.com/paypal/sdk-core-java/wiki/SDK-Configuration-Parameters). 
  */
 public class Configuration {
 	
