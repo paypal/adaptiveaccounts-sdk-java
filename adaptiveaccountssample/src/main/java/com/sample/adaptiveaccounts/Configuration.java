@@ -28,7 +28,7 @@ public class Configuration {
 		// configMap.put("acct2.AppId", "APP-80W284485P519543T");
 		
 		// Sandbox Email Address
-		configMap.put("service.sandboxEmailAddress", "pp.devtools@gmail.com");
+		configMap.put("sandbox.EmailAddress", "pp.devtools@gmail.com");
 		
 		return configMap;
 	}
