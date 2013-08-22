@@ -1,3 +1,9 @@
+Version 2.4.106 - August 21, 2013
+ 
+  	- Updated samples to showcase dynamic configuration.
+	
+You can see source code of this release in github under https://github.com/paypal/adaptiveaccounts-sdk-java/tree/v2.4.106.
+--------------------------------------------------------------------------------------------------
 Version 2.3.102 - May 23, 2013
  
  	- Updated core sdk version.
