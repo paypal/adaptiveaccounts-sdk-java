@@ -43,7 +43,7 @@ public class AdaptiveAccountsService extends BaseService {
 	private static final String SDK_NAME = "adaptiveaccounts-java-sdk";
 	
 	//SDK Version
-	private static final String SDK_VERSION = "2.3.102";
+	private static final String SDK_VERSION = "2.4.106";
 
 
 	/**

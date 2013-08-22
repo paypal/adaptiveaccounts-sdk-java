@@ -108,11 +108,15 @@ public class AdaptiveAccountsServlet extends HttpServlet {
 
 		response.setContentType("text/html");
 		try {
-			// ## Creating service wrapper object
+			
+			// Configuration map containing signature credentials and other required configuration.
+			// For a full list of configuration parameters refer in wiki page
+			// (https://github.com/paypal/sdk-core-java/wiki/SDK-Configuration-Parameters).
+			Map<String,String> configurationMap =  Configuration.getAcctAndConfig();
+			
 			// Creating service wrapper object to make an API call and loading
-			// configuration file for your credentials and endpoint
-			AdaptiveAccountsService service = new AdaptiveAccountsService(this
-					.getClass().getResourceAsStream("/sdk_config.properties"));
+			// configuration map for your credentials and endpoint
+			AdaptiveAccountsService service = new AdaptiveAccountsService(configurationMap);
 
 			if (request.getRequestURI().contains("CreateAccount")) { 			// CreateAccount Request
 				RequestEnvelope requestEnvelope = new RequestEnvelope();
