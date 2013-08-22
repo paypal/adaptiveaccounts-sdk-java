@@ -12,6 +12,6 @@ To build and run this application:
 *   Setup your API credentials and other configuration as shown in SDK README in the root directory.
 *	Simply run `mvn install` to build war file.
 *	Run `mvn jetty:run` to run the war file.
-*	Access `http://localhost:<jetty-port>/adaptiveaccountssample-2.3.102/` in your browser to play with the test pages.`<jetty-port>` is configurable in `pom.xml`.
+*	Access `http://localhost:<jetty-port>/adaptiveaccountssample-2.4.106/` in your browser to play with the test pages.`<jetty-port>` is configurable in `pom.xml`.
 
  
